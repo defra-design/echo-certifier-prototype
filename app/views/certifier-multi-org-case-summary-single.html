@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner govuk-width-container" id="beta-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <form method="POST" action="/protected/certifier/organisation" data-destroy="false" class="organisation-form">
+      <input type="hidden" name="crumb_csrf_token" value="L_1qXCAqIJHRqJCpIYu0DpL3LMq8ppGedRjckQZ5OQG">
+      <select class="govuk-select organisation-dropdown" id="Select-Organisation" name="orgId">
+        <option value="">Select</option>
+        <option value="667219e2-6192-e911-a96d-000d3a29ba60" selected="">Acme Org Ltd</option>
+        <option value="dfb37397-d591-e911-a96b-000d3a29be4a">ABC BUILDING (ESSEX) LTD</option>
+      </select> <a href="" class="govuk-link govuk-link--no-visited-state margin-left-30">
+        <button class="govuk-button blue-button margin-bottom-0" id="select-organisation-button">
+          Select
+        </button>
+      </a>
+
+    </form>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <div class="login-nav multi-org">
+      <ul class="login-nav__list">
+        <li class="login-nav__list-item" id="Nav-DisplayName">Ann Cooper</li>
+        <li class="login-nav__list-item"> | <a
+            href="https://identity-management-app.herokuapp.com/manage/team-members/services-on-team-member-admin-account_company-exports?serviceLine=Export%20Health%20Certificates&serviceRole=Certifier&numUsers=1&numAgents=0&numServices=1&multiOrg=no&parentChild=parent"
+            class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a>|</li>
+        <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--visible">
+
+<div>
+  <a class="govuk-back-link" id="link-back" href="/protected/certifier/dashboard">Back</a>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<main class="govuk-main-wrapper app-main-class" id="main-content" role="main" data-qa-page="Page-Certifier-Summary">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div>
+        <h1 class="govuk-heading-l heading">Export animal to
+          United Arab Emirates -
+          2849EHC</h1>
+      </div>
+      <div class="govuk-grid-column-full">
+        <div class="govuk-grid-column-three-quarters">
+
+          <p class="govuk-body">
+            Case ID: 19/1527 <br>
+            Name of applicant: Alan Home Purchase <br>
+            Destination Country: United Arab Emirates
+            <br>
+            Proposed Export Date: 2019-05-15 <br>
+          </p>
+
+        </div>
+
+      </div>
+      <div>
+        <form id="table-select-certificates" action="#">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+
+                <th class="govuk-table__header">No.</th>
+                <th class="govuk-table__header">Certificate Number
+                </th>
+                <th class="govuk-table__header">Actual Export Date</th>
+                <th class="govuk-table__header">Certificate Status</th>
+                <th class="govuk-table__header">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr class="govuk-table__row">
+                <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
+                <td id="cert-num" class="govuk-table__cell" scope="row">19-02-005770</td>
+                <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                  30 May 2022
+                </td>
+                <td id="status" class="govuk-table__cell" scope="row">NEW
+                </td>
+                <td id="actions" class="govuk-table__cell" scope="row">
+                  <a id="view_cert_19-2-002303" href="#" target="_blank">
+                    View Certificate
+                  </a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </form>
+
+        <div>
+          <a href="certifier-questions/certifier-questions-page-01" class="govuk-button blue-button" id="button-continue">
+            Continue
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+
+{% endblock %}
