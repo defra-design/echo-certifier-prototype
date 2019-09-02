@@ -54,3 +54,29 @@ $govuk-global-styles: true;
     border-bottom: 1px solid #005ea5;
     cursor: pointer;
 }
+
+.icon {
+    display: inline-block;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.icon-file-download {
+    width: 30px;
+    height: 39px;
+    background-image: url('../images/icon-file-download.png');
+}
+
+@media (min-width: 40.0625em) {
+  dl.govuk-summary-list.govuk-\!-margin-bottom-9 {
+    .govuk-summary-list__key {
+      width: 60%;
+    }
+    .govuk-summary-list__value {
+      width: 30%;
+    }
+    .govuk-summary-list__actions {
+      width: 10%;
+    }
+  }
+}
