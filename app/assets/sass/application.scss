@@ -67,6 +67,10 @@ $govuk-global-styles: true;
     background-image: url('../images/icon-file-download.png');
 }
 
+.govuk-radios__conditional#conditional-decision-conditional-2 {
+  display: block;
+}
+
 @media (min-width: 40.0625em) {
   dl.govuk-summary-list.govuk-\!-margin-bottom-9 {
     .govuk-summary-list__key {
