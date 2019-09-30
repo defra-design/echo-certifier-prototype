@@ -13,6 +13,7 @@ $govuk-global-styles: true;
 @import "components/cookie-banner";
 @import "components/responsive-tables";
 @import "components/organisation-switcher";
+@import "components/status";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 @import "patterns/login-nav";
@@ -87,6 +88,7 @@ $govuk-global-styles: true;
   text-transform: uppercase;
 }
 
+
 .turquoise-tag {
     background-color: #28a197;
 }
@@ -110,5 +112,9 @@ $govuk-global-styles: true;
 @media (min-width: 40.0625em){
   .govuk-summary-list__40 {
       width: 40% !important;
+  }
+  .govuk-link-group--right{
+    margin-top:10px;
+    text-align: right;
   }
 }

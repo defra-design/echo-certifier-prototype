@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which organisation fo you want to manage?
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a class="govuk-back-link" href="review-your-answers">Back</a>
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div>
+              <form action="certifier-multi-org-dashboard-new" method="POST">
+                <div class="govuk-form-group govuk-!-margin-bottom-9 ">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                      <h1 class="govuk-fieldset__heading">
+                        Which organisation do you want to manage?
+                      </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="org1" name="orgname" type="radio" value="ACME ORG LTD" data-aria-controls="conditional-decision-conditional-1">
+                        <label class="govuk-label govuk-radios__label" for="org1">
+                          ACME ORG LTD
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="org2" name="orgname" type="radio" value="ABC BUILDING LTD" data-aria-controls="conditional-decision-conditional-3">
+                        <label class="govuk-label govuk-radios__label" for="org2">
+                          ABC BUILDING LTD
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="org3" name="orgname" type="radio" value="XYZ FISHPORT LTD" data-aria-controls="conditional-decision-conditional-3">
+                        <label class="govuk-label govuk-radios__label" for="org3">
+                          XYZ FISHPORT LTD
+                        </label>
+                      </div>
+                      </div>
+                  </fieldset>
+                </div>
+                  <div class="govuk-form-group">
+                    <input type="hidden" name="crumb_csrf_token" value="T7T4SHvWvcq7qk1MSfTevo6ezo5qfnvArpiUHe8Nr2d">
+                    <input class="govuk-button margin-top-30" type="submit" name="acceptAndSubmit" value="Manage organisation" id="Button-CertifierRecordDecisionSubmit">
+
+                  </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+{% endblock %}

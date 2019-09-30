@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div>
+      <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Who is the consignor?</h1>
+      <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+      <p>
+      </p>
+      <form method="POST">
+        <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
+
+
+        <!-- @formatter:off -->
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-0">Consignor name</label>
+          <input class="govuk-input form-control-3-4" id="8270EHC-0" name="consignor_name" value="{{data.consignor_name or 'Andrew Consignor'}}" type="text" data-qa-id="Question-8270EHC-0" data-com.onepassword.iv="Andrew Consignor">
+        </div>
+        <input type="hidden" name="0-formQuestionId" value="7856">
+        <input type="hidden" name="0-questionId" value="591">
+        <input type="hidden" name="0-formName" value="8270EHC">
+        <input type="hidden" name="0-questionText" value="Consignor name">
+        <input type="hidden" name="0-questionType" value="text">
+        <input type="hidden" name="0-questionOrder" value="1">
+        <input type="hidden" name="0-questionScope" value="BOTH">
+        <input type="hidden" name="questionSequence-7856" value="0">
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-1">Consignor address</label>
+          <textarea class="govuk-textarea" id="8270EHC-1" name="consignor_address" rows="3" data-qa-id="Question-8270EHC-1" spellcheck="false">{{data.consignor_address or "Andrew Consignor Address"}}</textarea>
+        </div>
+        <input type="hidden" name="1-formQuestionId" value="7857">
+        <input type="hidden" name="1-questionId" value="592">
+        <input type="hidden" name="1-formName" value="8270EHC">
+        <input type="hidden" name="1-questionText" value="Consignor address">
+        <input type="hidden" name="1-questionType" value="textarea">
+        <input type="hidden" name="1-questionOrder" value="2">
+        <input type="hidden" name="1-questionScope" value="BOTH">
+        <input type="hidden" name="questionSequence-7857" value="1">
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-2">Consignor telephone number (optional)</label>
+          <input class="govuk-input form-control-3-4" id="8270EHC-2" name="consignor_phone" value="{{data.consignor_phone or ''}}" type="text" data-qa-id="Question-8270EHC-2" data-com.onepassword.iv="">
+        </div>
+        <input type="hidden" name="2-formQuestionId" value="7858">
+        <input type="hidden" name="2-questionId" value="593">
+        <input type="hidden" name="2-formName" value="8270EHC">
+        <input type="hidden" name="2-questionText" value="Consignor telephone number (optional)">
+        <input type="hidden" name="2-questionType" value="text">
+        <input type="hidden" name="2-questionOrder" value="3">
+        <input type="hidden" name="2-questionScope" value="BOTH">
+        <input type="hidden" name="questionSequence-7858" value="2"> <!-- @formatter:on -->
+        <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="3">
+        <div class="govuk-grid-row margin-top-30"></div>
+        <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+          <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full govuk-body">
+            <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+          </div>
+        </div>
+
+      </form>
+
+      <p></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

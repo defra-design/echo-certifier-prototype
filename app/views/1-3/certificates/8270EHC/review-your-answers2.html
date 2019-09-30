@@ -17,13 +17,10 @@ Check your answers
         <h1 class="govuk-heading-xl">
           Review your answers
         </h1>
-
-        <div class="govuk-details__text">
-          <strong class="govuk-body govuk-!-font-weight-bold">
-            Your application for a health certificate is now ready to be submitted.<br><br>
-            Please check that the answers you've provided are correct.
-          </strong>
-        </div>
+        <p class="govuk-body">
+          Your application for a health certificate is now ready to be submitted.<br><br>
+          Please check that the answers you've provided are correct.
+        </p>
 
         <table class="govuk-table">
           <tbody class="govuk-table__body">
@@ -182,6 +179,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7854-question">Total number of packages in the consignment (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="16-answer">
+              {{data.packaging_amount or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="packaging" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-16">Change</a>
@@ -191,6 +189,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7855-question">Type of packaging (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="17-answer">
+              {{data.packaging_type or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="packaging" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-17">Change</a>
@@ -200,6 +199,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7860-question">Place of loading (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="18-answer">
+              {{data.dispatch_name or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-18">Change</a>
@@ -209,6 +209,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7861-question">Approval number of the place of loading (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="19-answer">
+              {{data.dispatch_number or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-19">Change</a>
@@ -218,6 +219,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7862-question">Name of establishment of dispatch (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="20-answer">
+              {{data.dispatch_establishment or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-20">Change</a>
@@ -227,6 +229,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7863-question">Address of establishment of dispatch (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="21-answer">
+              {{data.dispatch_address or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-21">Change</a>
@@ -236,6 +239,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7864-question">Approval number of the establishment of dispatch (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="22-answer">
+              {{data.dispatch_approval_number or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-22">Change</a>
@@ -245,6 +249,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7874-question">Expected date of departure from the UK (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="23-answer">
+              {{transport_departure_day}} {{transport_departure_month}} {{transport_departure_year}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-23">Change</a>
@@ -254,6 +259,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7875-question">Means of transport to the BIP (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="24-answer">
+              {{data.transport_type or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-24">Change</a>
@@ -263,6 +269,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7876-question">Identification of the transport (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="25-answer">
+              {{data.transport_id or ''}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-25">Change</a>
@@ -272,6 +279,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7877-question">Documentary reference number for the transport (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="26-answer">
+              {{data.transport_refnumber or ''}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-26">Change</a>
@@ -281,6 +289,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7878-question">Container and seal numbers (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="27-answer">
+              {{data.transport_seal_numbers or ''}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-27">Change</a>
@@ -289,7 +298,8 @@ Check your answers
           <tr class="govuk-table__row">
             <td class="govuk-table__header" scope="row" id="7856-question">Consignor name
             </td>
-            <td class="govuk-table__cell" scope="row" id="28-answer">Andrew Consignor
+            <td class="govuk-table__cell" scope="row" id="28-answer">
+              {{data.consignor_name or "Andrew Consignor"}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-28">Change</a>
@@ -298,7 +308,8 @@ Check your answers
           <tr class="govuk-table__row">
             <td class="govuk-table__header" scope="row" id="7857-question">Consignor address
             </td>
-            <td class="govuk-table__cell" scope="row" id="29-answer">Andrew Consignor Address
+            <td class="govuk-table__cell" scope="row" id="29-answer">
+              {{data.consignor_address or "Andrew Consignors address"}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-29">Change</a>
@@ -308,6 +319,7 @@ Check your answers
             <td class="govuk-table__header" scope="row" id="7858-question">Consignor telephone number (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="30-answer">
+              {{data.consignor_phone or ""}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-30">Change</a>
@@ -316,28 +328,31 @@ Check your answers
           <tr class="govuk-table__row">
             <td class="govuk-table__header" scope="row" id="7865-question">Consignee name (optional)
             </td>
-            <td class="govuk-table__cell" scope="row" id="31-answer">Consignee Andrew
+            <td class="govuk-table__cell" scope="row" id="31-answer">
+              {{data.consignee_name or 'Consignee Andrew'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-31">Change</a>
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-31">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__header" scope="row" id="7866-question">Consignee address (optional)
             </td>
-            <td class="govuk-table__cell" scope="row" id="32-answer">Consignee Address Andrew
+            <td class="govuk-table__cell" scope="row" id="32-answer">
+              {{data.consignee_address or 'Consignee Address Andrew'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-32">Change</a>
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-32">Change</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__header" scope="row" id="7867-question">Consignee telephone number (optional)
             </td>
             <td class="govuk-table__cell" scope="row" id="33-answer">
+              {{data.consignee_phone or ''}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
-              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-33">Change</a>
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-33">Change</a>
             </td>
           </tr>
           </tbody>

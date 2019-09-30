@@ -18,7 +18,7 @@ Example usage:
 */
 
 module.exports = {
-
+  "transport_type": []
   // Insert values here
 
 }
