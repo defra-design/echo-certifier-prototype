@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a class="govuk-back-link" href="review-your-answers">Back</a>
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div>
+              <form action="certifier-multi-org-dashboard" method="POST">
+                <div class="govuk-form-group govuk-!-margin-bottom-9 ">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Decision and Confirmation
+                      </h1>
+                    </legend>
+                    <span id="how-contacted-conditional-hint" class="govuk-hint">
+                      Select one option.
+                    </span>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="approved" name="decision" type="radio" value="APPROVED" data-aria-controls="conditional-decision-conditional-1">
+                        <label class="govuk-label govuk-radios__label" for="approved">
+                          Approved
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="rejected" name="decision" type="radio" value="REJECTED" data-aria-controls="conditional-decision-conditional-2">
+                        <label class="govuk-label govuk-radios__label" for="rejected">
+                          Rejected
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__conditional" id="conditional-decision-conditional-2">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="rejected-reason">
+                            Reason for rejected
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="rejected-reason" name="rejected-reason" type="" value="">
+                        </div>
+
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="cancelled" name="decision" type="radio" value="CANCELLED" data-aria-controls="conditional-decision-conditional-3">
+                        <label class="govuk-label govuk-radios__label govuk-!-margin-bottom-5" for="cancelled">
+                          Cancelled
+                        </label>
+                      </div>
+                    </div>
+
+                  </fieldset>
+                </div>
+
+                  <div class="govuk-form-group ">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                          Certifier details
+                        </h1>
+                      </legend>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="fullname">
+                          Full Name
+                        </label>
+                        <input class="govuk-input govuk-!-width-full" id="fullname" name="fullname" type="text" value="">
+                      </div>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="id-number">
+                          SP number
+                        </label>
+                        <span id="national-insurance-number-hint" class="govuk-hint">
+                            This is your SP number. It's in your identification card. For example, ‘123456’.
+                          </span>
+                        <span class="govuk-label-inline">SP-</span>
+                        <input class="govuk-input govuk-input--width-10" id="id-number" name="id-number" type="text" value="" data-com.onepassword.iv="" data-op-id="0">
+                      </div>
+
+                    </fieldset>
+                  </div>
+
+                  <h2 class="govuk-heading-m">Now submit the details to APHA</h2>
+
+                  <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+                  <div class="govuk-form-group">
+                    <input type="hidden" name="crumb_csrf_token" value="T7T4SHvWvcq7qk1MSfTevo6ezo5qfnvArpiUHe8Nr2d">
+                    <input class="govuk-button margin-top-30" type="submit" name="acceptAndSubmit" value="Accept and submit" id="Button-CertifierRecordDecisionSubmit">
+
+                  </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+{% endblock %}

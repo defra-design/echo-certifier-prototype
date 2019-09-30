@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+How will the consignment be transported - GOV UK
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div>
+          <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">How will the consignment be transported?</h1>
+          <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+          <p>
+            </p><form action="review-your-answers" method="POST" enctype="application/x-www-form-urlencoded">
+              <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
+
+
+            <!-- @formatter:off -->
+            <div class="govuk-form-group ">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <label class="govuk-label govuk-!-font-weight-bold">Expected date of departure from the UK (optional)</label>
+                  <span class="govuk-hint">For example, 31 08 1970</span>
+                </legend>
+                <div class="govuk-date-input">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="8270EHC-0-day">Day</label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="8270EHC-0-day" name="0-day" value="NaN" data-qa-id="Question-8270EHC-0-Day" type="number" pattern="^[0-9]{2}$">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="8270EHC-0-month">Month</label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="8270EHC-0-month" name="0-month" value="NaN" data-qa-id="Question-8270EHC-0-Month" type="number" pattern="^[0-9]{2}$">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="8270EHC-0-year">Year</label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="8270EHC-0-year" name="0-year" value="NaN" data-qa-id="Question-8270EHC-0-Year" type="number" pattern="^[0-9]{4}$">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <input type="hidden" name="0-formQuestionId" value="7874">
+            <input type="hidden" name="0-questionId" value="609">
+            <input type="hidden" name="0-formName" value="8270EHC">
+            <input type="hidden" name="0-questionText" value="Expected date of departure from the UK (optional)">
+            <input type="hidden" name="0-questionType" value="date">
+            <input type="hidden" name="0-questionOrder" value="1">
+            <input type="hidden" name="0-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7874" value="0">            <div class="govuk-form-group " id="checkboxes" data-qa-id="8270EHC-1">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-1">Means of transport to the BIP (optional)</label>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="8270EHC-1_1" name="1_1" type="checkbox" data-qa-id="8270EHC-1_1" value="Aeroplane">
+                  <label class="govuk-label govuk-checkboxes__label" for="8270EHC-1_1">
+                    Aeroplane
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="8270EHC-1_2" name="1_2" type="checkbox" data-qa-id="8270EHC-1_2" value="Ship">
+                  <label class="govuk-label govuk-checkboxes__label" for="8270EHC-1_2">
+                    Ship
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="8270EHC-1_3" name="1_3" type="checkbox" data-qa-id="8270EHC-1_3" value="Railway wagon">
+                  <label class="govuk-label govuk-checkboxes__label" for="8270EHC-1_3">
+                    Railway wagon
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="8270EHC-1_4" name="1_4" type="checkbox" data-qa-id="8270EHC-1_4" value="Road vehicle">
+                  <label class="govuk-label govuk-checkboxes__label" for="8270EHC-1_4">
+                    Road vehicle
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="8270EHC-1_5" name="1_5" type="checkbox" data-qa-id="8270EHC-1_5" value="Other">
+                  <label class="govuk-label govuk-checkboxes__label" for="8270EHC-1_5">
+                    Other
+                  </label>
+                </div>
+            </div>
+            <input type="hidden" name="1-formQuestionId" value="7875">
+            <input type="hidden" name="1-questionId" value="610">
+            <input type="hidden" name="1-formName" value="8270EHC">
+            <input type="hidden" name="1-questionText" value="Means of transport to the BIP (optional)">
+            <input type="hidden" name="1-questionType" value="multi_select">
+            <input type="hidden" name="1-questionOrder" value="2">
+            <input type="hidden" name="1-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7875" value="1">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-2">Identification of the transport (optional)</label>
+              <div class="govuk-hint">Provide the flight number, the ship name or vehicle registration number(s)</div>
+              <input class="govuk-input form-control-3-4" id="8270EHC-2" name="2" value="" type="text" data-qa-id="Question-8270EHC-2">
+            </div>
+            <input type="hidden" name="2-formQuestionId" value="7876">
+            <input type="hidden" name="2-questionId" value="611">
+            <input type="hidden" name="2-formName" value="8270EHC">
+            <input type="hidden" name="2-questionText" value="Identification of the transport (optional)">
+            <input type="hidden" name="2-questionType" value="text">
+            <input type="hidden" name="2-questionOrder" value="3">
+            <input type="hidden" name="2-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7876" value="2">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-3">Documentary reference number for the transport (optional)</label>
+              <div class="govuk-hint">For example, number of the airline bill or bill of lading</div>
+              <input class="govuk-input form-control-3-4" id="8270EHC-3" name="3" value="" type="text" data-qa-id="Question-8270EHC-3">
+            </div>
+            <input type="hidden" name="3-formQuestionId" value="7877">
+            <input type="hidden" name="3-questionId" value="612">
+            <input type="hidden" name="3-formName" value="8270EHC">
+            <input type="hidden" name="3-questionText" value="Documentary reference number for the transport (optional)">
+            <input type="hidden" name="3-questionType" value="text">
+            <input type="hidden" name="3-questionOrder" value="4">
+            <input type="hidden" name="3-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7877" value="3">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-4">Container and seal numbers (optional)</label>
+              <div class="govuk-hint">If this is not known at the time of application, leave blank</div>
+              <input class="govuk-input form-control-3-4" id="8270EHC-4" name="4" value="" type="text" data-qa-id="Question-8270EHC-4">
+            </div>
+            <input type="hidden" name="4-formQuestionId" value="7878">
+            <input type="hidden" name="4-questionId" value="613">
+            <input type="hidden" name="4-formName" value="8270EHC">
+            <input type="hidden" name="4-questionText" value="Container and seal numbers (optional)">
+            <input type="hidden" name="4-questionType" value="text">
+            <input type="hidden" name="4-questionOrder" value="5">
+            <input type="hidden" name="4-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7878" value="4">            <!-- @formatter:on -->
+              <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="5">
+              <div class="govuk-grid-row margin-top-30"></div>
+              <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+              </div>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-body">
+                  <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+                </div>
+              </div>
+
+            </form>
+
+          <p></p>
+        </div>
+      </div>
+    </div>
+{% endblock %}

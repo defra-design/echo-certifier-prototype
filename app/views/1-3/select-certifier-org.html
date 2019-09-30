@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form action="certifier-multi-org-dashboard" method="POST">
+          <div class="govuk-form-group " id="Form-Organisation">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Select an organisation
+                </h1>
+              </legend>
+              <span id="Hint-Organisation" class="govuk-hint">
+                Select an organisation and view their cases
+              </span>
+              <select class="govuk-select govuk-select--width-20" id="Select-Organisation" name="orgId">
+                <option value="">Select</option>
+                <option value="667219e2-6192-e911-a96d-000d3a29ba60">Acme Org Ltd</option>
+                <option value="dfb37397-d591-e911-a96b-000d3a29be4a">ABC BUILDING (ESSEX) LTD</option>
+              </select>        </fieldset>
+          </div>
+          <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-OrganisationSaveAndContinue">
+        </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

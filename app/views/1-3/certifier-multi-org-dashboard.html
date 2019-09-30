@@ -1,0 +1,299 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-phase-banner govuk-width-container" id="beta-banner">
+  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service
+    </span>
+  </p>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <form method="POST" action="/protected/certifier/organisation" data-destroy="false" class="organisation-form">
+      <input type="hidden" name="crumb_csrf_token" value="L_1qXCAqIJHRqJCpIYu0DpL3LMq8ppGedRjckQZ5OQG">
+      <select class="govuk-select organisation-dropdown" id="Select-Organisation" name="orgId">
+        <option value="">Select</option>
+        <option value="667219e2-6192-e911-a96d-000d3a29ba60" selected="">Acme Org Ltd</option>
+        <option value="dfb37397-d591-e911-a96b-000d3a29be4a">ABC BUILDING (ESSEX) LTD</option>
+      </select> <a href="" class="govuk-link govuk-link--no-visited-state margin-left-30">
+        <button class="govuk-button blue-button margin-bottom-0" id="select-organisation-button">
+          Select
+        </button>
+      </a>
+
+    </form>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <div class="login-nav multi-org">
+      <ul class="login-nav__list">
+        <li class="login-nav__list-item" id="Nav-DisplayName">Ann Cooper</li>
+        <li class="login-nav__list-item"> | <a
+            href="https://identity-management-app.herokuapp.com/manage/team-members/services-on-team-member-admin-account_company-exports?serviceLine=Export%20Health%20Certificates&serviceRole=Certifier&numUsers=1&numAgents=0&numServices=1&multiOrg=no&parentChild=parent"
+            class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a>|</li>
+        <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--visible">
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div>
+          <h1 class="govuk-heading-l heading">Your Cases</h1>
+        </div>
+        <div>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header">
+                  <div class="applicationRef-column">Case ID</div>
+                </th>
+                <th class="govuk-table__header">Name</th>
+                <th class="govuk-table__header">Export date</th>
+                <th class="govuk-table__header">Destination</th>
+                <th class="govuk-table__header">Status</th>
+                <th class="govuk-table__header">Reference</th>
+                <th class="govuk-table__header">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="govuk-table__row">
+                <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  19/1527
+                </td>
+                <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
+                  Alan Home Purchase
+                </td>
+                <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
+                  15 May 2019
+                </td>
+                <td id="-destination" class="govuk-table__cell" scope="row">
+                  United Arab Emirates
+                </td>
+
+                <td id="-status" class="govuk-table__cell" scope="row">
+                  <strong class="govuk-tag green">
+                    COMPLETED
+                  </strong>
+                </td>
+                <td id="-reference" class="govuk-table__cell" scope="row">
+                  7686728
+                </td>
+                <td id="-actions" class="govuk-table__cell" scope="row">
+                  <a id="dashboard_action_link_1651965954452" href="summary/case-completed">
+                    Summary
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="govuk-table__row">
+                <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  19/1522
+                </td>
+                <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
+                  Alan Home Purchase
+                </td>
+                <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
+                  15 May 2022
+                </td>
+                <td id="-destination" class="govuk-table__cell" scope="row">
+                  United Arab Emirates
+                </td>
+
+                <td id="-status" class="govuk-table__cell" scope="row">
+                  <strong class="govuk-tag blue">
+                    NEW
+                  </strong>
+                </td>
+                <td id="-reference" class="govuk-table__cell" scope="row">
+
+                </td>
+                <td id="-actions" class="govuk-table__cell" scope="row">
+                  <a id="dashboard_action_link_1000065954446" href="summary/case-new">
+                    Summary
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="govuk-table__row">
+                <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  19/1523
+                </td>
+                <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
+                  Alan Purchase
+                </td>
+                <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
+                  15 May 2022
+                </td>
+                <td id="-destination" class="govuk-table__cell" scope="row">
+                  United Arab Emirates
+                </td>
+
+                <td id="-status" class="govuk-table__cell" scope="row">
+                  <strong class="govuk-tag orange">
+                    CERTIFIER ACTION
+                  </strong>
+                </td>
+                <td id="-reference" class="govuk-table__cell" scope="row">
+
+                </td>
+                <td id="-actions" class="govuk-table__cell" scope="row">
+                  <a id="dashboard_action_link_1651965954447" href="summary/case-certifier-action">
+                    Summary
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="govuk-table__row">
+                <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  19/1456
+                </td>
+                <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
+                  Agent User
+                </td>
+                <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
+                  24 May 2022
+                </td>
+                <td id="-destination" class="govuk-table__cell" scope="row">
+                  United Arab Emirates
+                </td>
+
+                <td id="-status" class="govuk-table__cell" scope="row">
+                  <div class="turquoise-tag">
+                    AWAITING DISPATCH
+                  </div>
+                </td>
+                <td id="-reference" class="govuk-table__cell" scope="row">
+                  7686728
+                </td>
+                <td id="-actions" class="govuk-table__cell" scope="row">
+                  <a id="dashboard_action_link_1000065954449" href="summary/case-awaiting-dispatch">
+                    Summary
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="govuk-table__row" id="1721147989399">
+              <td id="1721147989399-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                19/1398
+              </td>
+              <td id="1721147989399-commodity" class="govuk-table__cell wrap commodity-column" scope="row">
+                Bob Smith
+              </td>
+              <td id="1721147989399-submitted" class="govuk-table__cell submitted-column" scope="row">
+                09 Sep 2019
+              </td>
+              <td id="1721147989399-destination" class="govuk-table__cell" scope="row">
+                Hong Kong
+              </td>
+
+              <td id="1721147989399-status" class="govuk-table__cell" scope="row">
+                <div class="status-cell">
+                  <div class="govuk-tag orange">
+                    CANCELLED
+                  </div>
+                </div>
+              </td>
+              <td id="1721147989399-reference" class="govuk-table__cell" scope="row">
+
+              </td>
+              <td id="1721147989399-actions" class="govuk-table__cell" scope="row">
+                <a id="dashboard_action_link_1721147989399" href="summary/case-cancelled">
+                  Summary
+                </a>
+              </td>
+            </tr>
+              </tbody>
+              <tbody>
+            <tr class="govuk-table__row" id="1721147993646">
+              <td id="1721147993646-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                19/2376
+              </td>
+              <td id="1721147993646-commodity" class="govuk-table__cell wrap commodity-column" scope="row">
+                Caitlin Dixon
+              </td>
+              <td id="1721147993646-submitted" class="govuk-table__cell submitted-column" scope="row">
+                25 Sep 2019
+              </td>
+              <td id="1721147993646-destination" class="govuk-table__cell" scope="row">
+                Gibraltar
+              </td>
+
+              <td id="1721147993646-status" class="govuk-table__cell" scope="row">
+                <div class="status-cell">
+                  <div class="govuk-tag red ">
+                    REJECTED
+                  </div>
+                </div>
+              </td>
+              <td id="1721147993646-reference" class="govuk-table__cell" scope="row">
+                PO13570
+              </td>
+              <td id="1721147993646-actions" class="govuk-table__cell" scope="row">
+                <a id="dashboard_action_link_1721147993646" href="summary/case-rejected">
+                  Summary
+                </a>
+              </td>
+            </tr>
+            </tbody>
+            <tbody>
+            <tr class="govuk-table__row" id="1721147993559">
+              <td id="1721147993559-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                19/2349
+              </td>
+              <td id="1721147993559-commodity" class="govuk-table__cell wrap commodity-column" scope="row">
+                nicky private
+              </td>
+              <td id="1721147993559-submitted" class="govuk-table__cell submitted-column" scope="row">
+                20 Sep 2019
+              </td>
+              <td id="1721147993559-destination" class="govuk-table__cell" scope="row">
+                Saudi Arabia
+              </td>
+
+              <td id="1721147993559-status" class="govuk-table__cell" scope="row">
+                <div class="status-cell">
+                  <div class="govuk-tag blue">
+                    PROCESSING
+                  </div>
+                </div>
+              </td>
+              <td id="1721147993559-reference" class="govuk-table__cell" scope="row">
+
+              </td>
+              <td id="1721147993559-actions" class="govuk-table__cell" scope="row">
+                <a id="dashboard_action_link_1721147993559" href="summary/case-processing">
+                  Summary
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

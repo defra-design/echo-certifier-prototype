@@ -11,7 +11,8 @@ $govuk-global-styles: true;
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
-
+@import "components/responsive-tables";
+@import "components/organisation-switcher";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 @import "patterns/login-nav";
@@ -45,7 +46,7 @@ $govuk-global-styles: true;
 }
 
 
-.link-button {
+.link-button, .link-button:visited{
     background: none !important;
     color: #005ea5;
     border: none;
@@ -53,6 +54,7 @@ $govuk-global-styles: true;
     font: inherit;
     border-bottom: 1px solid #005ea5;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .icon {
@@ -72,7 +74,7 @@ $govuk-global-styles: true;
 }
 
 
-.govuk-tag.green, .govuk-tag.orange, .govuk-tag.blue, .turquoise-tag {
+.govuk-tag.green, .govuk-tag.orange, .govuk-tag.blue, .turquoise-tag, .govuk-tag.red {
   width: 90px;
   text-align: center;
   font-size: 12px;
@@ -101,5 +103,12 @@ $govuk-global-styles: true;
     .govuk-summary-list__actions {
       width: 10%;
     }
+  }
+}
+
+//summary_list extension
+@media (min-width: 40.0625em){
+  .govuk-summary-list__40 {
+      width: 40% !important;
   }
 }

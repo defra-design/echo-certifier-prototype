@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div>
+          <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">Where will this consignment be loaded and dispatched?</h1>
+          <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+          <span id="questionPageHint" class="govuk-body govuk-!-margin-bottom-3 govuk-hint">Provide details of where the consignment will be loaded and dispatched. These may be the same place.</span>
+          <p>
+            </p><form action="review-your-answers" method="POST" enctype="application/x-www-form-urlencoded">
+              <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
+
+
+            <!-- @formatter:off -->
+            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-0">Place of loading (optional)</label>
+              <div class="govuk-hint">Provide the name and location of the establishment</div>
+              <input class="govuk-input form-control-3-4" id="8270EHC-0" name="0" value="" type="text" data-qa-id="Question-8270EHC-0">
+            </div>
+            <input type="hidden" name="0-formQuestionId" value="7860">
+            <input type="hidden" name="0-questionId" value="595">
+            <input type="hidden" name="0-formName" value="8270EHC">
+            <input type="hidden" name="0-questionText" value="Place of loading (optional)">
+            <input type="hidden" name="0-questionType" value="text">
+            <input type="hidden" name="0-questionOrder" value="1">
+            <input type="hidden" name="0-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7860" value="0">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-1">Approval number of the place of loading (optional)</label>
+              <input class="govuk-input form-control-3-4" id="8270EHC-1" name="1" value="" type="text" data-qa-id="Question-8270EHC-1">
+            </div>
+            <input type="hidden" name="1-formQuestionId" value="7861">
+            <input type="hidden" name="1-questionId" value="596">
+            <input type="hidden" name="1-formName" value="8270EHC">
+            <input type="hidden" name="1-questionText" value="Approval number of the place of loading (optional)">
+            <input type="hidden" name="1-questionType" value="text">
+            <input type="hidden" name="1-questionOrder" value="2">
+            <input type="hidden" name="1-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7861" value="1">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-2">Name of establishment of dispatch (optional)</label>
+              <input class="govuk-input form-control-3-4" id="8270EHC-2" name="2" value="" type="text" data-qa-id="Question-8270EHC-2">
+            </div>
+            <input type="hidden" name="2-formQuestionId" value="7862">
+            <input type="hidden" name="2-questionId" value="597">
+            <input type="hidden" name="2-formName" value="8270EHC">
+            <input type="hidden" name="2-questionText" value="Name of establishment of dispatch (optional)">
+            <input type="hidden" name="2-questionType" value="text">
+            <input type="hidden" name="2-questionOrder" value="3">
+            <input type="hidden" name="2-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7862" value="2">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-3">Address of establishment of dispatch (optional)</label>
+              <textarea class="govuk-textarea" id="8270EHC-3" name="3" rows="3" data-qa-id="Question-8270EHC-3"></textarea>
+            </div>
+            <input type="hidden" name="3-formQuestionId" value="7863">
+            <input type="hidden" name="3-questionId" value="598">
+            <input type="hidden" name="3-formName" value="8270EHC">
+            <input type="hidden" name="3-questionText" value="Address of establishment of dispatch (optional)">
+            <input type="hidden" name="3-questionType" value="textarea">
+            <input type="hidden" name="3-questionOrder" value="4">
+            <input type="hidden" name="3-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7863" value="3">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-4">Approval number of the establishment of dispatch (optional)</label>
+              <input class="govuk-input form-control-3-4" id="8270EHC-4" name="4" value="" type="text" data-qa-id="Question-8270EHC-4">
+            </div>
+            <input type="hidden" name="4-formQuestionId" value="7864">
+            <input type="hidden" name="4-questionId" value="599">
+            <input type="hidden" name="4-formName" value="8270EHC">
+            <input type="hidden" name="4-questionText" value="Approval number of the establishment of dispatch (optional)">
+            <input type="hidden" name="4-questionType" value="text">
+            <input type="hidden" name="4-questionOrder" value="5">
+            <input type="hidden" name="4-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7864" value="4">            <!-- @formatter:on -->
+              <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="5">
+              <div class="govuk-grid-row margin-top-30"></div>
+              <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+              </div>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-body">
+                  <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+                </div>
+              </div>
+
+            </form>
+
+          <p></p>
+        </div>
+      </div>
+    </div>
+{% endblock %}

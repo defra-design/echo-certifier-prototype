@@ -1,0 +1,238 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    <div class="govuk-form-group " id="Form-Organisation">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-heading-xl">
+            Who will certify your consignment?
+          </h1>
+        </legend>
+        <span id="Hint-CertifierOrganisation" class="govuk-hint">
+          Select the organisation that will be carrying out the certification for this application.<br>
+          This might be an Official Veterinarian (OV) or an Environmental Health Officer (EHO).
+        </span>
+      </fieldset>
+    </div>
+
+    <form name="search-form" action="" method="GET">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-form-group">
+
+          <div class="govuk-grid-column-two-thirds">
+            <label class="govuk-label" for="filter">Filter by name, address, location or specialism</label>
+            <input class="govuk-input" id="filter" type="text" name="filter" data-qa-id="TextField-filter" value="{{ query.filter or ''}}" placeholder="">
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <div class="govuk-label govuk-!-margin-top-7">
+              <button type="submit" name="name" value="" class="link-button" id="Button-Search" data-qa-id="Button-Search">
+                Search
+              </button>
+              <a href="organisation-search" type="button" name="clear" value="clear" class="link-button" id="Button-Clear" data-qa-id="Button-Clear">
+                Clear
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </form>
+    <p class="govuk-body">&nbsp;</p>
+    {% if query.filter %}
+    <table class="govuk-table" data-qa-id="TABLE_FORM_CERTIFIER" id="certifyingOrganisations">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">Name</th>
+          <th class="govuk-table__header">Address</th>
+          <th class="govuk-table__header">Area</th>
+          <th class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            ALLIANCE QA SERVICES LIMITED Eden Bridge House CW5 8DG
+          </td>
+          <td class="govuk-table__cell wrap">
+            Eden Bridge House
+            Lowther Street
+
+            Carlisle
+            CW5 8DG
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+          <td class="govuk-table__cell">
+            <form action="certificate-delivery-address" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="00cjWOe9i6sG-GzHQk_xVluLrDo3gxDb_D55s1NT9HE">
+              <input type="hidden" name="ehcNumber" value="7432EHC">
+              <input type="hidden" name="applicationFormId" value="1721147990599">
+              <input type="hidden" name="pageSequence" value="2">
+              <input id="certifier-organisation-name-field-0" type="hidden" name="certifierName" value="ALLIANCE QA SERVICES LIMITED Eden Bridge House  CW5 8DG  ">
+              <input id="certifier-organisation-address-1-field-0" type="hidden" name="addressLine1" value="Eden Bridge House">
+              <input id="certifier-organisation-address-2-field-0" type="hidden" name="addressLine2" value="Lowther Street">
+              <input id="certifier-organisation-address-3-field-0" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-0" type="hidden" name="town" value="Carlisle">
+              <input id="certifier-organisation-county-field-0" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-0" type="hidden" name="postcode" value="CW5 8DG">
+              <input id="certifier-organisation-address-id-field-0" type="hidden" name="addressId" value="ceb3a58c-aede-e911-a812-000d3ab118a3">
+              <input id="certifier-organisation-id-field-0" type="hidden" name="certifierOrganisationId" value="cdb3a58c-aede-e911-a812-000d3ab118a3">
+              <input class="link-button" type="submit" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-0" data-qa-id="Button-SaveAndContinue">
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            Certifier OB3 Eden Bridge House CW5 8DG
+          </td>
+          <td class="govuk-table__cell wrap">
+            Eden Bridge House
+            Lowther Street
+
+            Carlisle
+            CW5 8DG
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+          <td class="govuk-table__cell">
+            <form action="certificate-delivery-address" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="00cjWOe9i6sG-GzHQk_xVluLrDo3gxDb_D55s1NT9HE">
+              <input type="hidden" name="ehcNumber" value="7432EHC">
+              <input type="hidden" name="applicationFormId" value="1721147990599">
+              <input type="hidden" name="pageSequence" value="2">
+              <input id="certifier-organisation-name-field-1" type="hidden" name="certifierName" value="Certifier OB3 Eden Bridge House  CW5 8DG  ">
+              <input id="certifier-organisation-address-1-field-1" type="hidden" name="addressLine1" value="Eden Bridge House">
+              <input id="certifier-organisation-address-2-field-1" type="hidden" name="addressLine2" value="Lowther Street">
+              <input id="certifier-organisation-address-3-field-1" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-1" type="hidden" name="town" value="Carlisle">
+              <input id="certifier-organisation-county-field-1" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-1" type="hidden" name="postcode" value="CW5 8DG">
+              <input id="certifier-organisation-address-id-field-1" type="hidden" name="addressId" value="49aa0cc4-f1db-e911-a812-000d3ab1160e">
+              <input id="certifier-organisation-id-field-1" type="hidden" name="certifierOrganisationId" value="48aa0cc4-f1db-e911-a812-000d3ab1160e">
+              <input class="link-button" type="submit" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-1" data-qa-id="Button-SaveAndContinue">
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            Certifier OB5 Eden Bridge House CA3 8DX
+          </td>
+          <td class="govuk-table__cell wrap">
+            Eden Bridge House
+            Lowther Street
+
+            Carlisle
+            CA3 8DX
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+          <td class="govuk-table__cell">
+            <form action="certificate-delivery-address" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="00cjWOe9i6sG-GzHQk_xVluLrDo3gxDb_D55s1NT9HE">
+              <input type="hidden" name="ehcNumber" value="7432EHC">
+              <input type="hidden" name="applicationFormId" value="1721147990599">
+              <input type="hidden" name="pageSequence" value="2">
+              <input id="certifier-organisation-name-field-2" type="hidden" name="certifierName" value="Certifier OB5 Eden Bridge House  CA3 8DX  ">
+              <input id="certifier-organisation-address-1-field-2" type="hidden" name="addressLine1" value="Eden Bridge House">
+              <input id="certifier-organisation-address-2-field-2" type="hidden" name="addressLine2" value="Lowther Street">
+              <input id="certifier-organisation-address-3-field-2" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-2" type="hidden" name="town" value="Carlisle">
+              <input id="certifier-organisation-county-field-2" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-2" type="hidden" name="postcode" value="CA3 8DX">
+              <input id="certifier-organisation-address-id-field-2" type="hidden" name="addressId" value="179595bd-fedd-e911-a812-000d3ab11e51">
+              <input id="certifier-organisation-id-field-2" type="hidden" name="certifierOrganisationId" value="169595bd-fedd-e911-a812-000d3ab11e51">
+              <input class="link-button" type="submit" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-2" data-qa-id="Button-SaveAndContinue">
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            MOORLAND VETERINARY CENTRE LIMITED Eden Bridge House CW5 8DG
+          </td>
+          <td class="govuk-table__cell wrap">
+            Eden Bridge House
+            Lowther Street
+
+            Carlisle
+            CW5 8DG
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+          <td class="govuk-table__cell">
+            <form action="certificate-delivery-address" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="00cjWOe9i6sG-GzHQk_xVluLrDo3gxDb_D55s1NT9HE">
+              <input type="hidden" name="ehcNumber" value="7432EHC">
+              <input type="hidden" name="applicationFormId" value="1721147990599">
+              <input type="hidden" name="pageSequence" value="2">
+              <input id="certifier-organisation-name-field-3" type="hidden" name="certifierName" value="MOORLAND VETERINARY CENTRE LIMITED Eden Bridge House  CW5 8DG  ">
+              <input id="certifier-organisation-address-1-field-3" type="hidden" name="addressLine1" value="Eden Bridge House">
+              <input id="certifier-organisation-address-2-field-3" type="hidden" name="addressLine2" value="Lowther Street">
+              <input id="certifier-organisation-address-3-field-3" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-3" type="hidden" name="town" value="Carlisle">
+              <input id="certifier-organisation-county-field-3" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-3" type="hidden" name="postcode" value="CW5 8DG">
+              <input id="certifier-organisation-address-id-field-3" type="hidden" name="addressId" value="93fab0ba-ebde-e911-a812-000d3ab1160e">
+              <input id="certifier-organisation-id-field-3" type="hidden" name="certifierOrganisationId" value="92fab0ba-ebde-e911-a812-000d3ab1160e">
+              <input class="link-button" type="submit" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-3" data-qa-id="Button-SaveAndContinue">
+            </form>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            UAT None Digital Certifier Eden Bridge House CA3 8DX
+          </td>
+          <td class="govuk-table__cell wrap">
+            Eden Bridge House
+            Lowther Street
+
+            Carlisle
+            CA3 8DX
+          </td>
+          <td class="govuk-table__cell">
+
+          </td>
+          <td class="govuk-table__cell">
+            <form action="certificate-delivery-address" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="00cjWOe9i6sG-GzHQk_xVluLrDo3gxDb_D55s1NT9HE">
+              <input type="hidden" name="ehcNumber" value="7432EHC">
+              <input type="hidden" name="applicationFormId" value="1721147990599">
+              <input type="hidden" name="pageSequence" value="2">
+              <input id="certifier-organisation-name-field-4" type="hidden" name="certifierName" value="UAT None Digital Certifier Eden Bridge House  CA3 8DX  ">
+              <input id="certifier-organisation-address-1-field-4" type="hidden" name="addressLine1" value="Eden Bridge House">
+              <input id="certifier-organisation-address-2-field-4" type="hidden" name="addressLine2" value="Lowther Street">
+              <input id="certifier-organisation-address-3-field-4" type="hidden" name="addressLine3" value="">
+              <input id="certifier-organisation-town-field-4" type="hidden" name="town" value="Carlisle">
+              <input id="certifier-organisation-county-field-4" type="hidden" name="county" value="">
+              <input id="certifier-organisation-postcode-field-4" type="hidden" name="postcode" value="CA3 8DX">
+              <input id="certifier-organisation-address-id-field-4" type="hidden" name="addressId" value="0c2d47e6-6ad9-e911-a812-000d3ab11b53">
+              <input id="certifier-organisation-id-field-4" type="hidden" name="certifierOrganisationId" value="8ee18b1f-6ad9-e911-a812-000d3ab11b53">
+              <input class="link-button" type="submit" name="saveAndContinue" value="Select" id="Button-SaveAndContinue-4" data-qa-id="Button-SaveAndContinue">
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
