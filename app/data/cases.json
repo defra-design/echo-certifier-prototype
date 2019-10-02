@@ -1,0 +1,65 @@
+[
+  {
+    "index": 0,
+    "caseID": "19/1527",
+    "name": "Alan Home Purchase",
+    "date": "15 May 2019",
+    "destination": "United Arab Emirates",
+    "status": "completed",
+    "Reference" : "7686728"
+  },
+  {
+    "index": 1,
+    "caseID": "19/1522",
+    "name": "Alan Home Purchase",
+    "date": "15 May 2019",
+    "destination": "United Arab Emirates",
+    "status": "new",
+    "Reference" : ""
+  },
+  {
+    "index": 2,
+    "caseID": "19/1523",
+    "name": "Alan Purchase",
+    "date": "15 May 2019",
+    "destination": "United Arab Emirates",
+    "status": "certifer action",
+    "Reference" : ""
+  },
+  {
+    "index": 3,
+    "caseID": "19/1456",
+    "name": "Agent User",
+    "date": "24 May 2022",
+    "destination": "United Arab Emirates",
+    "status": "awaiting dispatch",
+    "Reference" : "76867"
+  },
+  {
+    "index": 4,
+    "caseID": "19/1398",
+    "name": "Bob Smith",
+    "date": "09 Sep 2019",
+    "destination": "Hong Kong",
+    "status": "cancelled",
+    "reference" : ""
+  },
+  {
+    "index": 5,
+    "caseID": "19/1398",
+    "name": "Caitlin Dixon",
+    "date": "25 Sep 2019",
+    "destination": "Gibraltar",
+    "status": "rejected",
+    "Reference" : "PO13570"
+  },
+  {
+    "index": 6,
+    "caseID": "19/1398",
+    "name": "nicky private",
+    "date": "20 Sep 2019",
+    "destination": "Saudi Arabia",
+    "status": "processing",
+    "Reference" : "PO13570"
+  }
+]

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXP-4870 Certifier can search case details on certifier dashboard
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-4870" class="govuk-link">View EXP-4870 story on jira</a></p>
+    <p class="govuk-body">This prototype's search works. You can search for any term and it will do a partial match.</p>
+
+    <ul class="govuk-list">
+      <li><a href="certifier-multi-org-dashboard">Dashboard with search</a></li>
+      <li><a href="certifier-multi-org-dashboard?search=alan">Search with results (alan)</a></li>
+      <li><a href="certifier-multi-org-dashboard?search=germany">Search with NO results (germany)</a></li>
+    </ul>
+
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -14,6 +14,7 @@ $govuk-global-styles: true;
 @import "components/responsive-tables";
 @import "components/organisation-switcher";
 @import "components/status";
+@import "components/search";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 @import "patterns/login-nav";
@@ -30,19 +31,19 @@ $govuk-global-styles: true;
     color: #ffffff;
 }
 
-.govuk-tag.green {
+.govuk-table .govuk-tag.green {
   background-color: #006435;
 }
 
-.govuk-tag.blue {
+.govuk-table .govuk-tag.blue {
   background-color: #005ea5;
 }
 
-.govuk-tag.orange {
+.govuk-table .govuk-tag.orange {
   background-color: #f47738;
 }
 
-.govuk-tag.red {
+.govuk-table .govuk-tag.red {
   background-color: #b10e1e;
 }
 
@@ -75,21 +76,34 @@ $govuk-global-styles: true;
 }
 
 
-.govuk-tag.green, .govuk-tag.orange, .govuk-tag.blue, .turquoise-tag, .govuk-tag.red {
+.govuk-table .govuk-tag, .turquoise-tag {
   width: 90px;
   text-align: center;
   font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 4px 8px;
-  padding-bottom: 1px;
+  padding: 4px 8px 1px;
   color: #ffffff;
   letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
+  background-color: #6f777b;
+}
+.govuk-tag-l {
+  width: auto;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  padding: 6px 10px 3px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #6f777b;
 }
 
 
-.turquoise-tag {
+.turquoise-tag, .turquoise{
     background-color: #28a197;
 }
 
@@ -117,4 +131,7 @@ $govuk-global-styles: true;
     margin-top:10px;
     text-align: right;
   }
+}
+.govuk-table__disabled td{
+  background-color: #f3f2f1;
 }

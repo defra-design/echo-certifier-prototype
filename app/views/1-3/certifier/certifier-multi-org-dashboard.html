@@ -5,51 +5,14 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-
-<div class="govuk-phase-banner govuk-width-container" id="beta-banner">
-  <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service
-    </span>
-  </p>
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% block navadmin %}{% include "./includes/nav-admin.html" %}{% endblock %}
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
 </div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
-
-    <form method="POST" action="/protected/certifier/organisation" data-destroy="false" class="organisation-form">
-      <input type="hidden" name="crumb_csrf_token" value="L_1qXCAqIJHRqJCpIYu0DpL3LMq8ppGedRjckQZ5OQG">
-      <select class="govuk-select organisation-dropdown" id="Select-Organisation" name="orgId">
-        <option value="">Select</option>
-        <option value="667219e2-6192-e911-a96d-000d3a29ba60" selected="">Acme Org Ltd</option>
-        <option value="dfb37397-d591-e911-a96b-000d3a29be4a">ABC BUILDING (ESSEX) LTD</option>
-      </select> <a href="" class="govuk-link govuk-link--no-visited-state margin-left-30">
-        <button class="govuk-button blue-button margin-bottom-0" id="select-organisation-button">
-          Select
-        </button>
-      </a>
-
-    </form>
-  </div>
-
-  <div class="govuk-grid-column-one-half">
-    <div class="login-nav multi-org">
-      <ul class="login-nav__list">
-        <li class="login-nav__list-item" id="Nav-DisplayName">Ann Cooper</li>
-        <li class="login-nav__list-item"> | <a
-            href="https://identity-management-app.herokuapp.com/manage/team-members/services-on-team-member-admin-account_company-exports?serviceLine=Export%20Health%20Certificates&serviceRole=Certifier&numUsers=1&numAgents=0&numServices=1&multiOrg=no&parentChild=parent"
-            class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a>|</li>
-        <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<hr class="govuk-section-break govuk-section-break--visible">
-
-
 {% endblock %}
 
 {% block content %}

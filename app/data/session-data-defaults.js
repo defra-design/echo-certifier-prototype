@@ -16,9 +16,12 @@ Example usage:
 ============================================================================
 
 */
+var cases_list = require('./cases.json')
 
+  
 module.exports = {
-  "transport_type": []
+  "transport_type": [],
+  "cases": cases_list
   // Insert values here
 
 }
