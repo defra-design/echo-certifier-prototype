@@ -97,7 +97,13 @@ GOV.UK Prototype Kit
             {{case.reference}}
           </td>
           <td id="-actions" class="govuk-table__cell" scope="row">
-            <a id="dashboard_action_link_1651965954452" href="summary/case-completed">
+
+            <a id="dashboard_action_link_1651965954452" href="
+            {% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch
+            {%elseif case.status=='certifier action'%}summary/case-certifier-action
+            {%else%}summary/case-{{case.status}}
+            {%endif%}
+            ">
               Summary
             </a>
           </td>

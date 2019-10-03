@@ -58,6 +58,8 @@ Your cases
               </tr>
             </thead>
             <tbody>
+              <!-- loop through a an array of cases. can be found in app > data > cases.json.
+              Loaded via app > data > session-data-defaults.js -->
               {% for case in data.cases %}
                 {% if (query.search|upper) in (case.name|upper)
                     or (query.search|upper) in (case.caseID|upper)
@@ -66,19 +68,18 @@ Your cases
                   %}
               <tr class="govuk-table__row">
                 <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
-                  <span class="table-heading" aria-hidden="true">Case ID </span> {{case.caseID}}
+                  {{case.caseID}}
                 </td>
                 <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
-                  <span class="table-heading" aria-hidden="true">Name </span> {{case.name}}
+                  {{case.name}}
                 </td>
                 <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
-                  <span class="table-heading" aria-hidden="true">Export date </span> {{case.date}}
+                  {{case.date}}
                 </td>
                 <td id="-destination" class="govuk-table__cell" scope="row">
-                <span class="table-heading" aria-hidden="true">Destination </span> {{case.destination}}
+                  {{case.destination}}
                 </td>
                 <td id="-status" class="govuk-table__cell" scope="row">
-                  <span class="table-heading" aria-hidden="true">Reference </span>
                   <strong class="govuk-tag
                     {% if case.status=='completed'%}green
                     {%elseif case.status=='new' or case.status=='processing'%}blue
@@ -94,7 +95,13 @@ Your cases
                   {{case.reference}}
                 </td>
                 <td id="-actions" class="govuk-table__cell" scope="row">
-                  <a id="dashboard_action_link_1651965954452" href="summary/case-completed">
+
+                  <a id="dashboard_action_link_1651965954452" href="
+                  {% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch
+                  {%elseif case.status=='certifier action'%}summary/case-certifier-action
+                  {%else%}summary/case-{{case.status}}
+                  {%endif%}
+                  ">
                     Summary
                   </a>
                 </td>
