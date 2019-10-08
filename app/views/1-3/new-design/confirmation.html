@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Certificate {{data.decision}} {% if data.decision == "Approved"%} and submitted{% endif %}
+      </h1>
+      <div class="govuk-panel__body">
+        {{data.decision}} by Richard Hatton (923423)
+      </div>
+    </div>
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">
+      This will be sent to somewhere to do something (TODO)
+    </p>
+    <p class="govuk-body">
+      We will email you on richard.hattton@defra.gov.uk when the certificate is ready
+    </p>
+    <form method="post">
+      <div class="gov uk-form-group">
+        <input class="govuk-button margin-top-30" type="submit" value="Return to dashboard" id="Button-Continue" data-qa-id="Button-Continue">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -6,7 +6,7 @@
     "date": "15 May 2019",
     "destination": "United Arab Emirates",
     "status": "completed",
-    "Reference" : "7686728"
+    "reference" : "7686728"
   },
   {
     "index": 1,
@@ -15,7 +15,7 @@
     "date": "15 May 2019",
     "destination": "United Arab Emirates",
     "status": "new",
-    "Reference" : ""
+    "reference" : ""
   },
   {
     "index": 2,
@@ -24,7 +24,7 @@
     "date": "15 May 2019",
     "destination": "United Arab Emirates",
     "status": "certifier action",
-    "Reference" : ""
+    "reference" : ""
   },
   {
     "index": 3,
@@ -33,7 +33,7 @@
     "date": "24 May 2022",
     "destination": "United Arab Emirates",
     "status": "awaiting dispatch",
-    "Reference" : "76867"
+    "reference" : "76867"
   },
   {
     "index": 4,
@@ -51,7 +51,7 @@
     "date": "25 Sep 2019",
     "destination": "Gibraltar",
     "status": "rejected",
-    "Reference" : "PO13570"
+    "reference" : "PO13570"
   },
   {
     "index": 6,
@@ -60,6 +60,6 @@
     "date": "20 Sep 2019",
     "destination": "Saudi Arabia",
     "status": "processing",
-    "Reference" : "PO13570"
+    "reference" : "PO13570"
   }
 ]

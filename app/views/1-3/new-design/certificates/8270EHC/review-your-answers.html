@@ -1,0 +1,447 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="../certifier-multi-org-dashboard">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+
+        <h1 class="govuk-heading-xl">
+          Complete and review certificate
+        </h1>
+        <p class="govuk-body-l">
+          Export <span class="govuk-!-font-weight-bold">Cod</span> intended for human consumption to the <span class="govuk-!-font-weight-bold">EU: certificate 8270</span><br>
+        <span class="govuk-tag-l grey govuk-!-margin-top-2">Unfinished</span>
+        </p>
+
+        <dl class="govuk-summary-list govuk-summary-list__m">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" id="specific-commodity-question">
+              What are you exporting?
+            </dt>
+            <dd class="govuk-summary-list__value" id="specific-commodity-answer">
+              COD
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../errors/no-permission" data-qa-id="Link-ChangeAnswer" id="Link-specific-commodity-question">Change</a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key" id="-5-question">Number of certificates
+            </dt>
+            <dd class="govuk-summary-list__value" id="0-answer">2
+              <span class="govuk-hint">
+(exporter only)
+              </span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key" id="-7-question">Within the economic bloc, what is the first country your export will enter?
+            </dt>
+            <dd class="govuk-summary-list__value" id="1-answer">Germany
+              <span class="govuk-hint">
+
+(exporter only)
+              </span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key" id="-3-question">What country of the selected economic community does the certificate relate to?
+            </dt>
+            <dd class="govuk-summary-list__value" id="2-answer">San Marino
+              <span class="govuk-hint">
+
+(exporter only)
+              </span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" id="-question">Select the certifier practice to include with your application
+            </dt>
+            <dd class="govuk-summary-list__value" id="3-answer">ADM ACCOUNTING LIMITED Hornbeam House  CW12 3ER
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="organisation-search" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-3">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="-question">Select certificate delivery address
+            </dt>
+            <dd class="govuk-summary-list__value" id="4-answer">Hornbeam House Electra Way Crewe CW12 3ER
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="certificate-delivery-address" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key"id="7739-question">Delivery method
+            </dt>
+            <dd class="govuk-summary-list__value" id="5-answer">Email
+              <span class="govuk-hint">
+
+(exporter only)
+              </span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key"id="7740-question">Planned certification date (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="6-answer">2019-09-09
+              <span class="govuk-hint">(exporter only)</span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key"id="7741-question">Certification region
+            </dt>
+            <dd class="govuk-summary-list__value" id="7-answer">England <span class="govuk-hint">(exporter only)</span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key"id="7742-question">Exporter name
+            </dt>
+            <dd class="govuk-summary-list__value" id="8-answer">Andrew Certifier Testing
+              <span class="govuk-hint">(exporter only)</span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key"id="7743-question">Origin
+            </dt>
+            <dd class="govuk-summary-list__value" id="9-answer">Great Britain
+              <span class="govuk-hint">
+
+(exporter only)
+              </span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row govuk-govuk-summary-list__disabled">
+            <dt class="govuk-summary-list__key"id="7744-question">Planned export date
+            </dt>
+            <dd class="govuk-summary-list__value" id="10-answer">
+              2019-09-12
+              <span class="govuk-hint">
+
+(exporter only)
+              </span>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7849-question">Commodity code (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="11-answer">
+              {{data.commodity_code or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="commodity-details" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-11">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7850-question">Description of commodity (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="12-answer">
+              {{data.commodity_description or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="commodity-details" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-12">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7851-question">Production area for frozen or processed bivalve molluscs  (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="13-answer">
+              {{data.commodity_production_area or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="commodity-details" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-13">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7852-question">Net weight of consignment (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="14-answer">
+              {{data.commodity_net_weight or ''}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="commodity-details" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-14">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7853-question">Temperature of commodity (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="15-answer">
+              {{data.commodity_temprature or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="commodity-detail" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-15">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7854-question">Total number of packages in the consignment (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="16-answer">
+              {{data.packaging_amount or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="packaging" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-16">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7855-question">Type of packaging (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="17-answer">
+              {{data.packaging_type or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="packaging" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-17">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7860-question">Place of loading (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="18-answer">
+              {{data.dispatch_name or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-18">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7861-question">Approval number of the place of loading (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="19-answer">
+              {{data.dispatch_number or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-19">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7862-question">Name of establishment of dispatch (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="20-answer">
+              {{data.dispatch_establishment or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-20">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7863-question">Address of establishment of dispatch (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="21-answer">
+              {{data.dispatch_address or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-21">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7864-question">Approval number of the establishment of dispatch (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="22-answer">
+              {{data.dispatch_approval_number or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-22">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7874-question">Expected date of departure from the UK (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="23-answer">
+              {{transport_departure_day}} {{transport_departure_month}} {{transport_departure_year}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-23">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7875-question">Means of transport to the BIP (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="24-answer">
+              {{data.transport_type or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-24">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7876-question">Identification of the transport (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="25-answer">
+              {{data.transport_id or ''}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-25">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7877-question">Documentary reference number for the transport (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="26-answer">
+              {{data.transport_refnumber or ''}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-26">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7878-question">Container and seal numbers (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="27-answer">
+              {{data.transport_seal_numbers or ''}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-27">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7856-question">Consignor name
+            </dt>
+            <dd class="govuk-summary-list__value" id="28-answer">
+              {{data.consignor_name or "Andrew Consignor"}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-28">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7857-question">Consignor address
+            </dt>
+            <dd class="govuk-summary-list__value" id="29-answer">
+              {{data.consignor_address or "Andrew Consignors address"}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-29">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7858-question">Consignor telephone number (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="30-answer">
+              {{data.consignor_phone or ""}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-30">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7865-question">Consignee name (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="31-answer">
+              {{data.consignee_name or 'Consignee Andrew'}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-31">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7866-question">Consignee address (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="32-answer">
+              {{data.consignee_address or 'Consignee Address Andrew'}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-32">Change</a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"id="7867-question">Consignee telephone number (optional)
+            </dt>
+            <dd class="govuk-summary-list__value" id="33-answer">
+              {{data.consignee_phone or ''}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-33">Change</a>
+            </dd>
+          </div>
+          </dl>
+          <h3 class="govuk-heading-m">Supporting documents</h3>
+          <dl class="govuk-summary-list govuk-summary-list__m">
+            {% if data.has_uploaded_files != "yes"%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" id="specific-commodity-question">
+                File name
+                <br>
+                File description
+              </dt>
+              <dd class="govuk-summary-list__value" id="specific-commodity-answer">
+                No documents uploaded
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a href="supporting-documents" id="change_file_0" class="govuk-link">Change</a>
+              </dd>
+            </div>
+            {% else %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" id="specific-commodity-question">
+                File name
+                <br>
+                File description
+              </dt>
+              <dd class="govuk-summary-list__value" id="specific-commodity-answer">
+                No documents uploaded
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <div class="govuk-grid-column-one-quarter align-right"><a href="supporting-documents" id="change_file_0" class="govuk-link">Change</a></div>
+              </dd>
+            </div>
+            {% endif %}
+          </dl>
+          </div>
+          </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p class="notice">
+            <span class="icon icon-file-download"><span class="govuk-visually-hidden">File download</span></span>
+            <strong>Preview your answers in a <a href="/public/files/ehc-7006ehc-3.0.pdf" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
+          </p>
+          <!-- <div class="notice form-group">
+				<i class="icon icon-file-download"></i>
+				<strong class="bold-small">
+				<a href="javascript:window.print()">Print this page</a>
+				</strong>
+			</div> -->
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div>
+            <form  method="POST">
+              <input type="hidden" name="certificate" value="a49890fe-79d0-e911-a982-000d3ab6a5e0">
+              <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
+              <input type="hidden" name="applicationFormStatus" value="">
+              <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue" data-qa-id="Button-Continue">
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endblock %}

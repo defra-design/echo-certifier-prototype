@@ -15,15 +15,19 @@ module.exports = function(router) {
 
   // Base page router
 
- 
+
   router.post('/' + base_url + "*/supporting-documents-uploaded", function(req, res) {
     req.session.data.has_uploaded_files = "yes";
     res.redirect(301, '/' + base_url + req.params[0] + '/review-your-answers');
   })
+  router.post('/' + base_url + "*/certifier-record-decision", function(req, res) {
+    res.redirect(301, '/' + base_url + req.params[0] + '/confirmation');
+  })
 
-  router.post('/' + base_url + "*/review-your-answers", function(req, res) {
+
+  router.post('/' + base_url + "*/certificates/*/review-your-answers", function(req, res) {
     console.log('review your answers')
-    res.redirect(301, '/' + base_url + 'certifier-record-decision')
+    res.redirect(301, '/' + base_url +req.params[0] + '/certifier-record-decision')
   })
   // Set default route for all pages certificates
   router.post('/' + base_url + '*/certificates/*/*', function(req, res) {
