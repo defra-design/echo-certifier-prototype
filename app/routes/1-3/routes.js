@@ -26,7 +26,6 @@ module.exports = function(router) {
 
 
   router.post('/' + base_url + "*/certificates/*/review-your-answers", function(req, res) {
-    console.log('review your answers')
     res.redirect(301, '/' + base_url +req.params[0] + '/certifier-record-decision')
   })
   // Set default route for all pages certificates
