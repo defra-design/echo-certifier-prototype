@@ -4,7 +4,7 @@ module.exports = function(router) {
 
 
   // ADD extra routing here if needed.
-  // require('./extra-stories.js')(router)
+  require('./EXP-7136-supporting-documents.js')(router)
 
 
   // CHANGE VERSION TO THE VERSION

@@ -18,10 +18,12 @@ Example usage:
 */
 var cases_list = require('./cases.json')
 
-  
+
 module.exports = {
   "transport_type": [],
-  "cases": cases_list
+  "cases": cases_list,
+  "uploaded_files": [{"name": "test_support.docx","description": "some wonderful text","ID":1}],
+  "file_id_count" : 1,
   // Insert values here
 
 }

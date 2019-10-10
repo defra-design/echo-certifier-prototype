@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXP-7136 Supporting Documents - Validate filename
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-7136" class="govuk-link">View EXP-7136 story on jira</a></p>
+    <p class="govuk-body">This prototype will mock the upload flow. You can add a file with the same name to tigger the error message</p>
+
+    <ul class="govuk-list">
+      <li><a href="certificates/8270EHC/supporting-documents">Supporting documents</a></li>
+      <li><a href="certificates/8270EHC/supporting-documents?hasError=true&errorType=duplicate">Supporting document with error</a></li>
+    </ul>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
