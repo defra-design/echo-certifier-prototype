@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Certifiers' prototype
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>{{releaseVersion | log }}
+
+    <h2 class="govuk-heading-m">Certifier registration</h2>
+
+    <p><strong>v1</strong></p>
+
+    <p>
+      <a href="start.html" class="govuk-link--no-visited-state">Start here (Initial Organisation Administrator)</a>
+    </p>
+
+    <p>
+      <a href="https://identity-management-app.herokuapp.com/emails/E1-invite-email" class="govuk-link--no-visited-state">Start here (individual Certifier invited to register)</a>
+    </p>
+<!-- 
+    <span class="govuk-hint">
+      Username and password for Identity pages, if needed -<br>
+      <strong>username:</strong> whoareyou, <strong>password:</strong> menotyou
+    </span> -->
+
+    <p>
+      <a href="certifier-org_confirm-org-details">Confirm org details
+      </a>
+    </p>
+    <p>
+      <a href="certifier-org_post-idm">Registered but not yet approved (Organisation admin)
+      </a>
+    </p>
+    <p>
+      <a href="certifier-ov_post-idm">Registered but not yet approved (OV)
+      </a>
+    </p>
+
+    <br>
+
+    <p><strong>v2</strong></p>
+
+    <p>
+      <a href="emails/org-invite-email" class="govuk-link--no-visited-state">Start here (Initial Organisation Administrator)</a>
+    </p>
+
+    <span class="govuk-hint">
+      Username and password for Identity pages, if needed -<br>
+      <strong>username:</strong> whoareyou, <strong>password:</strong> menotyou
+    </span>
+
+    <p>
+      <a href="certifier-org_confirm-org-details-2">Confirm org details
+      </a>
+    </p>
+
+    <p>
+      <a href="certifier-org_post-idm_not-sorry">Registered but not yet approved (Organisation admin)
+      </a>
+    </p>
+
+
+    <p>
+      <a href="/emails/org-admin-reg-email">EMAIL: Org admin registration confirmation
+      </a>
+    </p>
+
+
+    <br><br>
+
+    <h2 class="govuk-heading-m">Certifier case processing</h2>
+
+
+      <p>
+        <a href="select-certifier-org" class="govuk-link--no-visited-state">1. Certifier selects an Organisation</a>
+      </p>
+      <p>
+        <a href="certifier-multi-org-dashboard" class="govuk-link--no-visited-state">2. Certifier dashboard</a> (select 'new' case to begin processing journey)
+      </p>
+      <p>
+        <a href="certifier-multi-org-case-summary-single" class="govuk-link--no-visited-state">3. Case summary, single certificate</a> (press 'Continue' button to go through processing journey)
+      </p>
+
+
+    <br><br>
+
+    <h2 class="govuk-heading-m">BAU</h2>
+
+    <p>
+      <a href="exp-6472">EXP-6472 Certifier Onboarding: Confirm Address and Certifier Details Screen
+      </a>
+    </p>
+    <p>
+      <a href="exp-6472b">EXP-6472 Certifier Onboarding: Confirm Address and Certifier Details Screen (with hint text)
+      </a>
+    </p>
+
+    <p>
+      <a href="exp-6313">EXP-6313 Certifier Onboarding: Confirmation of submission screen
+      </a>
+    </p>
+
+    <p>
+      <a href="exp-6545">EXP-6545 Certifier Onboarding: personal accounts prohibited
+      </a>
+    </p>
+
+    <p>
+      <a href="exp6673">EXP-6673 Certifier Onboarding: Show organisation selector on Splash Screen
+      </a>
+    </p>
+
+
+
+    <br>
+
+
+  </div>
+</div>
+
+{% endblock %}

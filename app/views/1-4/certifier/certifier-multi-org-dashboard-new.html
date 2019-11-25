@@ -1,0 +1,256 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your cases
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- call the same block in the main layout file -->
+  {{super()}}
+  <!-- add admin navbar from includes folder -->
+  {% block navadmin %}{% include "./includes/nav-admin-new.html" %}{% endblock %}
+  <!-- back button -->
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div>
+          <h1 class="govuk-heading-l heading">Your Cases</h1>
+        </div>
+        <div>
+          <table class="govuk-table responsive-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header">
+                  <div class="applicationRef-column">Case ID</div>
+                </th>
+                <th class="govuk-table__header">Name</th>
+                <th class="govuk-table__header">Export date</th>
+                <th class="govuk-table__header">Destination</th>
+                <th class="govuk-table__header">Status</th>
+                <th class="govuk-table__header">Reference</th>
+                <th class="govuk-table__header">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="govuk-table__row">
+                <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Case ID </span>19/1527
+                </td>
+                <td id="-commodity" class="govuk-table__cell commodity-column" >
+                  <span class="table-heading" aria-hidden="true">Name </span>Alan Home Purchase
+                </td>
+                <td id="-submitted" class="govuk-table__cell submitted-column" >
+                  <span class="table-heading" aria-hidden="true">Export date </span>15 May 2019
+                </td>
+                <td id="-destination" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">Destination </span>United Arab Emirates
+                </td>
+                <td id="-status" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">Status </span>
+                  <strong class="govuk-status green">
+                    COMPLETED
+                  </strong>
+                </td>
+                <td id="-reference" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">Reference </span> 7686728
+                </td>
+                <td id="-actions" class="govuk-table__cell" scope="row">
+                  <a id="dashboard_action_link_1651965954452" href="summary/case-completed">
+                    Summary
+                  </a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Case ID </span>19/1522
+                </td>
+                <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
+                    <span class="table-heading" aria-hidden="true">Name </span>Alan Home Purchase
+                </td>
+                <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
+                    <span class="table-heading" aria-hidden="true">Export date </span>15 May 2022
+                </td>
+                <td id="-destination" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">Destination </span>United Arab Emirates
+                </td>
+
+                <td id="-status" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">status </span>
+                  <strong class="govuk-status blue">
+                    NEW
+                  </strong>
+                </td>
+                <td id="-reference" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">Reference </span>
+                </td>
+                <td id="-actions" class="govuk-table__cell" scope="row">
+                  <a id="dashboard_action_link_1000065954446" href="summary/case-new-design">
+                    Summary
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Case ID </span>19/1523
+                </td>
+                <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
+                    <span class="table-heading" aria-hidden="true">Name </span>Alan Purchase
+                </td>
+                <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
+                    <span class="table-heading" aria-hidden="true">Export date </span>15 May 2022
+                </td>
+                <td id="-destination" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">Destination </span>United Arab Emirates
+                </td>
+
+                <td id="-status" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">status </span>
+                  <strong class="govuk-status orange">
+                    CERTIFIER ACTION
+                  </strong>
+                </td>
+                <td id="-reference" class="govuk-table__cell" scope="row">
+
+                </td>
+                <td id="-actions" class="govuk-table__cell" scope="row">
+                  <a id="dashboard_action_link_1651965954447" href="summary/case-certifier-action">
+                    Summary
+                  </a>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Case ID </span>19/1456
+                </td>
+                <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
+                    <span class="table-heading" aria-hidden="true">Name </span>Agent User
+                </td>
+                <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
+                    <span class="table-heading" aria-hidden="true">Export date </span>24 May 2022
+                </td>
+                <td id="-destination" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">Destination </span>United Arab Emirates
+                </td>
+
+                <td id="-status" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">status </span>
+                  <div class="govuk-status turquoise">
+                    AWAITING DISPATCH
+                  </div>
+                </td>
+                <td id="-reference" class="govuk-table__cell" scope="row">
+                  <span class="table-heading" aria-hidden="true">Reference </span>7686728
+                </td>
+                <td id="-actions" class="govuk-table__cell" scope="row">
+                  <a id="dashboard_action_link_1000065954449" href="summary/case-awaiting-dispatch">
+                    Summary
+                  </a>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row" id="1721147989399">
+              <td id="1721147989399-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                <span class="table-heading" aria-hidden="true">Case ID </span>19/1398
+              </td>
+              <td id="1721147989399-commodity" class="govuk-table__cell wrap commodity-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Name </span>Bob Smith
+              </td>
+              <td id="1721147989399-submitted" class="govuk-table__cell submitted-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Export date </span>09 Sep 2019
+              </td>
+              <td id="1721147989399-destination" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">Destination </span>Hong Kong
+              </td>
+
+              <td id="1721147989399-status" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">status </span>
+                <div class="status-cell">
+                  <div class="govuk-status orange">
+                    CANCELLED
+                  </div>
+                </div>
+              </td>
+              <td id="1721147989399-reference" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">Reference </span>
+              </td>
+              <td id="1721147989399-actions" class="govuk-table__cell" scope="row">
+                <a id="dashboard_action_link_1721147989399" href="summary/case-cancelled">
+                  Summary
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="1721147993646">
+              <td id="1721147993646-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                <span class="table-heading" aria-hidden="true">Case ID </span>19/2376
+              </td>
+              <td id="1721147993646-commodity" class="govuk-table__cell wrap commodity-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Name </span>Caitlin Dixon
+              </td>
+              <td id="1721147993646-submitted" class="govuk-table__cell submitted-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Export date </span>25 Sep 2019
+              </td>
+              <td id="1721147993646-destination" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">Destination </span>Gibraltar
+              </td>
+
+              <td id="1721147993646-status" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">status </span>
+                <div class="status-cell">
+                  <div class="govuk-status red ">
+                    REJECTED
+                  </div>
+                </div>
+              </td>
+              <td id="1721147993646-reference" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">Reference </span> PO13570
+              </td>
+              <td id="1721147993646-actions" class="govuk-table__cell" scope="row">
+                <a id="dashboard_action_link_1721147993646" href="summary/case-rejected">
+                  Summary
+                </a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row" id="1721147993559">
+              <td id="1721147993559-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+                <span class="table-heading" aria-hidden="true">Case ID </span>19/2349
+              </td>
+              <td id="1721147993559-commodity" class="govuk-table__cell wrap commodity-column" scope="row">
+                <span class="table-heading" aria-hidden="true">Name </span>  nicky private
+              </td>
+              <td id="1721147993559-submitted" class="govuk-table__cell submitted-column" scope="row">
+                  <span class="table-heading" aria-hidden="true">Export date </span>20 Sep 2019
+              </td>
+              <td id="1721147993559-destination" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">Destination </span>Saudi Arabia
+              </td>
+
+              <td id="1721147993559-status" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">status </span>
+                <div class="status-cell">
+                  <div class="govuk-status blue">
+                    PROCESSING
+                  </div>
+                </div>
+              </td>
+              <td id="1721147993559-reference" class="govuk-table__cell" scope="row">
+                <span class="table-heading" aria-hidden="true">Reference </span>
+              </td>
+              <td id="1721147993559-actions" class="govuk-table__cell" scope="row">
+                <a id="dashboard_action_link_1721147993559" href="summary/case-processing">
+                  Summary
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
