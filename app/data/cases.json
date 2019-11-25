@@ -9,31 +9,53 @@
     "reference" : "7686728"
   },
   {
-    "index": 1,
-    "caseID": "19/1522",
+    "index": 0,
+    "caseID": "19/1527",
     "name": "Alan Home Purchase",
     "date": "15 May 2019",
     "destination": "United Arab Emirates",
-    "status": "new",
-    "reference" : ""
-  },
-  {
-    "index": 2,
-    "caseID": "19/1523",
-    "name": "Alan Purchase",
+    "status": "completed",
+    "reference" : "7686728"
+  },{
+    "index": 0,
+    "caseID": "19/1527",
+    "name": "Alan Home Purchase",
     "date": "15 May 2019",
     "destination": "United Arab Emirates",
-    "status": "certifier action",
-    "reference" : ""
-  },
-  {
-    "index": 3,
-    "caseID": "19/1456",
-    "name": "Agent User",
-    "date": "24 May 2022",
+    "status": "completed",
+    "reference" : "7686728"
+  },{
+    "index": 0,
+    "caseID": "19/1527",
+    "name": "Alan Home Purchase",
+    "date": "15 May 2019",
     "destination": "United Arab Emirates",
-    "status": "awaiting dispatch",
-    "reference" : "76867"
+    "status": "completed",
+    "reference" : "7686728"
+  },{
+    "index": 0,
+    "caseID": "19/1527",
+    "name": "Alan Home Purchase",
+    "date": "15 May 2019",
+    "destination": "United Arab Emirates",
+    "status": "completed",
+    "reference" : "7686728"
+  },{
+    "index": 0,
+    "caseID": "19/1527",
+    "name": "Alan Home Purchase",
+    "date": "15 May 2019",
+    "destination": "United Arab Emirates",
+    "status": "completed",
+    "reference" : "7686728"
+  },{
+    "index": 0,
+    "caseID": "19/1527",
+    "name": "Alan Home Purchase",
+    "date": "15 May 2019",
+    "destination": "United Arab Emirates",
+    "status": "completed",
+    "reference" : "7686728"
   },
   {
     "index": 4,
@@ -61,5 +83,33 @@
     "destination": "Saudi Arabia",
     "status": "processing",
     "reference" : "PO13570"
+  },
+  {
+    "index": 1,
+    "caseID": "19/1522",
+    "name": "Alan Home Purchase",
+    "date": "15 Nov 2019",
+    "destination": "China, People's Republic of",
+    "status": "Processing",
+    "reference" : ""
+  },
+  {
+    "index": 2,
+    "caseID": "19/1523",
+    "name": "Anto Inigo",
+    "date": "01 Dec 2019",
+    "destination": "China, People's Republic of",
+    "status": "certifier action",
+    "reference" : "70063994u9jf"
+  },
+  {
+    "index": 3,
+    "caseID": "19/1456",
+    "name": "Agent User",
+    "date": "24 May 2022",
+    "destination": "Australia",
+    "status": "dispatched",
+    "reference" : "9589408C934"
   }
+
 ]
