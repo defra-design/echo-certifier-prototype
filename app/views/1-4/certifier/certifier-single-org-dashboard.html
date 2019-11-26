@@ -82,11 +82,12 @@ GOV.UK Prototype Kit
             <strong class="govuk-tag
               {% if case.status=='completed'%}green
               {%elseif case.status=='new' or case.status=='processing'%}blue
-              {%elseif case.status=='awaiting dispatch'%}turquoise
+              {%elseif case.status=='dispatched'%}turquoise
               {%elseif case.status=='certifier action' or case.status=='cancelled'%}orange
               {%else%}red
               {%endif%}
               ">
+
               {{case.status}}
             </strong>
           </td>

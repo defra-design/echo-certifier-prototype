@@ -90,7 +90,7 @@
     "name": "Alan Home Purchase",
     "date": "15 Nov 2019",
     "destination": "China, People's Republic of",
-    "status": "Processing",
+    "status": "processing",
     "reference" : ""
   },
   {
@@ -100,7 +100,7 @@
     "date": "01 Dec 2019",
     "destination": "China, People's Republic of",
     "status": "certifier action",
-    "reference" : "70063994u9jf"
+    "reference" : "CR123456"
   },
   {
     "index": 3,
@@ -109,7 +109,7 @@
     "date": "24 May 2022",
     "destination": "Australia",
     "status": "dispatched",
-    "reference" : "9589408C934"
+    "reference" : "2010065"
   }
 
 ]

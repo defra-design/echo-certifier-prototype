@@ -8,10 +8,9 @@ Exports application - GOV.UK
 <!-- call the same block in the main layout file -->
 {{super()}}
 <!-- add admin navbar from includes folder -->
-{% block navadmin %}{% include "./includes/nav-admin.html" %}{% endblock %}
 <!-- back button -->
 <div>
-  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+  <a class="govuk-back-link" id="link-back" href="../certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
 </div>
 {% endblock %}
 
@@ -22,7 +21,7 @@ Exports application - GOV.UK
     <div>
       <h1 class="govuk-heading-l heading">Close certificate</h1>
     </div>
-    <form action="/protected/certifier/applications/1721147992687/certificates/a39890fe-79d0-e911-a982-000d3ab6a5e0/close" id="CloseCaseForm" method="POST">
+    <form action="./summary/case-{{data.return or 'certifier-action'}}" id="CloseCaseForm" method="POST">
       <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
       <input type="hidden" name="applicationId" value="1721147992687">
                 <p id="close-case-declaration" class="govuk-body">

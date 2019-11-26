@@ -8,10 +8,14 @@ GOV.UK Prototype Kit
 <!-- call the same block in the main layout file -->
 {{super()}}
 <!-- add admin navbar from includes folder -->
+{% if data.orgs=="multi"%}
 {% block navadmin %}{% include "../includes/nav-admin.html" %}{% endblock %}
+{% else %}
+{% block navadminSingle %}{% include "../includes/nav-admin-single.html" %}{% endblock %}
+{% endif %}
 <!-- back button -->
 <div>
-  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+  <a class="govuk-back-link" id="link-back" href="../certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
 </div>
 {% endblock %}
 
@@ -19,19 +23,17 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div>
-      <h1 class="govuk-heading-l heading">Export animal to
-        United Arab Emirates -
-        2849EHC</h1>
+      <h1 class="govuk-heading-l heading">Export animal to China, People's Republic of - 7006EHC</h1>
     </div>
     <div class="govuk-grid-column-full">
       <div class="govuk-grid-column-three-quarters">
 
         <p class="govuk-body">
-          Case ID: 19/921 <br>
-          Name of applicant: Alan Home Purchase <br>
-          Destination Country: United Arab Emirates
+          Case ID: 19/1523 <br>
+          Name of applicant:	Anto Inigo<br>
+          Destination Country: China
           <br>
-          Proposed Export Date: 2019-08-02 <br>
+          Proposed Export Date: 2019-12-01 <br>
         </p>
 
       </div>
@@ -55,23 +57,43 @@ GOV.UK Prototype Kit
             <tr class="govuk-table__row">
               <td id="cert-num" class="govuk-table__cell" scope="row">19/2/008718</td>
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
-                02 Aug 2019
+                	01 Dec 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">NEW
+              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_7006 == "completed" %}COMPLETED{% elseif data.status_7006 == "dispatched" or data.status_7006 == "approved"  %}DISPATCHED{% else %}APHA is processing{% endif%}
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
-                <a id="continue_link_19/2/008722" href="../certifier-record-decision?destroy=yes">
+                {% if data.status_7006 == "processing"  or data.status_7006 == "completed" %}
+                {% elseif data.status_7006 == "approved" %}
+                <a id="continue_link_19/2/008722" href="../close-certificate?status_7006=completed&return=certifier-action">
                   Continue
                 </a>
+                {% elseif data.status_7006 == "dispatched" %}
+                <a id="continue_link_19/2/008722" href="../certificates/7006EHC/review-your-answers?status_7006=approved&return=certifier-action">
+                  Continue
+                </a>
+                {% else %}
+                <a id="continue_link_19/2/008722" href="../certificates/7006EHC/slaughterhouse_details?status_7006=processing&return=certifier-action">
+                  Continue
+                </a>
+                {% endif %}
                 &nbsp;
-                <a id="view_cert_19/2/008722" href="/protected/application/1721147987161/ehc/1d8aa99b-40b1-e911-a984-000d3ab6a35c" target="_blank">
+                <div>
+                <a id="view_cert_19/2/008722" href="/public/images/ehc-7006ehc-3.1.pdf" target="_blank">
                   View Certificate
                 </a>
+                &nbsp;
+                <a id="view_cert_19/2/008722" href="/public/images/ehc-7006ehc-3.1-edit.pdff" target="_blank">
+                  Editable Certificate
+                </a>
+                </div>
               </td>
             </tr>
           </tbody>
         </table>
       </form>
+      <br>
+        <a href="case-certifier-action?status_7006=dispatched" class="govuk-link">Dispatch certificte</a>
+      <br>
     </div>
   </div>
 </div>
