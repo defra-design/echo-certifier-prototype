@@ -96,12 +96,7 @@ GOV.UK Prototype Kit
           </td>
           <td id="-actions" class="govuk-table__cell" scope="row">
 
-            <a id="dashboard_action_link_1651965954452" href="
-            {% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch
-            {%elseif case.status=='certifier action'%}summary/case-certifier-action
-            {%else%}summary/case-{{case.status}}
-            {%endif%}
-            ">
+            <a id="dashboard_action_link_1651965954452" href="{% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch{%elseif case.status=='certifier action'%}summary/case-certifier-action{%else%}summary/case-{{case.status}}{%endif%}?id={{case.index}}">
               Summary
             </a>
           </td>

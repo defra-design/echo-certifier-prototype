@@ -9,7 +9,7 @@
     "reference" : "7686728"
   },
   {
-    "index": 0,
+    "index": 1,
     "caseID": "19/1527",
     "name": "Alan Home Purchase",
     "date": "15 May 2019",
@@ -17,7 +17,7 @@
     "status": "completed",
     "reference" : "7686728"
   },{
-    "index": 0,
+    "index": 2,
     "caseID": "19/1527",
     "name": "Alan Home Purchase",
     "date": "15 May 2019",
@@ -25,7 +25,7 @@
     "status": "completed",
     "reference" : "7686728"
   },{
-    "index": 0,
+    "index": 3,
     "caseID": "19/1527",
     "name": "Alan Home Purchase",
     "date": "15 May 2019",
@@ -33,7 +33,7 @@
     "status": "completed",
     "reference" : "7686728"
   },{
-    "index": 0,
+    "index": 4,
     "caseID": "19/1527",
     "name": "Alan Home Purchase",
     "date": "15 May 2019",
@@ -41,7 +41,7 @@
     "status": "completed",
     "reference" : "7686728"
   },{
-    "index": 0,
+    "index": 5,
     "caseID": "19/1527",
     "name": "Alan Home Purchase",
     "date": "15 May 2019",
@@ -49,7 +49,7 @@
     "status": "completed",
     "reference" : "7686728"
   },{
-    "index": 0,
+    "index": 6,
     "caseID": "19/1527",
     "name": "Alan Home Purchase",
     "date": "15 May 2019",
@@ -58,7 +58,7 @@
     "reference" : "7686728"
   },
   {
-    "index": 4,
+    "index": 7,
     "caseID": "19/1398",
     "name": "Bob Smith",
     "date": "09 Sep 2019",
@@ -67,7 +67,7 @@
     "reference" : ""
   },
   {
-    "index": 5,
+    "index": 8,
     "caseID": "19/1398",
     "name": "Caitlin Dixon",
     "date": "25 Sep 2019",
@@ -76,7 +76,7 @@
     "reference" : "PO13570"
   },
   {
-    "index": 6,
+    "index": 9,
     "caseID": "19/1398",
     "name": "nicky private",
     "date": "20 Sep 2019",
@@ -85,7 +85,7 @@
     "reference" : "PO13570"
   },
   {
-    "index": 1,
+    "index": 10,
     "caseID": "19/1522",
     "name": "Alan Home Purchase",
     "date": "15 Nov 2019",
@@ -94,7 +94,7 @@
     "reference" : ""
   },
   {
-    "index": 2,
+    "index": 11,
     "caseID": "19/1523",
     "name": "Anto Inigo",
     "date": "01 Dec 2019",
@@ -103,10 +103,10 @@
     "reference" : "CR123456"
   },
   {
-    "index": 3,
+    "index": 12,
     "caseID": "19/1456",
-    "name": "Agent User",
-    "date": "24 May 2022",
+    "name": "Caitlin Dixon",
+    "date": "06 Dec 2019",
     "destination": "Australia",
     "status": "dispatched",
     "reference" : "2010065"

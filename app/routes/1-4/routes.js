@@ -13,8 +13,24 @@ module.exports = function(router) {
 
 
   // Base page router
-
-
+ function updateStatus($data,$id,$status){
+  for (var i = 0; i < $data.length; i++) {
+    // for each field create an obj with the Key being the field name
+    // and the value being the posted data from that field
+    if($data[i].index == $id){
+      $data[i].status=$status
+      return true;
+    }
+  }
+  return false;
+ }
+ router.use(function (req, res, next) {
+   //hacky way to update statuses.
+   if(req.query.update_status && req.query.id){
+     updateStatus(req.session.data.cases, req.query.id, req.query.update_status)
+   }
+  next()
+})
   router.post('/' + base_url + "*/supporting-documents-uploaded", function(req, res) {
     req.session.data.has_uploaded_files = "yes";
     res.redirect(301, '/' + base_url + req.params[0] + '/review-your-answers');
