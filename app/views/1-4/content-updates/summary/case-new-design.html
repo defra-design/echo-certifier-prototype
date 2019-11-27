@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your cases
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% block navadmin %}{% include "../includes/nav-admin-new.html" %}{% endblock %}
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl heading">Export animal to
+      United Arab Emirates -
+      2849EHC</h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Case ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          19/1527
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Name of applicant
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Alan Home Purchase
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Alan Home Purchase
+        </dt>
+        <dd class="govuk-summary-list__value">
+          United Arab Emirates
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Planned export date
+        </dt>
+        <dd class="govuk-summary-list__value govuk-summary-list__40">
+          15/05/2019
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+
+
+
+<div>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
+  <form id="table-select-certificates" action="#">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters"><h2 class="govuk-heading-l">Certificates</h2></div>
+      <div class="govuk-grid-column-one-quarter govuk-link-group--right"><p class="govuk-body"><a class="govuk-link" href="/protected/application/1651965954452/ehc" target="_blank" id="download_all_link">Download all certificates</a></p></div>
+    </div>
+
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+            <th class="govuk-table__header">Number</th>
+            <th class="govuk-table__header">Certificate number
+            </th>
+            <th class="govuk-table__header">Actual export date</th>
+            <th class="govuk-table__header">Certificate status</th>
+            <th class="govuk-table__header">Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <tr class="govuk-table__row">
+            <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19-02-005770</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 May 2022
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">NEW
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+                <a id="view_cert_19-02-005770" href="/protected/application/1651965954452/ehc/2caf6335-f672-e911-a830-000d3a207f58" target="_blank">
+                    View
+                </a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19-02-005771</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 May 2022
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">COMPLETED
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+  </form>
+  <div>
+  </div>
+</div>
+</div>
+
+
+
+
+{% endblock %}
