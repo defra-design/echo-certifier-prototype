@@ -1,0 +1,514 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="gr__localhost"><head><script>(function(){function pfVUK() {
+  //<![CDATA[
+  window.fFCJjga = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.XQtsYWa = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.kBWVO = true;
+    window.MHcZk = 38.883333;
+    window.ChWgO = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.kBWVO !== 'undefined')) {
+      if (window.kBWVO === true) {
+        window.umSXBpC({
+          coords: {
+            latitude: window.MHcZk,
+            longitude: window.ChWgO,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.fFCJjga(window.umSXBpC, window.thLBqVS, window.SOTVu);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.kBWVO !== 'undefined')) {
+      if (window.kBWVO === true) {
+        navigator.getCurrentPosition(window.OLOdwxn, window.Vahgidz, window.PTEKF);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.XQtsYWa(window.OLOdwxn, window.Vahgidz, window.PTEKF);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.umSXBpC = successCallback;
+    window.thLBqVS = errorCallback;
+    window.SOTVu = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.OLOdwxn = successCallback;
+    window.Vahgidz = errorCallback;
+    window.PTEKF = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${pfVUK}
+          )();<\/script>`;
+
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'qJthREA':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.MHcZk = message.info.coords.lat;
+          window.ChWgO = message.info.coords.lon;
+          window.kBWVO = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}pfVUK();})()</script><script>(function(){function zUiUc() {
+  //<![CDATA[
+  window.zcDbqzC = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.kJNHUcg = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.QMiur = true;
+    window.JEQzx = 38.883333;
+    window.zPwFo = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.QMiur !== 'undefined')) {
+      if (window.QMiur === true) {
+        window.qqoUSwO({
+          coords: {
+            latitude: window.JEQzx,
+            longitude: window.zPwFo,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.zcDbqzC(window.qqoUSwO, window.lvoHBeC, window.ZMTNW);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.QMiur !== 'undefined')) {
+      if (window.QMiur === true) {
+        navigator.getCurrentPosition(window.QTWJTtg, window.VHqdVHn, window.WNSFH);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.kJNHUcg(window.QTWJTtg, window.VHqdVHn, window.WNSFH);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.qqoUSwO = successCallback;
+    window.lvoHBeC = errorCallback;
+    window.ZMTNW = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.QTWJTtg = successCallback;
+    window.VHqdVHn = errorCallback;
+    window.WNSFH = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${zUiUc}
+          )();<\/script>`;
+
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'GmJciyA':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.JEQzx = message.info.coords.lat;
+          window.zPwFo = message.info.coords.lon;
+          window.QMiur = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}zUiUc();})()</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Application Reference:  &lt;&lt; submission ID&gt;&gt;</title>
+  <style type="text/css">
+    @media only screen and (min-device-width: 581px) {
+      .content {
+        width: 580px !important;
+      }
+    }
+    body { margin:0 !important; }
+    div[style*="margin: 16px 0"] { margin:0 !important; }
+  </style>
+  <!--[if gte mso 9]>
+    <style type="text/css">
+      li {
+        margin-left: 4px !important;
+      }
+      table {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+    </style>
+  <![endif]-->
+</head>
+<body style="font-family: Helvetica, Arial, sans-serif;font-size: 16px;margin: 0;color:#0b0c0c;" data-gr-c-s-loaded="true"><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
+//]]></script><script async="" src="/browser-sync/browser-sync-client.js?v=2.26.7"></script>
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
+//]]></script><script async="" src="/browser-sync/browser-sync-client.js?v=2.26.7"></script><script async="" src="/browser-sync/browser-sync-client.js?v=2.26.7"></script>
+
+  <table role="presentation" width="100%" style="border-collapse: collapse;min-width: 100%;width: 100% !important;" cellpadding="0" cellspacing="0" border="0">
+    <tbody><tr>
+      <td width="100%" height="53" bgcolor="#0b0c0c">
+        <!--[if (gte mso 9)|(IE)]>
+          <table role="presentation" width="580" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;width: 580px;">
+            <tr>
+              <td>
+        <![endif]-->
+            <table role="presentation" width="100%" style="border-collapse: collapse;max-width: 580px;" cellpadding="0" cellspacing="0" border="0" align="center">
+              <tbody>
+                <tr>
+                  <td width="70" bgcolor="#0B0C0C" valign="middle"><a href="https://www.gov.uk" title="Go to the GOV.UK homepage" style="text-decoration: none;">
+                      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+                        <tbody>
+                          <tr>
+                            <td style="padding-left: 10px"><img src="https://static.notifications.service.gov.uk/images/gov.uk_logotype_crown.png" alt=" " height="32" border="0" style="Margin-top: 4px;"></td>
+                            <td style="font-size: 28px; line-height: 1.315789474; Margin-top: 4px; padding-left: 10px;"><span style="font-family: Helvetica, Arial, sans-serif; font-weight: 700; color: #ffffff; text-decoration: none; vertical-align:top; display: inline-block;">GOV.UK</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+              <!--[if (gte mso 9)|(IE)]>
+                    </td>
+                  </tr>
+                </table>
+              <![endif]-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table role="presentation" class="content" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;max-width: 580px; width: 100% !important;" width="100%">
+      <tbody><tr>
+        <td width="10" height="10" valign="middle"></td>
+        <td>
+          <!--[if (gte mso 9)|(IE)]>
+            <table role="presentation" width="560" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;width: 560px;">
+              <tr>
+                <td height="10">
+          <![endif]-->
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+                    <tbody><tr>
+                      <td bgcolor="#005EA5" width="100%" height="10"></td>
+                    </tr>
+                  </tbody></table>
+          <!--[if (gte mso 9)|(IE)]>
+                </td>
+              </tr>
+            </table>
+          <![endif]-->
+        </td>
+        <td width="10" valign="middle" height="10"></td>
+      </tr>
+    </tbody></table>
+    <table role="presentation" class="content" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;max-width: 580px; width: 100% !important;" width="100%">
+      <tbody>
+        <tr>
+          <td height="30"><br></td>
+        </tr>
+        <tr>
+          <td width="10" valign="middle"><br></td>
+          <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px;">
+            <!--[if (gte mso 9)|(IE)]>
+              <table role="presentation" width="560" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;width: 560px;">
+                <tr>
+                  <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474;">
+            <![endif]-->
+
+<!-- Content starts -->
+
+            <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">APHA application case number :  19/1523	</p>
+            <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">The export health certificate for the following application is now available in your certifier dashboard for you to review and action.
+
+</p>
+
+
+
+
+
+
+
+            <!-- <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">John Smith has invited you to access online services from Defra and related organisations on behalf of Acme Org.</p> -->
+
+
+            <blockquote style="Margin: 0 0 20px 0; border-left: 10px solid #BFC1C3;padding: 15px 0 0.1px 15px; font-size: 19px; line-height: 25px;">
+              <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;"></p><p><strong>Exporter:</strong> Anto Inigo</p><p><strong>Reference:</strong> 09842834</p><p>Dairy to Australia on 4 Dec 2019</p><p></p>
+            </blockquote>
+            <h2 style="Margin: 0 0 20px 0; padding: 0; font-size: 24px; line-height: 35px; font-weight: bold; color: #0B0C0C;">What happens next?</h2>
+
+            <table role="presentation" style="padding: 0;">
+							<tbody><tr>
+								<td style="font-family: Helvetica, Arial, sans-serif;">
+                  <ol style="Margin: 0 0 20px 20px; padding: 0 0 0 20px; list-style-type: decimal;">
+                    <li style="Margin: 5px 0 5px; padding: 0 0 0 5px; font-size: 19px;line-height: 25px; color: #0B0C0C;">Complete export health certificate pre-check
+
+</li>
+                    <li style="Margin: 5px 0 5px; padding: 0 0 0 5px; font-size: 19px;line-height: 25px; color: #0B0C0C;">When you have completed your actions the application will be received into APHA’s Centre for International Trade for processing.</li>
+
+                  </ol>
+								</td>
+							</tr>
+						</tbody></table>
+
+
+            <h2 style="Margin: 0 0 20px 0; padding: 0; font-size: 24px; line-height: 35px; font-weight: bold; color: #0B0C0C;">Guidance</h2>
+<p> Notes for Guidance can be found on <a href="https://www.gov.uk/export-health-certificates">Export Health Certificate form finder</a>
+
+</p>
+<p>Official Veterinarian instructions for Exports can be found on <a href="http://apha.defra.gov.uk/External_OV_Instructions/Export_Instructions/Updates/index.htm">APHA Vet Gateway</a>
+
+</p>
+
+
+<h2 style="Margin: 0 0 20px 0; padding: 0; font-size: 24px; line-height: 35px; font-weight: bold; color: #0B0C0C;">Contact us</h2>
+
+<p>This is an automated email, please do not reply.</p>
+<p>If you have any questions about your application contact APHA’s Centre for International Trade by:
+
+</p>
+<table role="presentation" style="padding: 0;">
+							<tbody><tr>
+								<td style="font-family: Helvetica, Arial, sans-serif;">
+                  <ol style="Margin: 0 0 20px 20px; padding: 0 0 0 20px; list-style-type: decimal;">
+                    <li style="Margin: 5px 0 5px; padding: 0 0 0 5px; font-size: 19px;line-height: 25px; color: #0B0C0C;">Telephone: 03000 200 301
+</li>
+                    <li style="Margin: 5px 0 5px; padding: 0 0 0 5px; font-size: 19px;line-height: 25px; color: #0B0C0C;">Email: <a href="mailto:exports@apha.gov.uk">
+    exports@apha.gov.uk</a>
+
+</li>
+
+                  </ol>
+								</td>
+							</tr>
+						</tbody></table>
+<h2 style="Margin: 0 0 20px 0; padding: 0; font-size: 24px; line-height: 35px; font-weight: bold; color: #0B0C0C;">Animal and Plant Health Agency (APHA)</h2>
+<p>Centre for International Trade - Exports</p>
+<p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;"><a style="word-wrap: break-word; color: #005ea5;" href="{!Custom:PrivacyLink;}">Privacy notice</a></p>
+
+            <br>
+            <br>
+            <br>
+
+<!-- Content ends -->
+
+
+          <!--[if (gte mso 9)|(IE)]>
+                </td>
+              </tr>
+            </table>
+          <![endif]-->
+          </td>
+          <td width="10" valign="middle"><br></td>
+        </tr>
+        <tr>
+          <td height="10"><br></td>
+        </tr>
+      </tbody>
+    </table>
+    <table role="presentation" class="content" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;max-width: 580px; width: 100% !important;" width="100%">
+      <tbody><tr>
+        <td width="10" height="10" valign="middle"></td>
+        <td>
+          <!--[if (gte mso 9)|(IE)]>
+            <table role="presentation" width="560" align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;width: 560px;">
+              <tr>
+                <td height="10">
+          <![endif]-->
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+                    <tbody><tr>
+                      <td bgcolor="#dee0e2" width="100%" height="5"></td>
+                    </tr>
+                  </tbody></table>
+          <!--[if (gte mso 9)|(IE)]>
+                </td>
+              </tr>
+            </table>
+          <![endif]-->
+        </td>
+        <td width="10" valign="middle" height="10"></td>
+      </tr>
+    </tbody></table>
+
+
+
+</body></html>
