@@ -1,0 +1,396 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <!-- call the same block in the main layout file -->
+  {{super()}}
+  <!-- add admin navbar from includes folder -->
+  {% block navadmin %}{% include "../includes/nav-admin.html" %}{% endblock %}
+  <!-- back button -->
+  <div>
+    <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div>
+      <h1 class="govuk-heading-l heading">Export animal to
+        Saudi Arabia -
+        1100EHC</h1>
+    </div>
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-three-quarters">
+
+        <p class="govuk-body">
+          Case ID: 19/2349 <br>
+          Name of applicant: nicky private <br>
+          Destination country: Saudi Arabia
+          <br>
+          Proposed export date: 20/09/2019 <br>
+        </p>
+
+      </div>
+      <div class="govuk-grid-column-one-quarter"> </div>
+    </div>
+    <div>
+      <form id="table-select-certificates" action="#">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+
+              <th class="govuk-table__header">Number</th>
+              <th class="govuk-table__header">Certificate number
+              </th>
+              <th class="govuk-table__header">Actual export date</th>
+              <th class="govuk-table__header">Certificate status</th>
+              <th class="govuk-table__header">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008302</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008303</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">3</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008304</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">4</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008305</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">5</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008306</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">6</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008307</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">7</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008308</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">8</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008309</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">9</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008310</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">10</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008311</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">11</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008312</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">12</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008313</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">13</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008314</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">14</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008315</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">15</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008316</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">16</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008317</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">17</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008318</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">18</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008319</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">19</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008320</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">20</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008321</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">21</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008322</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">22</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008323</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">23</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008324</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">24</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008325</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">25</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008326</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">26</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008327</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">27</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008328</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">28</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008329</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">29</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008330</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td id="cert-counter" class="govuk-table__cell" scope="row">30</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008331</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
