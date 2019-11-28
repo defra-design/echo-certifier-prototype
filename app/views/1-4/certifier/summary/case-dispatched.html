@@ -64,7 +64,10 @@ GOV.UK Prototype Kit
               <td id="status" class="govuk-table__cell" scope="row">{% if data.status_6969 == "completed" %}CERTIFIED{% else %}DISPATCHED{% endif %}
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
-                {% if data.status_6969 == "approved" %}
+
+                {% if data.status_6969 == "completed" %}
+
+                {% elseif data.status_6969 == "approved" %}
                 <a id="continue_link_19/2/008722" href="../close-certificate?status_6969=completed&return=dispatched">
                   Continue
                 </a>
@@ -73,15 +76,16 @@ GOV.UK Prototype Kit
                   Continue
                 </a>
                 {% endif %}
-                &nbsp;
                 <div>
                 <a id="view_cert_19/2/008722" href="/protected/application/1721147987161/ehc/1d8aa99b-40b1-e911-a984-000d3ab6a35c" target="_blank">
                   View Certificate
                 </a>
                 &nbsp;
+                {% if data.status_6969 != "completed" %}
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-7006ehc-3.1-edit.pdf" target="_blank">
-                  Editable certificate (prototype)
+                  Editable certificate
                 </a>
+                {% endif %}
                 </div>
               </td>
             </tr>
