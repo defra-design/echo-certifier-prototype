@@ -61,15 +61,15 @@ GOV.UK Prototype Kit
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 02 Aug 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
+              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_6969 == "completed" %}CERTIFIED{% else %}DISPATCHED{% endif %}
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
                 {% if data.status_6969 == "approved" %}
-                <a id="continue_link_19/2/008722" href="../close-certificate?status_7006=completed&return=certifier-action">
+                <a id="continue_link_19/2/008722" href="../close-certificate?status_6969=completed&return=dispatched">
                   Continue
                 </a>
                 {% else %}
-                <a id="continue_link_19/2/008722" href="../certificates/6969EHC/review-your-answers?status_6969=apporved">
+                <a id="continue_link_19/2/008722" href="../certificates/6969EHC/review-your-answers?status_6969=approved&return=dispatched">
                   Continue
                 </a>
                 {% endif %}
