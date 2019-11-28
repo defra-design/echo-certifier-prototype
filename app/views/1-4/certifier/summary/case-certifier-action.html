@@ -59,16 +59,12 @@ GOV.UK Prototype Kit
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 	01 Dec 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_7006 == "completed" %}COMPLETED{% elseif data.status_7006 == "dispatched" or data.status_7006 == "approved"  %}DISPATCHED{% else %}APHA is processing{% endif%}
+              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_7006 == "completed" %}CERTIFIED{% elseif data.status_7006 == "dispatched" or data.status_7006 == "approved"  %}DISPATCHED{% else %}APHA is processing{% endif%}
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
                 {% if data.status_7006 == "processing"  or data.status_7006 == "completed" %}
-                {% elseif data.status_7006 == "approved" %}
+                {% elseif data.status_7006 == "approved" OR  data.status_7006 == "dispatched"%}
                 <a id="continue_link_19/2/008722" href="../close-certificate?status_7006=completed&return=certifier-action">
-                  Continue
-                </a>
-                {% elseif data.status_7006 == "dispatched" %}
-                <a id="continue_link_19/2/008722" href="../certificates/7006EHC/review-your-answers?status_7006=approved&return=certifier-action">
                   Continue
                 </a>
                 {% else %}
@@ -76,15 +72,16 @@ GOV.UK Prototype Kit
                   Continue
                 </a>
                 {% endif %}
-                &nbsp;
                 <div>
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-7006ehc-3.1.pdf" target="_blank">
                   View Certificate
                 </a>
                 &nbsp;
+                {% if data.status_7006 != "completed"%}
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-7006ehc-3.1-edit.pdf" target="_blank">
                   Editable Certificate
                 </a>
+                {% endif %}
                 </div>
               </td>
             </tr>
@@ -92,7 +89,7 @@ GOV.UK Prototype Kit
         </table>
       </form>
       <br>
-        <a href="case-certifier-action?status_7006=dispatched" class="govuk-link">Dispatch certificte</a>
+        <a href="case-certifier-action?status_7006=dispatched" class="govuk-link">Dispatch certificate (for prototype only)</a>
       <br>
     </div>
   </div>

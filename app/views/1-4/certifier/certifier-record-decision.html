@@ -32,7 +32,7 @@ GOV.UK Prototype Kit
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="rejected" name="decision" type="radio" value="REJECTED" data-aria-controls="conditional-decision-conditional-2">
+                        <input class="govuk-radios__input" id="rejected" name="decision" type="radio" value="REJECTED" >
                         <label class="govuk-label govuk-radios__label" for="rejected">
                           Rejected
                         </label>
@@ -49,11 +49,20 @@ GOV.UK Prototype Kit
 
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="cancelled" name="decision" type="radio" value="CANCELLED" data-aria-controls="conditional-decision-conditional-3">
+                        <input class="govuk-radios__input" id="cancelled" name="decision" type="radio" value="CANCELLED" >
                         <label class="govuk-label govuk-radios__label govuk-!-margin-bottom-5" for="cancelled">
                           Cancelled
                         </label>
                       </div>
+                    </div>
+                    <div class="govuk-radios__conditional" id="conditional-decision-conditional-2">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="rejected-reason">
+                          Reason for cancellation
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="rejected-reason" name="rejected-reason" type="" value="">
+                      </div>
+
                     </div>
 
                   </fieldset>
