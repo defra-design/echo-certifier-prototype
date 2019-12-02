@@ -26,9 +26,9 @@ module.exports = function(router) {
  }
  router.use(function (req, res, next) {
    //hacky way to update statuses.
-   if(req.query.update_status && req.query.id){
-     updateStatus(req.session.data.cases, req.query.id, req.query.update_status)
-   }
+   // if(req.query.update_status && req.query.id){
+   //   updateStatus(req.session.data.cases, req.query.id, req.query.update_status)
+   // }
   next()
 })
   router.post('/' + base_url + "*/supporting-documents-uploaded", function(req, res) {
