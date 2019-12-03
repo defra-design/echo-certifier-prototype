@@ -11,7 +11,7 @@ Your cases
 {% block navadmin %}{% include "../includes/nav-admin-new.html" %}{% endblock %}
 <!-- back button -->
 <div>
-  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+  <a class="govuk-back-link" id="link-back" href="../certifier-certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
 </div>
 {% endblock %}
 
