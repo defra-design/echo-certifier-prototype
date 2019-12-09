@@ -1,0 +1,126 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Commodity details - GOV UK
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div>
+          <h1 id="questionPageHeading" class="govuk-heading-xl margin-bottom-20">What are the commodity details?</h1>
+          <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
+          <p>
+            </p><form  method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
+
+
+            <!-- @formatter:off -->
+            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-0">Commodity code (optional)</label>
+              <div class="govuk-hint">You can use the trade tariff search on GOV.UK to find this. This code is between 4 and 10 digits, for example 0308305000</div>
+              <input class="govuk-input form-control-3-4" id="8270EHC-0" name="commodity_code" value="{{data.commodity_code or ''}}" type="text" data-qa-id="Question-8270EHC-0">
+            </div>
+            <input type="hidden" name="0-formQuestionId" value="7849">
+            <input type="hidden" name="0-questionId" value="579">
+            <input type="hidden" name="0-formName" value="8270EHC">
+            <input type="hidden" name="0-questionText" value="Commodity code (optional)">
+            <input type="hidden" name="0-questionType" value="text">
+            <input type="hidden" name="0-questionOrder" value="1">
+            <input type="hidden" name="0-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7849" value="0">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-1">Description of commodity (optional)</label>
+              <div class="govuk-hint">For example, Live swine</div>
+              <input class="govuk-input form-control-3-4" id="8270EHC-1" name="commodity_description" value="{{data.commodity_description or ''}}" type="text" data-qa-id="Question-8270EHC-1">
+            </div>
+            <input type="hidden" name="1-formQuestionId" value="7850">
+            <input type="hidden" name="1-questionId" value="580">
+            <input type="hidden" name="1-formName" value="8270EHC">
+            <input type="hidden" name="1-questionText" value="Description of commodity (optional)">
+            <input type="hidden" name="1-questionType" value="text">
+            <input type="hidden" name="1-questionOrder" value="2">
+            <input type="hidden" name="1-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7850" value="1">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-2">Production area for frozen or processed bivalve molluscs  (optional)</label>
+              <div class="govuk-hint">If not applicable, leave blank</div>
+              <input class="govuk-input form-control-3-4" id="8270EHC-2" name="commodity_production_area" value="{{data.commodity_production_area or ''}}" type="text" data-qa-id="Question-8270EHC-2">
+            </div>
+            <input type="hidden" name="2-formQuestionId" value="7851">
+            <input type="hidden" name="2-questionId" value="581">
+            <input type="hidden" name="2-formName" value="8270EHC">
+            <input type="hidden" name="2-questionText" value="Production area for frozen or processed bivalve molluscs  (optional)">
+            <input type="hidden" name="2-questionType" value="text">
+            <input type="hidden" name="2-questionOrder" value="3">
+            <input type="hidden" name="2-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7851" value="2">            <div class="govuk-form-group ">
+              <label class="govuk-label govuk-!-font-weight-bold" for="8270EHC-3">Net weight of consignment (optional)</label>
+              <div class="govuk-hint">Provide the number and the units of measurement</div>
+              <input class="govuk-input form-control-3-4" id="8270EHC-3" name="commodity_net_weight" value="{{data.commodity_net_weight or ''}}" type="text" data-qa-id="Question-8270EHC-3">
+            </div>
+            <input type="hidden" name="3-formQuestionId" value="7852">
+            <input type="hidden" name="3-questionId" value="615">
+            <input type="hidden" name="3-formName" value="8270EHC">
+            <input type="hidden" name="3-questionText" value="Net weight of consignment (optional)">
+            <input type="hidden" name="3-questionType" value="text">
+            <input type="hidden" name="3-questionOrder" value="4">
+            <input type="hidden" name="3-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7852" value="3">               <div class="govuk-form-group ">
+                 <!-- @formatter:off -->
+                 <fieldset id="8270EHC-4" class="govuk-fieldset">
+                   <!-- @formatter:on -->
+                   <legend class="govuk-fieldset__legend" for="8270EHC-4">
+                     <label class="govuk-label govuk-!-font-weight-bold">Temperature of commodity (optional)</label>
+                   </legend>
+
+
+                   <div class="govuk-radios govuk-radios">
+                     <div class="govuk-radios__item">
+                       <input type="radio" class="govuk-radios__input" id="8270EHC-4" value="Ambient" name="commodity_temprature" data-qa-id="Question-radio-Ambient" {% if data.commodity_temprature == "Ambient"%}checked="checked"{%endif%}>
+                       <label class="govuk-label govuk-radios__label" for="8270EHC-4">Ambient</label>
+                     </div>
+                     <div class="govuk-radios__item">
+                       <input type="radio" class="govuk-radios__input" id="8270EHC-4" value="Chilled" name="commodity_temprature" data-qa-id="Question-radio-Chilled" {% if data.commodity_temprature == "Chilled"%}checked="checked"{%endif%}>
+                       <label class="govuk-label govuk-radios__label" for="8270EHC-4">Chilled</label>
+                     </div>
+                     <p class="form-block">or</p>
+                     <div class="govuk-radios__item">
+                       <input type="radio" class="govuk-radios__input" id="8270EHC-4" value="Frozen" name="commodity_temprature" data-qa-id="Question-radio-Frozen" {% if data.commodity_temprature == "Frozen"%}checked="checked"{%endif%}>
+                       <label class="govuk-label govuk-radios__label" for="8270EHC-4">Frozen</label>
+                     </div>
+                   </div>
+                 </fieldset>
+               </div>
+
+            <input type="hidden" name="4-formQuestionId" value="7853">
+            <input type="hidden" name="4-questionId" value="583">
+            <input type="hidden" name="4-formName" value="8270EHC">
+            <input type="hidden" name="4-questionText" value="Temperature of commodity (optional)">
+            <input type="hidden" name="4-questionType" value="single_select">
+            <input type="hidden" name="4-questionOrder" value="5">
+            <input type="hidden" name="4-questionScope" value="BOTH">
+            <input type="hidden" name="questionSequence-7853" value="4">            <!-- @formatter:on -->
+              <input type="hidden" id="numQuestionsOnPage" name="numQuestionsOnPage" value="5">
+              <div class="govuk-grid-row margin-top-30"></div>
+              <div class="govuk-grid-row govuk-!-margin-left-0 govuk-!-padding-0">
+                <input class="govuk-button margin-top-30" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+              </div>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-body">
+                  <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+                </div>
+              </div>
+
+            </form>
+
+          <p></p>
+        </div>
+      </div>
+    </div>
+{% endblock %}

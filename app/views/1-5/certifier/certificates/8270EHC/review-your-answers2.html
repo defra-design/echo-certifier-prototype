@@ -1,0 +1,450 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="../certifier-multi-org-dashboard">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+
+        <h1 class="govuk-heading-xl">
+          Review your answers
+        </h1>
+        <p class="govuk-body">
+        Please check that the answers provided are correct
+        </p>
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="specific-commodity-question">
+              What are you exporting?
+            </td>
+            <td class="govuk-table__cell" scope="row" id="specific-commodity-answer">
+              COD
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="../errors/no-permission" data-qa-id="Link-ChangeAnswer" id="Link-specific-commodity-question">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="-5-question">Number of certificates
+            </td>
+            <td class="govuk-table__cell" scope="row" id="0-answer">2
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="-7-question">Within the economic bloc, what is the first country your export will enter?
+            </td>
+            <td class="govuk-table__cell" scope="row" id="1-answer">Germany
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="-3-question">What country of the selected economic community does the certificate relate to?
+            </td>
+            <td class="govuk-table__cell" scope="row" id="2-answer">San Marino
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="-question">Select the certifier practice to include with your application
+            </td>
+            <td class="govuk-table__cell" scope="row" id="3-answer">ADM ACCOUNTING LIMITED Hornbeam House  CW12 3ER
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="organisation-search" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-3">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="-question">Select certificate delivery address
+            </td>
+            <td class="govuk-table__cell" scope="row" id="4-answer">Hornbeam House Electra Way Crewe CW12 3ER
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="certificate-delivery-address" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7739-question">Delivery method
+            </td>
+            <td class="govuk-table__cell" scope="row" id="5-answer">Email
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7740-question">Planned certification date (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="6-answer">2019-09-09
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7741-question">Certification region
+            </td>
+            <td class="govuk-table__cell" scope="row" id="7-answer">England
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7742-question">Exporter name
+            </td>
+            <td class="govuk-table__cell" scope="row" id="8-answer">Andrew Certifier Testing
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7743-question">Origin
+            </td>
+            <td class="govuk-table__cell" scope="row" id="9-answer">Great Britain
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7744-question">Planned export date
+            </td>
+            <td class="govuk-table__cell" scope="row" id="10-answer">2019-09-12
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7849-question">Commodity code (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="11-answer">
+              {{data.commodity_code or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="commodity-details" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-11">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7850-question">Description of commodity (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="12-answer">
+              {{data.commodity_description or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="commodity-details" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-12">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7851-question">Production area for frozen or processed bivalve molluscs  (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="13-answer">
+              {{data.commodity_production_area or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="commodity-details" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-13">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7852-question">Net weight of consignment (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="14-answer">
+              {{data.commodity_net_weight or ''}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="commodity-details" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-14">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7853-question">Temperature of commodity (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="15-answer">
+              {{data.commodity_temprature or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="commodity-detail" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-15">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7854-question">Total number of packages in the consignment (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="16-answer">
+              {{data.packaging_amount or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="packaging" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-16">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7855-question">Type of packaging (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="17-answer">
+              {{data.packaging_type or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="packaging" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-17">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7860-question">Place of loading (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="18-answer">
+              {{data.dispatch_name or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-18">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7861-question">Approval number of the place of loading (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="19-answer">
+              {{data.dispatch_number or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-19">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7862-question">Name of establishment of dispatch (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="20-answer">
+              {{data.dispatch_establishment or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-20">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7863-question">Address of establishment of dispatch (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="21-answer">
+              {{data.dispatch_address or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-21">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7864-question">Approval number of the establishment of dispatch (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="22-answer">
+              {{data.dispatch_approval_number or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="loading-and-dispatch" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-22">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7874-question">Expected date of departure from the UK (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="23-answer">
+              {{transport_departure_day}} {{transport_departure_month}} {{transport_departure_year}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-23">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7875-question">Means of transport to the BIP (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="24-answer">
+              {{data.transport_type or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-24">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7876-question">Identification of the transport (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="25-answer">
+              {{data.transport_id or ''}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-25">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7877-question">Documentary reference number for the transport (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="26-answer">
+              {{data.transport_refnumber or ''}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-26">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7878-question">Container and seal numbers (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="27-answer">
+              {{data.transport_seal_numbers or ''}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="transportation" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-27">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7856-question">Consignor name
+            </td>
+            <td class="govuk-table__cell" scope="row" id="28-answer">
+              {{data.consignor_name or "Andrew Consignor"}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-28">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7857-question">Consignor address
+            </td>
+            <td class="govuk-table__cell" scope="row" id="29-answer">
+              {{data.consignor_address or "Andrew Consignors address"}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-29">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7858-question">Consignor telephone number (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="30-answer">
+              {{data.consignor_phone or ""}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="consignor" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-30">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7865-question">Consignee name (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="31-answer">
+              {{data.consignee_name or 'Consignee Andrew'}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-31">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7866-question">Consignee address (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="32-answer">
+              {{data.consignee_address or 'Consignee Address Andrew'}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-32">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header" scope="row" id="7867-question">Consignee telephone number (optional)
+            </td>
+            <td class="govuk-table__cell" scope="row" id="33-answer">
+              {{data.consignee_phone or ''}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link" href="consignee" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-33">Change</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="govuk-grid-column-full margin-bottom-15">
+          <div class="govuk-grid-row govuk-!-font-weight-bold margin-bottom-15">
+            <h1 class="govuk-heading-m">Supporting documents</h1>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-body govuk-!-margin-0">
+              {% if data.has_uploaded_files != "yes"%}
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-full">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-quarter govuk-!-font-weight-bold">File name
+                      </div>
+                      <div class="govuk-grid-column-three-quarters">
+                        <div class="govuk-grid-row">
+                          <div class="govuk-grid-column-three-quarters wrap" id="file_0">
+                            No documents uploaded
+                          </div>
+                          <div class="govuk-grid-column-one-quarter align-right"><a href="supporting-documents" id="change_file_0" class="govuk-link">Change</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-one-quarter govuk-!-font-weight-bold">File
+                        description
+                      </div>
+                      <div class="govuk-grid-column-three-quarters wrap" id="description_0">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% else %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-quarter govuk-!-font-weight-bold">File name
+                    </div>
+                    <div class="govuk-grid-column-three-quarters">
+                      <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-three-quarters wrap" id="file_0">
+                          test_support.docx
+                        </div>
+                        <div class="govuk-grid-column-one-quarter align-right"><a href="supporting-documents-uploaded" id="change_file_0" class="govuk-link">Change</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-quarter govuk-!-font-weight-bold">File
+                      description
+                    </div>
+                    <div class="govuk-grid-column-three-quarters wrap" id="description_0">
+                      {{data.file_description}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              {% endif %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-warning-text">
+            <span class="icon icon-file-download"></span>
+            <span class="govuk-visually-hidden">File download</span>
+            <strong class="govuk-body govuk-!-font-weight-regular">Preview your answers in a <a href="/protected/form/8270EHC/application/1721147992687/preview" data-qa-id="Link-PreviewCertificate" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div>
+            <form  method="POST">
+              <input type="hidden" name="certificate" value="a49890fe-79d0-e911-a982-000d3ab6a5e0">
+              <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
+              <input type="hidden" name="applicationFormStatus" value="">
+              <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue" data-qa-id="Button-Continue">
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+{% endblock %}

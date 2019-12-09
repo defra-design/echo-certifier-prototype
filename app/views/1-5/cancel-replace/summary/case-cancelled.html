@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% block navadmin %}{% include "../includes/nav-admin.html" %}{% endblock %}
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div>
+                    <h1 class="govuk-heading-l heading">Export animal to
+                        Hong Kong -
+                        3658EHC</h1>
+                </div>
+                <div class="govuk-grid-column-full">
+                    <div class="govuk-grid-column-three-quarters">
+
+                        <p class="govuk-body">
+                            Case ID: 19/1398 <br>
+                            Name of applicant: Bob Smith <br>
+                            Destination Country: Hong Kong
+                            <br>
+                            Proposed Export Date: 2019-08-10 <br>
+                        </p>
+
+                    </div>
+                    <div class="govuk-grid-column-one-quarter">                    </div>
+                </div>
+                <div>
+                    <form id="table-select-certificates" action="#">
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-table__header">Certificate Number
+                                </th>
+                                <th class="govuk-table__header">Actual Export Date</th>
+                                <th class="govuk-table__header">Certificate Status</th>
+                                <th class="govuk-table__header">Actions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
+                            <tr class="govuk-table__row">
+                                <td id="cert-num" class="govuk-table__cell" scope="row">19/2/011117</td>
+                                <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                                    10 Aug 2019
+                                </td>
+                                <td id="status" class="govuk-table__cell" scope="row">CANCELLED
+                                </td>
+                                <td id="actions" class="govuk-table__cell" scope="row">
+                                    <a id="view_cert_19/2/011117" href="/protected/application/1721147988847/ehc/a8bb413d-31b5-e911-a980-000d3ab6ae65" target="_blank">
+                                        View Certificate
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

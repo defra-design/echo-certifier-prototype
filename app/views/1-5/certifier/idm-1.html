@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Identity service, page 1
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>{{releaseVersion | log }}
+
+    <p>Need to link up with Mary Bowden's prototype work for the Identity service</p>
+
+    <p>
+      <a href="select-certifier-org" class="govuk-link--no-visited-state">Skip IDM</a>
+    </p>
+
+
+  </div>
+</div>
+
+{% endblock %}
