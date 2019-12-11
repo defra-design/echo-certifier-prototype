@@ -49,7 +49,7 @@ border: 3px solid #FFBF47;
   </div>
   <div class="govuk-grid-column-full">
     {% if query.search %}
-    <p class="govuk-body"><a href="certifier-multi-org-dashboard" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
+    <p class="govuk-body"><a href="dashboard" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
     <p class="govuk-body">
       There are <span id="js-case-count"></span> cases matching <strong>‘{{query.search}}’</strong>
     </p>
@@ -71,11 +71,12 @@ border: 3px solid #FFBF47;
       <tbody>
         <!-- loop through a an array of cases. can be found in app > data > cases.json.
               Loaded via app > data > session-data-defaults.js -->
-        {% for case in data.cases_v2 %}
+        {% for case in data.case_list %}
         {% if (query.search|upper) in (case.name|upper)
             or (query.search|upper) in (case.caseID|upper)
             or (query.search|upper) in (case.destination|upper)
             or (query.search|upper) in (case.destination|upper)
+            or (query.search|upper) in (case.certificate|upper)
           %}
         <tr class="govuk-table__row">
           <th id="-appRef" class="govuk-table__cell applicationRef-column table-header" scope="row">

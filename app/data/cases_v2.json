@@ -121,7 +121,8 @@
     "status": "completed",
     "is_canceled": "todo",
     "is_replacement" : "no",
-    "reference" : "PO 8333998 AUS"
+    "reference" : "PO 8333998 AUS",
+    "certificate": "19/2/008723"
   },
   {
     "index": 14,
@@ -133,7 +134,8 @@
     "status": "completed",
     "is_canceled": "todo",
     "is_replacement" : "no",
-    "reference" : "PO 23423423 CHNA"
+    "reference" : "PO 23423423 CHNA",
+    "certificate": "19/2/008724"
   },
   {
     "index": 15,
@@ -145,6 +147,7 @@
     "status": "completed",
     "is_canceled": "todo",
     "is_replacement" : "no",
-    "reference" : "PO 647234239 FR"
+    "reference" : "PO 647234239 FR",
+    "certificate": "19/2/008725s"
   }
 ]

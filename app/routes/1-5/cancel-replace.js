@@ -48,16 +48,18 @@ module.exports = function(router) {
    return false;
   }
   router.use(function (req, res, next) {
+    req.session.data.case_list = req.session.data.case_list || req.session.data.cases_v2;
     //hacky way to update statuses.
     if(req.query.update_status && req.query.cert_id){
       console.log("updating status")
-      updateStatus(req.session.data.cases_v2, req.query.cert_id, req.query.update_status)
+      updateStatus(req.session.data.case_list, req.query.cert_id, req.query.update_status)
+      console.log(req.session.data.case_list)
     }
     if(req.query.duplicate_case && req.query.cert_id){
       console.log("duplicating case")
-      duplicateCase(req.session.data.cases_v2, req.query.cert_id, "dispatched")
+      duplicateCase(req.session.data.case_list, req.query.cert_id, "dispatched")
     }
-    if(req.query.destroy){
+    if(req.query.clear){
       console.log("deleting data")
       req.session.data = ""
     }
@@ -99,7 +101,7 @@ module.exports = function(router) {
   })
   router.post('/' + base_url + "*/certificates/*/confirmation", function(req, res) {
     console.log
-    updateStatus(req.session.data.cases_v2, req.session.data.cert_id, "pending")
+    updateStatus(req.session.data.case_list, req.session.data.cert_id, "pending")
     res.redirect(301, '/' + base_url + req.params[0] + '/dashboard');
   })
 

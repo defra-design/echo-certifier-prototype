@@ -28,7 +28,7 @@ Exports application - GOV.UK
             <h2 class="govuk-fieldset__heading">The certificate: </h2>
           </legend>
 
-          <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios" data-module="radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="cancellation_reason_lost" name="cancel_reason" type="radio" value="lost">
               <label class="govuk-label govuk-radios__label" for="cancellation_reason_lost">
@@ -36,10 +36,18 @@ Exports application - GOV.UK
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="cancellation_reason_amend" name="cancel_reason" type="radio" value="amend">
+              <input class="govuk-radios__input" id="cancellation_reason_amend" name="cancel_reason" type="radio" value="amend" data-aria-controls="reason-conditional">
               <label class="govuk-label govuk-radios__label" for="cancellation_reason_lost">
                  needs updating
               </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="reason-conditional" >
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-line-1">
+                    Reasons for updating the certificate <span class="govuk-visually-hidden">line 1 of 2</span>
+                  </label>
+                  <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+                </div>
             </div>
           </div>
         </fieldset>
