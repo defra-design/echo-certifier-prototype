@@ -63,7 +63,7 @@
     "name": "Bob Smith",
     "date": "09 Sep 2019",
     "destination": "Hong Kong",
-    "status": "cancelled",
+    "status": "withdrawn",
     "reference" : ""
   },
   {
@@ -117,19 +117,34 @@
     "name": "Bob Smith",
     "date": "09 Nov 2019",
     "destination": "Australia",
-    "status": "cancelled",
-    "reference" : ""
+    "EHC" : "6969EHC",
+    "status": "completed",
+    "is_canceled": "todo",
+    "is_replacement" : "no",
+    "reference" : "PO 8333998 AUS"
   },
   {
-    "index": 13,
-    "caseID": "19/3425",
+    "index": 14,
+    "caseID": "19/3558",
     "name": "Bob Smith",
     "date": "09 Nov 2019",
-    "destination": "Australia",
-    "status": "processing",
-    "reference" : "",
-    "is_replacement" : "yes",
-    "replacing" : "19/2/008722"
+    "destination": "China",
+    "EHC" : "7006EHC",
+    "status": "completed",
+    "is_canceled": "todo",
+    "is_replacement" : "no",
+    "reference" : "PO 23423423 CHNA"
+  },
+  {
+    "index": 15,
+    "caseID": "19/3423",
+    "name": "Bob Smith",
+    "date": "09 Nov 2019",
+    "destination": "France",
+    "EHC" : "8270EHC",
+    "status": "completed",
+    "is_canceled": "todo",
+    "is_replacement" : "no",
+    "reference" : "PO 647234239 FR"
   }
-
 ]

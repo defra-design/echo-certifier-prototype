@@ -26,9 +26,10 @@ module.exports = function(router) {
  }
  router.use(function (req, res, next) {
    //hacky way to update statuses.
-   // if(req.query.update_status && req.query.id){
-   //   updateStatus(req.session.data.cases, req.query.id, req.query.update_status)
-   // }
+   if(req.query.update_status && req.query.cert_id){
+     console.log("updating status")
+     updateStatus(req.session.data.cases, req.query.cert_id, req.query.update_status)
+   }
   next()
 })
   router.post('/' + base_url + "*/supporting-documents-uploaded", function(req, res) {
@@ -65,6 +66,7 @@ module.exports = function(router) {
     if(req.query.destroy=="yes"){
       req.session.destroy();
     }
+    console.log(req.query)
     res.render(base_url + req.params[0], {"query":req.query},function(err, html) {
       if (err) {
         if (err.message.indexOf('template not found') !== -1) {

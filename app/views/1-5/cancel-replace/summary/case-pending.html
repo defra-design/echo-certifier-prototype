@@ -15,7 +15,7 @@ GOV.UK Prototype Kit
 {% endif %}
 <!-- back button -->
 <div>
-  <a class="govuk-back-link" id="link-back" href="../certifier-single-org-dashboard">Back</a>
+  <a class="govuk-back-link" id="link-back" href="../dashboard">Back</a>
 </div>
 {% endblock %}
 
@@ -25,19 +25,18 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Manage case 19/921
         </h1>
+        <!-- <div class="defra-alert defra-alert--info ">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">1 certificate has been replaced </h3>
+        <p class="govuk-body">You can still clone this certificate. We'll adapt the information from the old version to fit the new form, but there may be new changes or changed questions. <br></p>
+      </div> -->
         <dl class="govuk-summary-list govuk-summary-list--no-border">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-summary-list__40">
-              Case ID
+              EHC
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if query.ehc == "6969EHC" %}
-                6969EHC: Export dairy and dairy products to Australia
-              {% elseif query.ehc == "8270EHC"%}
-                8270EHC: fishery products intended for human consumption to the EU
-              {% else %}
-                7006GB: Pig meat from Great Britain to China
-              {% endif %}
+              Export dairy and dairy products to Australia:
+              6969EHC
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -45,7 +44,7 @@ GOV.UK Prototype Kit
               Exporter
             </dt>
             <dd class="govuk-summary-list__value">
-              Alan Home Purchase
+              	Bob Smith
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -53,7 +52,7 @@ GOV.UK Prototype Kit
               Destintaion
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ query.destination or 'China' }}
+              Australia
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -61,7 +60,7 @@ GOV.UK Prototype Kit
               Proposed Export Date
             </dt>
             <dd class="govuk-summary-list__value govuk-summary-list__40">
-              02-08-2019
+              	02 Aug 2019
             </dd>
           </div>
         </dl>
@@ -74,7 +73,7 @@ GOV.UK Prototype Kit
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
-              <th class="govuk-table__header">Certificate Number
+              <th class="govuk-table__header">Certificate
               </th>
               <th class="govuk-table__header">Actual Export Date</th>
               <th class="govuk-table__header">Certificate Status</th>
@@ -85,25 +84,27 @@ GOV.UK Prototype Kit
           <tbody>
 
             <tr class="govuk-table__row">
-              <td id="cert-num" class="govuk-table__cell" scope="row">19/2/008722</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-status govuk-status--warning">pending review</span>&nbsp;&nbsp;19/2/00869<br>
+                <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Requested to cancel and replace on 2 Dec 2019</span>
+              </td>
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 02 Aug 2019
               </td>
               <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
-              </td>
               <td id="actions" class="govuk-table__cell" scope="row">
+                <!-- <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  target="_blank">
+                  View replacement
+                </a>
+                <br>-->
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  target="_blank">
-                  View Certificate
+                  View certificate
                 </a>
                 <br>
-
-                <a id="continue_link_19/2/008722" href="../replace/left-uk">
-                  Cancel and replace
-                </a>
               </td>
             </tr>
           </tbody>
         </table>
+        <p class="govuk-body govuk-!-margin-top-8 govuk-!-font-size-16"><a href="case-replaced?cert_id={{query.cert_id or 14}}&destination={{query.destination}}&ehc=6969EHC&update_status=replaced&duplicate_case=yes">PROTOTYPE ONLY: approve cancellation</a>
       </form>
     </div>
   </div>

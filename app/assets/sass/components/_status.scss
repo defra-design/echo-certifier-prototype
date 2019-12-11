@@ -1,3 +1,4 @@
+
 .govuk-status.green, .govuk-status.orange, .govuk-status.blue, .govuk-status.turquoise, .govuk-status.red {
   width: 90px;
   text-align: center;
@@ -21,10 +22,32 @@
 .govuk-status.orange {
   border-color: #f47738;
 }
-
+.dark-grey{
+background: #626a6e!important;
+}
 .govuk-status.red {
   border-color: #b10e1e;
 }
 .govuk-status.turquoise {
     border-color: #28a197;
+}
+.govuk-tag.govuk-tag--complete{
+  background: #005ea5!important;
+  border: 3px solid #005ea5;
+  width: auto !important;
+}
+.govuk-status--warning{
+  width: auto !important;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  padding-bottom: 1px;
+  letter-spacing: 1px;
+  text-decoration: none;
+      display: inline-block;
+  color: #0b0c0c;
+  background: #FFBF47;
+  border: 3px solid #FFBF47;
 }
