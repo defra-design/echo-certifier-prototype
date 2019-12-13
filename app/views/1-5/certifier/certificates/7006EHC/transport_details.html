@@ -21,7 +21,7 @@ GOV.UK Prototype Kit
       <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
       <p>
       </p>
-      <form action="{% if query.change == 'yes' %}review-your-answers{% else %}consignor{% endif %}" method="POST">
+      <form action="{% if query.change == 'yes' %}review-your-answers{% else %}consignor{% endif %}" method="GET">
         <!-- @formatter:off -->
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-!-font-weight-bold" for="7006EHC-0">What is the container number? (optional)</label>

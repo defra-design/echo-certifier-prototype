@@ -24,7 +24,7 @@ GOV.UK Prototype Kit
       <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
       <p>
       </p>
-      <form action="{% if query.change == 'yes' %}review-your-answers{% else %}signature{% endif %}" method="POST">
+      <form action="{% if query.change == 'yes' %}review-your-answers{% else %}signature{% endif %}" method="GET">
 
         <div class="govuk-form-group ">
           <fieldset class="govuk-fieldset">

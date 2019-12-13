@@ -21,7 +21,7 @@ GOV.UK Prototype Kit
       <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
       <p>
       </p>
-      <form action="{% if query.change == 'yes' %}review-your-answers{% else %}place_of_issue{% endif %}" method="POST">
+      <form action="{% if query.change == 'yes' %}review-your-answers{% else %}place_of_issue{% endif %}" method="GET">
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-!-font-weight-bold" for="7006EHC-0">What is the name and address of the consignee? (optional)</label>
           <div class="govuk-hint">The consignee is the receiver of the consignment</div>

@@ -21,7 +21,7 @@ GOV.UK Prototype Kit
       <span id="questionPageSubtitle" class="govuk-caption-xl"></span>
       <p>
       </p>
-      <form action="{% if query.change == 'yes' %}review-your-answers{% else %}product_details{% endif %}" method="POST">
+      <form action="{% if query.change == 'yes' %}review-your-answers{% else %}product_details{% endif %}" method="GET">
         <input type="hidden" name="crumb_csrf_token" value="Gb3xP1qcExjm3zE_f922QkO0sYPMkZLJ3ad_zQ1l8ei">
         <input type="hidden" name="certificate" value="">
         <!-- @formatter:off -->

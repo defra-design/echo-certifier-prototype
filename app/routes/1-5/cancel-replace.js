@@ -80,7 +80,7 @@ module.exports = function(router) {
           var cert = req.session.data.ehc || "7006EHC"
         res.redirect(301, '/' + base_url + req.params[0] + '/certificates/'+cert+'/review-your-answers?is_replacement=yes');
       }
-    }else if (req.session.data.ehc=="7006EHC"){
+    }else if (req.session.data.has_left_uk == "yes" && req.session.data.ehc=="7006EHC"){
       res.redirect(301, '/' + base_url + req.params[0] + '/replace/delivery-address');
     }else{
       res.redirect(301, '/' + base_url + req.params[0] + '/replace/cannot-cancel-certificate');
