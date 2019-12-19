@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Exports application - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../dashboard">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      What happened to the certificate?
+    </h1>
+    <!-- Form routing handled in routes/1-5/cancel-replace.js -->
+    <form method="POST">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" for="8270EHCBLOCKTEST-0">
+            <h2 class="govuk-fieldset__heading">The certificate: </h2>
+          </legend>
+
+          <div class="govuk-radios" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancellation_reason_lost" name="cancel_reason" type="radio" value="lost">
+              <label class="govuk-label govuk-radios__label" for="cancellation_reason_lost">
+                was lost or damaged
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancellation_reason_amend" name="cancel_reason" type="radio" value="amend" data-aria-controls="reason-conditional">
+              <label class="govuk-label govuk-radios__label" for="cancellation_reason_lost">
+                 needs updating
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="reason-conditional" >
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="address-line-1">
+                    Why does the certificate need updating?
+                  </label>
+                  <input class="govuk-input" id="address-line-1" name="cancel_reason" type="text">
+                </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      <p class="govuk-body"><a class="govuk-link" href="cancel-replacement?cancelation_return_url=replace/reason">Cancel</a></p>
+
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}

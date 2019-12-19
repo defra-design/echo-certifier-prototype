@@ -24,6 +24,7 @@ module.exports = {
   "cases_v2" : cases_list_v2,
   "uploaded_files": [{"name": "test_support.docx","description": "some wonderful text","ID":1}],
   "file_id_count" : 1,
+  "filter_status" : []
   // Insert values here
 
 }

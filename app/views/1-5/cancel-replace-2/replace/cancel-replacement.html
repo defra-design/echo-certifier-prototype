@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Exports application - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Are you sure you want to cancel the certificate replacement?
+    </h1>
+    <p class="govuk-body">Anything you have answered will not be saved</p>
+
+    <form method="POST">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancel_replacement_yes" name="cancel_replacement" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="cancel_replacement_yes">
+                Yes, cancel and return to my cases
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cancel_replacement_no" name="cancel_replacement" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="cancel_replacement_no">
+                No, continue with replacement
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}
