@@ -71,6 +71,17 @@ module.exports = function(router) {
       console.log("Posting from left uk")
       res.redirect(301, '/' + base_url + req.params[0] + '/replace/reason');
   })
+  router.post('/' + base_url + "*/replace/cancel-replacement", function(req, res) {
+    console.log("Posting from cancel replacement")
+    console.log(req.body)
+
+      if(req.session.data.cancel_replacement=="yes"){
+        res.redirect(301, '/' + base_url + req.params[0] + '/dashboard');
+      }else{
+        res.redirect(301, '/' + base_url + req.params[0] + '/'+req.query.cancelation_return_url);
+      }
+
+  })
   router.post('/' + base_url + "*/replace/reason", function(req, res) {
     console.log(req.session.data.ehc)
     if(req.session.data.cancel_reason == "lost"){
@@ -100,7 +111,6 @@ module.exports = function(router) {
     res.redirect(301, '/' + base_url + req.params[0] + '/certificates/'+req.params[1]+'/confirmation');
   })
   router.post('/' + base_url + "*/certificates/*/confirmation", function(req, res) {
-    console.log
     updateStatus(req.session.data.case_list, req.session.data.cert_id, "pending")
     res.redirect(301, '/' + base_url + req.params[0] + '/dashboard');
   })

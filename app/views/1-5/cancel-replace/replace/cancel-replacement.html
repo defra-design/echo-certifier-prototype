@@ -19,24 +19,24 @@ Exports application - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Has the consignment already left the UK?
+      Are you sure you want to cancel the certificate replacement?
     </h1>
-
+    <p class="govuk-body">Anything you have answered will not be saved</p>
 
     <form method="POST">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="replace_lef_uk_yes" name="has_left_uk" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="replace_lef_uk_yes">
-                Yes
+              <input class="govuk-radios__input" id="cancel_replacement_yes" name="cancel_replacement" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="cancel_replacement_yes">
+                Yes, cancel and return to my cases
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="replace_lef_uk_no" name="has_left_uk" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="replace_lef_uk_no">
-                No
+              <input class="govuk-radios__input" id="cancel_replacement_no" name="cancel_replacement" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="cancel_replacement_no">
+                No, continue with replacement
               </label>
             </div>
           </div>
@@ -45,7 +45,6 @@ Exports application - GOV.UK
       <button class="govuk-button" data-module="govuk-button" type="submit">
         Continue
       </button>
-      <p class="govuk-body"><a class="govuk-link" href="cancel-replacement?cancelation_return_url=replace/left-uk">Cancel</a></p>
     </form>
   </div>
 </div>

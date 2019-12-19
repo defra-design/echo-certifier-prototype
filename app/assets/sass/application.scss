@@ -62,6 +62,19 @@ $govuk-global-styles: true;
     text-decoration: none;
 }
 
+.defra-link-button, .defra-link-button:visited{
+    background: none !important;
+    color: #005ea5;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline !important;
+    -webkit-font-smoothing: antialiased;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+    box-shadow: none;
+}
 .icon {
     display: inline-block;
     background-position: 0 0;
