@@ -5,7 +5,7 @@ module.exports = function(router) {
 
   // ADD extra routing here if needed.
   require('./cancel-replace.js')(router)
-
+  require('./cancel-replace-2.js')(router)
   // CHANGE VERSION TO THE VERSION
   const version = '1-5'
   const base_url = version + "/"

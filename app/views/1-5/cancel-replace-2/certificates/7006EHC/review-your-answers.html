@@ -6,10 +6,13 @@ Check your answers
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="../certifier-multi-org-dashboard">Back</a>
+
 <style media="screen">
   .grid_half {
     width: 50%;
+}
+.govuk-table{
+  margin-bottom: 50px;
 }
 .govuk-table__header:last-child, .govuk-table__cell:last-child {
     padding-right: 0;
@@ -24,21 +27,15 @@ Check your answers
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
 
-
+  <span class="govuk-caption-l">Cancel and replace certificate 12/12314</span>
         <h1 class="govuk-heading-xl">
-          Review the answers
+          Review and submit your replacement certifcate
         </h1>
 
-        <div class="govuk-details__text">
-          <strong class="govuk-body govuk-!-font-weight-bold">
-            Your application for a health certificate is now ready to be submitted.<br><br>
-            Please check that the answers you've provided are correct.
-          </strong>
-        </div>
         <br>
         <br>
 
-        <h1 class="govuk-heading-m">Commodity Details</h1>
+        <h2 class="govuk-heading-m">Commodity Details</h2>
         <table class="govuk-table">
           <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
@@ -54,7 +51,7 @@ Check your answers
           </tbody>
         </table>
 
-        <h1 class="govuk-heading-m">Do you want to provide an applicant reference number?</h1>
+        <h2 class="govuk-heading-m">Do you want to provide an applicant reference number?</h2>
         <table class="govuk-table" id="page-section-0">
           <tbody class="govuk-table__body">
 
@@ -69,7 +66,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Select the certifier practice to include with your application</h1>
+        <h2 class="govuk-heading-m">Select the certifier practice to include with your application</h2>
         <table class="govuk-table" id="page-section-1">
           <tbody class="govuk-table__body">
 
@@ -94,7 +91,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Exporter details</h1>
+        <h2 class="govuk-heading-m">Exporter details</h2>
         <table class="govuk-table" id="page-section-2">
           <tbody class="govuk-table__body">
 
@@ -119,7 +116,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Dates required</h1>
+        <h2 class="govuk-heading-m">Dates required</h2>
         <table class="govuk-table" id="page-section-3">
           <tbody class="govuk-table__body">
 
@@ -154,7 +151,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Slaughterhouse Details</h1>
+        <h2 class="govuk-heading-m">Slaughterhouse Details</h2>
         <table class="govuk-table" id="page-section-4">
           <tbody class="govuk-table__body">
 
@@ -192,7 +189,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Cutting plant details</h1>
+        <h2 class="govuk-heading-m">Cutting plant details</h2>
         <table class="govuk-table" id="page-section-5">
           <tbody class="govuk-table__body">
 
@@ -220,7 +217,7 @@ Check your answers
           </tr>
 
         </tbody></table>
-        <h1 class="govuk-heading-m">Cold store details</h1>
+        <h2 class="govuk-heading-m">Cold store details</h2>
         <table class="govuk-table" id="page-section-6">
           <tbody class="govuk-table__body">
 
@@ -236,7 +233,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Product details</h1>
+        <h2 class="govuk-heading-m">Product details</h2>
         <table class="govuk-table" id="page-section-7">
           <tbody class="govuk-table__body">
 
@@ -263,7 +260,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Type and number of packages</h1>
+        <h2 class="govuk-heading-m">Type and number of packages</h2>
         <table class="govuk-table" id="page-section-8">
           <tbody class="govuk-table__body">
 
@@ -279,7 +276,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Gross and Net weight</h1>
+        <h2 class="govuk-heading-m">Gross and Net weight</h2>
         <table class="govuk-table" id="page-section-9">
           <tbody class="govuk-table__body">
 
@@ -306,7 +303,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Slaughter Dates</h1>
+        <h2 class="govuk-heading-m">Slaughter Dates</h2>
         <table class="govuk-table" id="page-section-10">
           <tbody class="govuk-table__body">
 
@@ -322,7 +319,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Cutting dates</h1>
+        <h2 class="govuk-heading-m">Cutting dates</h2>
         <table class="govuk-table" id="page-section-11">
           <tbody class="govuk-table__body">
 
@@ -338,7 +335,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Production dates</h1>
+        <h2 class="govuk-heading-m">Production dates</h2>
         <table class="govuk-table" id="page-section-12">
           <tbody class="govuk-table__body">
 
@@ -354,7 +351,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Shelf Life</h1>
+        <h2 class="govuk-heading-m">Shelf Life</h2>
         <table class="govuk-table" id="page-section-13">
           <tbody class="govuk-table__body">
 
@@ -370,7 +367,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Batch numbers</h1>
+        <h2 class="govuk-heading-m">Batch numbers</h2>
         <table class="govuk-table" id="page-section-14">
           <tbody class="govuk-table__body">
 
@@ -386,7 +383,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Shipping marks</h1>
+        <h2 class="govuk-heading-m">Shipping marks</h2>
         <table class="govuk-table" id="page-section-15">
           <tbody class="govuk-table__body">
 
@@ -402,7 +399,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Storage temperature</h1>
+        <h2 class="govuk-heading-m">Storage temperature</h2>
         <table class="govuk-table" id="page-section-16">
           <tbody class="govuk-table__body">
 
@@ -418,7 +415,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Transport details</h1>
+        <h2 class="govuk-heading-m">Transport details</h2>
         <table class="govuk-table" id="page-section-17">
           <tbody class="govuk-table__body">
 
@@ -489,7 +486,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Consignor </h1>
+        <h2 class="govuk-heading-m">Consignor </h2>
         <table class="govuk-table" id="page-section-18">
           <tbody class="govuk-table__body">
 
@@ -505,7 +502,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Consignee</h1>
+        <h2 class="govuk-heading-m">Consignee</h2>
         <table class="govuk-table" id="page-section-19">
           <tbody class="govuk-table__body">
 
@@ -521,7 +518,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Place and date of issue</h1>
+        <h2 class="govuk-heading-m">Place and date of issue</h2>
         <table class="govuk-table" id="page-section-20">
           <tbody class="govuk-table__body">
 
@@ -548,7 +545,7 @@ Check your answers
             </td>
           </tr>
         </tbody></table>
-        <h1 class="govuk-heading-m">Signature</h1>
+        <h2 class="govuk-heading-m">Signature</h2>
         <table class="govuk-table" id="page-section-21">
           <tbody class="govuk-table__body">
 
@@ -566,7 +563,7 @@ Check your answers
         </tbody></table>
 
 
-        <h1 class="govuk-heading-m">Supporting documents</h1>
+        <h2 class="govuk-heading-m">Supporting documents</h2>
 
         <table class="govuk-table" id="page-section-1000">
           <tbody class="govuk-table__body">
@@ -607,15 +604,15 @@ Check your answers
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <div>
+
             <form action="../../certifier-record-decision" method="POST">
               <input type="hidden" name="crumb_csrf_token" value="Gb3xP1qcExjm3zE_f922QkO0sYPMkZLJ3ad_zQ1l8ei">
               <input type="hidden" name="applicationFormStatus" value="">
               <!-- <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue" data-qa-id="Button-Continue"> -->
-              <a class="govuk-button" href="confirmation">Submit</a>
-              <p class="govuk-body"><a class="govuk-link" href="../../replace/cancel-replacement?cancelation_return_url=certificates/7006EHC/review-your-answers">Cancel</a></p>
+              <a class="govuk-button" href="declaration">Continue</a>
+              <p class="govuk-body"><a class="govuk-link" href="../../summary/case-completed">Do not replace this certificate</a></p>
             </form>
-          </div>
+
         </div>
       </div>
     </div>
