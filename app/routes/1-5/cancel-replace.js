@@ -111,7 +111,8 @@ module.exports = function(router) {
     res.redirect(301, '/' + base_url + req.params[0] + '/certificates/'+req.params[1]+'/confirmation');
   })
   router.post('/' + base_url + "*/certificates/*/confirmation", function(req, res) {
-    updateStatus(req.session.data.case_list, req.session.data.cert_id, "pending")
+    //change to cancelled if we APHA do the cancelling
+    updateStatus(req.session.data.case_list, req.session.data.cert_id, "replaced")
     res.redirect(301, '/' + base_url + req.params[0] + '/dashboard');
   })
 

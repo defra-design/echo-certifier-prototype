@@ -56,7 +56,7 @@ module.exports = function(router) {
     }
     if(req.query.duplicate_case && req.query.cert_id){
       console.log("duplicating case")
-      duplicateCase(req.session.data.case_list, req.query.cert_id, "dispatched")
+      duplicateCase(req.session.data.case_list, req.query.cert_id, "processing")
     }
     if(req.query.clear){
       console.log("deleting data")
@@ -119,7 +119,9 @@ module.exports = function(router) {
     res.redirect(301, '/' + base_url + req.params[0] + '/certificates/'+req.params[1]+'/confirmation');
   })
   router.post('/' + base_url + "*/certificates/*/confirmation", function(req, res) {
-    updateStatus(req.session.data.case_list, req.session.data.cert_id, "pending")
+    //change to cancelled if we APHA do the cancelling
+    updateStatus(req.session.data.case_list, req.session.data.cert_id, "replaced")
+    duplicateCase(req.session.data.case_list, req.session.data.cert_id, "process")
     res.redirect(301, '/' + base_url + req.params[0] + '/dashboard');
   })
 
