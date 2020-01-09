@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Exports application - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Confirm this certificate cannot be amended by hand
+    </h1>
+    <div class="govuk-warning-text">
+   <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+   <strong class="govuk-warning-text__text">
+     <span class="govuk-warning-text__assistive">Warning</span>
+       We only accept requests for certificates that cannot be amended by hand
+   </strong>
+ </div>
+    <p class="govuk-body">Some certificates can be amended by hand and stamped where you have made changes. If you are unsure pleasse contact the desitnation country. </p>
+      <a class="govuk-button" data-module="govuk-button" type="submit" href="delivery-address">
+        Confirm and continue
+      </a>
+      <!-- <p class="govuk-body"><a class="govuk-link" href="cancel-replacement?cancelation_return_url=replace/left-uk">Do not replace this certificate</a></p> -->
+      <p class="govuk-body"><a class="govuk-link" href="../summary/case-completed">Do not replace this certificate</a></p>
+  </div>
+</div>
+
+
+
+{% endblock %}

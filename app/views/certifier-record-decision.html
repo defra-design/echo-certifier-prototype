@@ -26,7 +26,7 @@ GOV.UK Prototype Kit
               <form action="certifier-multi-org-dashboard" method="POST">
                 <div class="govuk-form-group govuk-!-margin-bottom-9 ">
                   <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                       <h1 class="govuk-fieldset__heading">
                         Decision and Confirmation
                       </h1>
@@ -34,7 +34,7 @@ GOV.UK Prototype Kit
                     <span id="how-contacted-conditional-hint" class="govuk-hint">
                       Select one option.
                     </span>
-                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="approved" name="decision" type="radio" value="APPROVED" data-aria-controls="conditional-decision-conditional-1">
                         <label class="govuk-label govuk-radios__label" for="approved">
@@ -48,7 +48,7 @@ GOV.UK Prototype Kit
                         </label>
                       </div>
 
-                      <div class="govuk-radios__conditional" id="conditional-decision-conditional-2">
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision-conditional-2">
                         <div class="govuk-form-group">
                           <label class="govuk-label" for="rejected-reason">
                             Reason for rejected

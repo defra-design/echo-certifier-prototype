@@ -36,6 +36,16 @@ module.exports = function(router) {
     req.session.data.has_uploaded_files = "yes";
     res.redirect(301, '/' + base_url + req.params[0] + '/review-your-answers');
   })
+  router.post('/' + base_url + "*/certifier-have-signed", function(req, res) {
+    req.session.data.return = req.session.data.return || "dispatched"
+    if(req.body.is_signed == "yes"){
+      res.redirect(301, '/' + base_url + req.params[0] + '/close-certificate?status_6969=completed');
+    }else{
+      res.redirect(301, '/' + base_url + req.params[0] + '/summary/case-dispatched?status_6969=approved');
+    }
+
+  })
+
   // router.post('/' + base_url + "*/certifier-record-decision", function(req, res) {
   //   res.redirect(301, '/' + base_url + req.params[0] + '/confirmation');
   // })
