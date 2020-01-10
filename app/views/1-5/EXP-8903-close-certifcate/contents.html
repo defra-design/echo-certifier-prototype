@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EXP-8903 contents page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXP-8903 - Increase prominence of certificate closure process
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-8903" class="govuk-link">View EXP-7136 story on jira</a> and also Includes<a href="https://eaflood.atlassian.net/browse/EXP-8808" class="govuk-link">EXP-8808 - Recording NV number instead of SP number for EHOs</a></p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <ul class="govuk-list">
+      <li><a href="summary/case-dispatched?ehc=6969EHC&destination=Australia&cert_id=12">Start from summary page (status is dispatched)</a></li>
+      <li><a href="certifier-record-decision?has_error=no&clear_all=yes">Decision page with error (no prefic of sp or NV)</a></li>
+      <li><a href="certifier-record-decision?has_error=yes&decision_identification_number=8983408">Decision page with error (no prefic of sp or NV)</a></li>
+      <li><a href="certifier-have-signed">Have your signed certificate (NEW)</a></li>
+      <li><a href="close-certificate?status_6969=completed">Have your signed certificate (UPDATED)</a></li>
+      <li><a href="summary/case-dispatched?status_6969=approved">Summary with status APPROVED but not signed (NEW)</a></li>
+    </ul>
+
+
+
+  </div>
+</div>
+{% endblock %}
