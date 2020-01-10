@@ -6,6 +6,7 @@ module.exports = function(router) {
   // ADD extra routing here if needed.
   require('./cancel-replace.js')(router)
   require('./cancel-replace-2.js')(router)
+  require('./EXP-8903-close-certifcate.js')(router)
   // CHANGE VERSION TO THE VERSION
   const version = '1-5'
   const base_url = version + "/"
@@ -29,6 +30,10 @@ module.exports = function(router) {
    if(req.query.update_status && req.query.cert_id){
      console.log("updating status")
      updateStatus(req.session.data.cases, req.query.cert_id, req.query.update_status)
+   }
+   if(req.query.clear_all=="yes"){
+     console.log("Clearing session data")
+     req.session.data = [];
    }
   next()
 })

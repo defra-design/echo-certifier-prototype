@@ -6,17 +6,32 @@ GOV.UK Prototype Kit
 {{super()}}
 <a class="govuk-back-link" href="">Back</a>
 <style media="screen">
-.govuk-label--inline{display:inline-block}
+  .govuk-label--inline{display:inline-block}
 </style>
 {% endblock %}
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% if query.has_error == "yes" %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#decision_identification_number_error">Identification number must start with SP or NV</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    {% endif %}
     <h1 class="govuk-heading-xl">
       Decision and confirmation
     </h1>
     <!-- <form action="./summary/case-{{data.return or 'certifier-action'}}" id="CloseCaseForm" method="POST"> -->
-    <form action="/certifier-have-signed" id="CloseCaseForm" method="POST">
+    <form id="CloseCaseForm" method="POST">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -26,13 +41,13 @@ GOV.UK Prototype Kit
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approved" name="decision" type="radio" value="APPROVED">
+              <input class="govuk-radios__input" id="approved" name="decision" type="radio" value="approved">
               <label class="govuk-label govuk-radios__label" for="approved">
                 Approve
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="rejected" name="decision" type="radio" value="REJECTED" data-aria-controls="conditional-decision-conditional-2">
+              <input class="govuk-radios__input" id="rejected" name="decision" type="radio" value="rejected" data-aria-controls="conditional-decision-conditional-2">
               <label class="govuk-label govuk-radios__label" for="rejected">
                 Reject
               </label>
@@ -46,7 +61,7 @@ GOV.UK Prototype Kit
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="cancelled" name="decision" type="radio" value="CANCELLED" data-aria-controls="conditional-decision-conditional-3">
+              <input class="govuk-radios__input" id="cancelled" name="decision" type="radio" value="cancelled" data-aria-controls="conditional-decision-conditional-3" {% if data.decision == "cancelled"%}selected="selected"{% endif %}>
               <label class="govuk-label govuk-radios__label" for="cancelled">
                 Cancel
               </label>
@@ -72,24 +87,28 @@ GOV.UK Prototype Kit
             <label class="govuk-label" for="fullname">
               Full name
             </label>
-            <input class="govuk-input  govuk-!-width-three-quarters" id="fullname" name="fullname" type="text" value="">
+            <input class="govuk-input  govuk-!-width-three-quarters" id="fullname" name="fullname" type="text" value="{{data.fullname}}">
           </div>
-          <div class="govuk-form-group">
+          <div class="govuk-form-group {% if query.has_error == 'yes' %}govuk-form-group--error{% endif %}">
             <label class="govuk-label" for="id-number">
-            Identification number
+              Identification number
             </label>
-            <span id="national-insurance-number-hint" class="govuk-hint">
+            {% if query.has_error == 'yes' %}
+            <span id="decision_identification_number_error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Identification number must start with SP or NV
+            </span>
+            {% endif %}
+            <span id="decision_identification_number" class="govuk-hint">
               This is your SP or NV number. It's in your identification card. <br>For example, ‘SP123456’ or 'NV23322'.
             </span>
-            <input class="govuk-input govuk-input--width-10" id="id-number" name="id-number" type="text" value="" data-com.onepassword.iv="" data-op-id="0">
+            <input class="govuk-input govuk-input--width-10" id="decision_identification_number" name="decision_identification_number" type="text" value="{{data.decision_identification_number}}">
           </div>
         </fieldset>
       </div>
       <h2 class="govuk-heading-m">Now submit your decision to APHA</h2>
       <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
       <div class="govuk-form-group">
-        <input type="hidden" name="crumb_csrf_token" value="T7T4SHvWvcq7qk1MSfTevo6ezo5qfnvArpiUHe8Nr2d">
-        <input class="govuk-button margin-top-30" type="submit" name="acceptAndSubmit" value="Submit" id="Button-CertifierRecordDecisionSubmit">
+        <input class="govuk-button" type="submit" name="acceptAndSubmit" value="Submit" id="Button-CertifierRecordDecisionSubmit">
       </div>
     </form>
   </div>

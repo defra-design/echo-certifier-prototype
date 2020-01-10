@@ -22,47 +22,26 @@ GOV.UK Prototype Kit
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Export dairy and dairy products to Australia:
+  <div class="govuk-grid-column-full">
+    <div>
+      <h1 class="govuk-heading-l heading">Export dairy and dairy products to Australia:
         6969EHC</h1>
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-summary-list__40">
-              Case ID
-            </dt>
-            <dd class="govuk-summary-list__value">
-              19/921
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-summary-list__40">
-              Name of applicant
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Alan Home Purchase
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-summary-list__40">
-              Alan Home Purchase
-            </dt>
-            <dd class="govuk-summary-list__value">
-              United Arab Emirates
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-summary-list__40">
-              Proposed Export Date
-            </dt>
-            <dd class="govuk-summary-list__value govuk-summary-list__40">
-              2019-08-02
-            </dd>
-          </div>
-        </dl>
     </div>
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-three-quarters">
+
+        <p class="govuk-body">
+          Case ID: 19/1456 <br>
+          Name of applicant: Caitlin Dixon <br>
+          Destination Country: Australia
+          <br>
+          Proposed Export Date: 2019-12-06 <br>
+        </p>
+
+      </div>
+      <div class="govuk-grid-column-one-quarter"> </div>
     </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
+    <div>
       <form id="table-select-certificates" action="#">
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -82,32 +61,13 @@ GOV.UK Prototype Kit
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 02 Aug 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_6969 == "completed" %}CERTIFIED{% else %}DISPATCHED{% endif %}
+              <td id="status" class="govuk-table__cell" scope="row">CANCELLED
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
 
-                {% if data.status_6969 == "completed" %}
-
-                {% elseif data.status_6969 == "approved" %}
-                <a id="continue_link_19/2/008722" href="../close-certificate?status_6969=completed&return=dispatched">
-                  Continue
-                </a>
-                {% else %}
-                <a id="continue_link_19/2/008722" href="../certificates/6969EHC/review-your-answers?status_6969=approved&return=dispatched">
-                  Continue
-                </a>
-                {% endif %}
-                <div>
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  target="_blank">
-                  View Certificate
+                  View certificate
                 </a>
-                &nbsp;
-                {% if data.status_6969 != "completed" %}
-                <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1-edit.pdf" target="_blank">
-                  Editable certificate
-                </a>
-                {% endif %}
-                </div>
               </td>
             </tr>
           </tbody>
@@ -115,6 +75,7 @@ GOV.UK Prototype Kit
       </form>
     </div>
   </div>
+</div>
 
 
 {% endblock %}
