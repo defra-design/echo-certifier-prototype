@@ -21,8 +21,10 @@ module.exports = function(router) {
       if(error){
         res.redirect(301, '/' + base_url + req.params[0] + '/certifier-record-decision?has_error=yes');
       }
-
-      if(req.body.decision=="approved"){
+      
+      if(req.body.decision=="approved" && req.session.data.skip_step == "yes" ){
+        res.redirect(301, '/' + base_url + req.params[0] + '/close-certificate');
+      }else if(req.body.decision=="approved" ){
         res.redirect(301, '/' + base_url + req.params[0] + '/certifier-have-signed');
       }else{
         res.redirect(301, '/' + base_url + req.params[0] + '/summary/case-'+req.body.decision);

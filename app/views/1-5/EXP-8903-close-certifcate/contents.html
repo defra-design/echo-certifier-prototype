@@ -17,12 +17,15 @@ EXP-8903 contents page
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <ul class="govuk-list">
-      <li><a href="summary/case-dispatched?ehc=6969EHC&destination=Australia&cert_id=12">Start from summary page (status is dispatched)</a></li>
-      <li><a href="certifier-record-decision?has_error=no&clear_all=yes">Decision page with error (no prefic of sp or NV)</a></li>
-      <li><a href="certifier-record-decision?has_error=yes&decision_identification_number=8983408">Decision page with error (no prefic of sp or NV)</a></li>
-      <li><a href="certifier-have-signed">Have your signed certificate (NEW)</a></li>
-      <li><a href="close-certificate?status_6969=completed">Have your signed certificate (UPDATED)</a></li>
-      <li><a href="summary/case-dispatched?status_6969=approved">Summary with status APPROVED but not signed (NEW)</a></li>
+      <li><a href="summary/case-dispatched?ehc=6969EHC&destination=Australia&cert_id=12&skip_step=no">Start from summary page (status is dispatched)</a></li>
+      <li><a href="certifier-record-decision?has_error=no&clear_all=yes&skip_step=no">Decision page with error (no prefic of sp or NV)</a></li>
+      <li><a href="certifier-record-decision?has_error=yes&decision_identification_number=8983408&skip_step=no">Decision page with error (no prefic of sp or NV)</a></li>
+      <li><a href="certifier-have-signed&skip_step=no">Have your signed certificate (NEW)</a></li>
+      <li><a href="close-certificate?status_6969=completed&skip_step=no">Have your signed certificate (UPDATED)</a></li>
+      <li><a href="summary/case-dispatched?status_6969=approved&skip_step=no">Summary with status APPROVED but not signed (NEW)</a></li>
+      <br>
+      <li><a href="summary/case-dispatched?ehc=6969EHC&destination=Australia&cert_id=12&skip_step=yes">Skip "have you signed" journey (test)</a></li>
+
     </ul>
 
 

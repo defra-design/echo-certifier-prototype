@@ -41,7 +41,7 @@ GOV.UK Prototype Kit
           </legend>
           <div class="govuk-radios govuk-radios--conditional" data-module="radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approved" name="decision" type="radio" value="approved">
+              <input class="govuk-radios__input" id="approved" name="decision" type="radio" value="approved" {% if data.decision == "approved" and query.hasError =="yes" %}selected="selected"{% endif %} >
               <label class="govuk-label govuk-radios__label" for="approved">
                 Approve
               </label>
@@ -101,7 +101,7 @@ GOV.UK Prototype Kit
             <span id="decision_identification_number" class="govuk-hint">
               This is your SP or NV number. It's in your identification card. <br>For example, ‘SP123456’ or 'NV23322'.
             </span>
-            <input class="govuk-input govuk-input--width-10" id="decision_identification_number" name="decision_identification_number" type="text" value="{{data.decision_identification_number}}">
+            <input class="govuk-input govuk-input--width-10" id="decision_identification_number" name="decision_identification_number" type="text" value="{% if query.hasError =="yes" %}{{data.decision_identification_number}}{% endif %}">
           </div>
         </fieldset>
       </div>
