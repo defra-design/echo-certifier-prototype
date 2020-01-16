@@ -14,7 +14,7 @@ module.exports = function(router) {
 
 
   // Base page router
- function updatefStatus($data,$id,$status){
+ function updateStatus($data,$id,$status){
   for (var i = 0; i < $data.length; i++) {
     // for each field create an obj with the Key being the field name
     // and the value being the posted data from that field

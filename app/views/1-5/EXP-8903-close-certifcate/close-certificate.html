@@ -10,7 +10,7 @@ Exports application - GOV.UK
 <!-- add admin navbar from includes folder -->
 <!-- back button -->
 <div>
-  <a class="govuk-back-link" id="link-back" href="summary/case-dispatched?status_6969=approved">Back</a>
+  <a class="govuk-back-link" id="link-back" href="{% if data.skip_step == 'yes'%}summary/case-dispatched?status_6969=approved{% else %}javascript:history.back(){%endif%}">Back</a>
 </div>
 {% endblock %}
 
