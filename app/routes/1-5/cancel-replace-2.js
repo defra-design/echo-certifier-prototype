@@ -16,6 +16,7 @@ module.exports = function(router) {
     console.log("** Updating status **")
    for (var i = 0; i < $data.length; i++) {
      console.log("looking at id "+$data[i].index+" case for "+$id)
+
      // for each field create an obj with the Key being the field name
      // and the value being the posted data from that field
      if($data[i].index == $id){
@@ -113,6 +114,14 @@ module.exports = function(router) {
       res.redirect(301, '/' + base_url + req.params[0] + '/replace/cannot-cancel-certificate');
     }
   })
+  router.post('/' + base_url + "*/replace/elegibility", function(req, res) {
+    var cert = req.session.data.ehc || "7006EHC"
+    if(req.body.application_rule_confirm =="yes"){
+      res.redirect(301, '/' + base_url + req.params[0] + '/certificates/'+cert+'/review-your-answers?is_replacement=yes');
+    }else{
+      res.redirect(301, '/' + base_url + req.params[0] + '/replace/cannot-cancel-certificate');
+    }
+  })
 
   router.post('/' + base_url + "*/certificates/*/review-your-answers", function(req, res) {
     var cert = req.session.data.ehc || "7006EHC"
@@ -120,9 +129,10 @@ module.exports = function(router) {
   })
   router.post('/' + base_url + "*/certificates/*/confirmation", function(req, res) {
     //change to cancelled if we APHA do the cancelling
-    updateStatus(req.session.data.case_list, req.session.data.cert_id, "replaced")
-    duplicateCase(req.session.data.case_list, req.session.data.cert_id, "process")
-    res.redirect(301, '/' + base_url + req.params[0] + '/dashboard');
+    console.log("confirmed  from v2")
+    updateStatus(req.session.data.case_list, req.session.data.cert_id, "pending")
+    duplicateCase(req.session.data.case_list, req.session.data.cert_id, "processing")
+    res.redirect(301, '/' + base_url + req.params[0] + '/dashboard?has_cancellation_request=yes');
   })
 
   router.get('/' + base_url + '*', function(req, res) {

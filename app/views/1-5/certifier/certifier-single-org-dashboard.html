@@ -79,15 +79,18 @@ GOV.UK Prototype Kit
             {{case.destination}}
           </td>
           <td id="-status" class="govuk-table__cell" scope="row">
-            <strong class="govuk-tag
-              {% if case.status=='completed'%}green
-              {%elseif case.status=='new' or case.status=='processing'%}blue
-              {%elseif case.status=='dispatched'%}turquoise
-              {%elseif case.status=='certifier action' or case.status=='cancelled'%}orange
-              {%else%}red
-              {%endif%}
-              ">
-              {{case.status}}
+            <strong class="status-tag status-tag--{% if case.status=='completed'%}completed
+                    {%elseif case.status=='new' or case.status=='processing'%}processing
+                    {%elseif case.status=='dispatched'%}dispatched
+                    {%elseif case.status=='withdrawn'%}gray-tag
+                    {% elseif case.status=='pending'%}green
+                    {%elseif case.status=='approved'%}approved
+                    {% elseif case.status=='certifier action' %}action
+                    {%elseif case.status=='cancelled' or case.status=='replaced' %}warning
+                    {%else%}rejected
+                    {%endif%}
+                    ">
+                    {% if case.status == "pending"%}Completed{% else  %}{{case.status}}{% endif%}
             </strong>
           </td>
           <td id="-reference" class="govuk-table__cell" scope="row">
@@ -95,7 +98,7 @@ GOV.UK Prototype Kit
           </td>
           <td id="-actions" class="govuk-table__cell" scope="row">
 
-            <a id="dashboard_action_link_1651965954452" href="{% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch{%elseif case.status=='certifier action'%}summary/case-certifier-action{%else%}summary/case-{{case.status}}{%endif%}?id={{case.index}}">
+            <a id="dashboard_action_link_1651965954452" href="{% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch{% elseif case.status=='approved'%}summary/case-dispatched?id={{case.index}}{%elseif case.status=='certifier action'%}summary/case-certifier-action{%else%}summary/case-{{case.status}}{%endif%}?id={{case.index}}">
               Summary
             </a>
           </td>

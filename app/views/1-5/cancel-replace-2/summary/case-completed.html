@@ -96,14 +96,15 @@ GOV.UK Prototype Kit
                   View Certificate
                 </a>
                 <br>
-
-                <a id="continue_link_19/2/008722" href="../replace/rules?cancelation_return_url=summary/case-complete">
-                  Cancel and replace
-                </a>
+                {% if data.has_cancellation_request != "yes" %}
+                <a id="continue_link_19/2/008722" href="../replace/elegibility?cancelation_return_url=summary/case-complete">
+                  Cancel and replace</a>
+                {% endif %}
               </td>
             </tr>
           </tbody>
         </table>
+        
       </form>
     </div>
   </div>

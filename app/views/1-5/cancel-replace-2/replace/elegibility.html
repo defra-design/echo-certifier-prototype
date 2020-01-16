@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Exports application - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+    Cancel and replace request for certificate 12/93423
+    </h1>
+
+      <p class="govuk-body">APHA will not replace an export health certificate if:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you are allowed to amend the certificate by hand</li>
+      <li>you are allowed to print the certificate on white paper</li>
+      <li>the consignment has already left the UK</li>
+   </ul>
+   <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    We only accept requests for replacement certificates that cannot be amended by hand
+  </strong>
+
+</div>
+<p class="govuk-body">Contact the destination country to find out if they will allow you to amend the certificate by hand.</p>
+
+    <h3 class="govuk-heading-m">Is this certificate eligible to be replaced?</h3>
+    <form method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="application_type_clone" name="application_rule_confirm" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="application_type_clone">
+                Yes, I confirm the certificate meets APHA's criteria for replacement
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="application_type_new" name="application_rule_confirm" type="radio" value="no" data-aria-controls="address-radios-conditional">
+              <label class="govuk-label govuk-radios__label" for="application_type_new">
+                No
+              </label>
+            </div>
+            </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      <p class="govuk-body"><a class="govuk-link" href="../summary/case-completed">Cancel request</a></p>
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}

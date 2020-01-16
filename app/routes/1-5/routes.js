@@ -4,8 +4,8 @@ module.exports = function(router) {
 
 
   // ADD extra routing here if needed.
-  require('./cancel-replace.js')(router)
   require('./cancel-replace-2.js')(router)
+  require('./cancel-replace.js')(router)
   require('./EXP-8903-close-certifcate.js')(router)
   // CHANGE VERSION TO THE VERSION
   const version = '1-5'
@@ -14,7 +14,7 @@ module.exports = function(router) {
 
 
   // Base page router
- function updateStatus($data,$id,$status){
+ function updatefStatus($data,$id,$status){
   for (var i = 0; i < $data.length; i++) {
     // for each field create an obj with the Key being the field name
     // and the value being the posted data from that field
@@ -41,15 +41,7 @@ module.exports = function(router) {
     req.session.data.has_uploaded_files = "yes";
     res.redirect(301, '/' + base_url + req.params[0] + '/review-your-answers');
   })
-  router.post('/' + base_url + "*/certifier-have-signed", function(req, res) {
-    req.session.data.return = req.session.data.return || "dispatched"
-    if(req.body.is_signed == "yes"){
-      res.redirect(301, '/' + base_url + req.params[0] + '/close-certificate?status_6969=completed');
-    }else{
-      res.redirect(301, '/' + base_url + req.params[0] + '/summary/case-dispatched?status_6969=approved');
-    }
 
-  })
 
   // router.post('/' + base_url + "*/certifier-record-decision", function(req, res) {
   //   res.redirect(301, '/' + base_url + req.params[0] + '/confirmation');
