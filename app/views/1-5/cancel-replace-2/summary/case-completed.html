@@ -96,16 +96,17 @@ GOV.UK Prototype Kit
                   View Certificate
                 </a>
                 <br>
-                {% if data.has_cancellation_request != "yes" %}
                 <a id="continue_link_19/2/008722" href="../replace/elegibility?cancelation_return_url=summary/case-complete">
                   Cancel and replace</a>
-                {% endif %}
               </td>
             </tr>
           </tbody>
         </table>
-        
+
       </form>
+      {% if query.request_rejected=='yes'%}
+      <p><br><a href="case-rejected?cert_id=16&destination={{query.destination}}&ehc=6969EHC&update_status=rejected">PROTOTYPE ONLY: View rejected replacement</a></p>
+      {% endif %}
     </div>
   </div>
 
