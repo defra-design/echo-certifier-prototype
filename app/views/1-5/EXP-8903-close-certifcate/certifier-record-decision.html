@@ -95,11 +95,11 @@ GOV.UK Prototype Kit
             </label>
             {% if query.has_error == 'yes' %}
             <span id="decision_identification_number_error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Identification number must start with SP or NV
+              <span class="govuk-visually-hidden">Error: </span>Identification number must start with SP or NV
             </span>
             {% endif %}
             <span id="decision_identification_number" class="govuk-hint">
-              This is your SP or NV number. It's in your identification card. <br>For example, ‘SP123456’ or 'NV12345'.
+              Enter the number on your stamp including SP or NV.
             </span>
             <input class="govuk-input govuk-input--width-10" id="decision_identification_number" name="decision_identification_number" type="text" value="{% if query.hasError =="yes" %}{{data.decision_identification_number}}{% endif %}">
           </div>
