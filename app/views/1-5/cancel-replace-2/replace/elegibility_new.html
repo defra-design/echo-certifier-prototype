@@ -15,30 +15,23 @@ Exports application - GOV.UK
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-    Can you replace this certificate?
+      Do you need to replace this certificate?
     </h1>
-      <p class="defra-alert defra-alert--info">If you still have the certificate, contact the importing country. They might accept an amended certified copy of the certificate, and you will not need to request a replacement.</p>
-      <p class="govuk-body">You can request to replace this certificate if it has been certified and:</p>
+    <p class="defra-alert defra-alert--info">If you still have the certificate, contact the importing country. They might accept an amended certified copy of the certificate, and you will not need to request a replacement.</p>
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">If the consignment and the certificate have left the UK</h2>
+    <p class="govuk-body">You can request to replace the certificate.</p>
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">If hand written changes are allowed</h2>
+    <p class="govuk-body">If the certificate does not have to be fully typed, you can amend the certificate and send it with the consignment.</p>
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">If hand written changes are not allowed</h2>
+    <p class="govuk-body">You will need to request a replacement certificate. Make sure you include a written request from the importing country for the replacement along with your application.</p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">APHA will not replace a certificate if:</h2>
     <ul class="govuk-list govuk-list--bullet">
-      <li>the certificate is lost in transit and the consignment has left the UK</li>
-      <li>you need to change the information in the certificate and it must be fully typed</li>
-   </ul>
-   <p class="govuk-body">You cannot request a replacement if:</p>
-   <ul class="govuk-list govuk-list--bullet">
-     <li>APHA have not processed the certificate or dispatched it</li>
-     <li>the certificate is lost in the post on its way to the certifier</li>
-     <li>the certificate is certified, can be amended by hand and has not left the UK</li>
-  </ul>
-<!--
-   <div class="govuk-warning-text">
-  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-  <strong class="govuk-warning-text__text">
-    <span class="govuk-warning-text__assistive">Warning</span>
-    We only accept requests for replacement certificates that cannot be amended by hand
-  </strong>
-</div> -->
-<p class="govuk-body">You will need to attach a written request for a replacement certificate from the importing country. Add it as a supporting document at the end of this application.</p>
-    <h3 class="govuk-heading-m">Is this certificate eligible to be replaced?</h3>
+      <li>the certificate has not been certified</li>
+      <li>the certificate is with the consignment, but it has not left the UK</li>
+      <li>you are allowed to amend the certificate by hand</li>
+    </ul>
+    <!-- <h3 class="govuk-heading-m">Is this certificate eligible to be replaced?</h3> -->
     <form method="post" novalidate>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -46,7 +39,7 @@ Exports application - GOV.UK
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="application_type_clone" name="application_rule_confirm" type="radio" value="yes">
               <label class="govuk-label govuk-radios__label" for="application_type_clone">
-                Yes, I confirm the certificate meets APHA's criteria for replacement
+                Yes, the certificate meets APHA's criteria for replacement
               </label>
             </div>
             <div class="govuk-radios__item">
@@ -55,7 +48,7 @@ Exports application - GOV.UK
                 No
               </label>
             </div>
-            </div>
+          </div>
         </fieldset>
       </div>
       <button class="govuk-button" data-module="govuk-button">
