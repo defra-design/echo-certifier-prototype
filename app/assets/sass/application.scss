@@ -19,6 +19,7 @@ $govuk-global-styles: true;
 @import "components/filter";
 @import "components/facet-tag";
 @import "components/status-tag";
+@import "components/cards";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 @import "patterns/login-nav";
