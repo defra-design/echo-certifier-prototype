@@ -63,7 +63,7 @@
     "name": "Bob Smith",
     "date": "09 Sep 2019",
     "destination": "Hong Kong",
-    "status": "withdrawn",
+    "status": "cancelled",
     "reference" : ""
   },
   {
