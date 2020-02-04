@@ -25,7 +25,7 @@ border: 3px solid #FFBF47;
 </style>
 <div class="govuk-grid-row ">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Dashboard</h1>
+    <h1 class="govuk-heading-xl">Your cases</h1>
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -56,10 +56,10 @@ border: 3px solid #FFBF47;
             <h3 class="govuk-heading-m das-card--heading">
               <span class="das-card--stat">20</span>
               <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=dispatched&has_filter=yes">
-                  Cases to review
+                  To review
               </a>
             </h3>
-              <p class="govuk-body das-card--description">Find and review a certificafte you recieved in the post</p>
+              <p class="govuk-body das-card--description">Approve or reject a certificate dispatched to your organisation by APHA </p>
             <!-- <p class="govuk-body das-card--description"></p> -->
               <!-- <ul class="das-card--tasks govuk-list">
                 <li>
@@ -76,10 +76,10 @@ border: 3px solid #FFBF47;
             <h3 class="govuk-heading-m das-card--heading">
               <span class="das-card--stat">20</span>
               <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=certifier+action&has_filter=yes">
-                  Cases need pre-checks
+                  To pre-check
               </a>
             </h3>
-              <p class="govuk-body das-card--description">Find and review a certificafte you recieved in the post</p>
+              <p class="govuk-body das-card--description">Check a certificate before submitting to APHA</p>
             <!-- <p class="govuk-body das-card--description"></p> -->
               <!-- <ul class="das-card--tasks govuk-list">
                 <li>
@@ -97,10 +97,10 @@ border: 3px solid #FFBF47;
             <h3 class="govuk-heading-m das-card--heading">
               <span class="das-card--stat">2</span>
               <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=approved&has_filter=yes">
-                  Approved but need to be closed
+                  To close
               </a>
             </h3>
-              <p class="govuk-body das-card--description">You have approved them but once signed need to be closed</p>
+              <p class="govuk-body das-card--description">Close these certificates your organisation has approved or rejected</p>
           </div>
 
         </div>
@@ -110,11 +110,11 @@ border: 3px solid #FFBF47;
           <div class="das-card--content">
             <h3 class="govuk-heading-m das-card--heading">
               <span class="das-card--stat">14</span>
-              <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=processing&has_filter=yes">
-                  Cases are being procecced by APHA
+              <a class="cases-list?filter_status=_unchecked&filter_status=processing&has_filter=yes">
+                  APHA processing
               </a>
             </h3>
-              <p class="govuk-body das-card--description">Find and use newest certificate</p>
+              <p class="govuk-body das-card--description">These certificates have not yet been dispatched to your organisation by APHA</p>
           </div>
 
         </div>
@@ -128,7 +128,7 @@ border: 3px solid #FFBF47;
                 Total open cases
               </a>
             </h3>
-            <p class="govuk-body das-card--description">Cases that not closed yet</p>
+            <p class="govuk-body das-card--description">View all your cases that need an action from your organisation</p>
             <!-- <p class="govuk-body das-card--description">./vacancies published on Find an Apprenctice service</p>
               <ul class="das-card--tasks govuk-list">
                 <li>
@@ -144,5 +144,5 @@ border: 3px solid #FFBF47;
       </div>
 
     </div>
-<p class="govuk-body"><a href="#" class="govuk-heading-m">View all cases</a></p>
+<p class="govuk-body"><a href="#" class="govuk-heading-m">View all your cases</a></p>
 {% endblock %}
