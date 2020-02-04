@@ -8,9 +8,9 @@ GOV.UK Prototype Kit
 <!-- add admin navbar from includes folder -->
 <!-- {% block navadmin %}{% include "./includes/nav-admin.html" %}{% endblock %} -->
 <!-- back button -->
-<!-- <div>
-  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
-</div> -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="dashboard">Return to home</a>
+</div>
 {% endblock %}
 {% block content %}
 <style media="screen">
@@ -131,7 +131,7 @@ GOV.UK Prototype Kit
                 Apply filter
               </button>
               {% if data.has_filter %}
-              <a href="dashboard?filter_status=&has_filter=" style="display:inline-block" class="govuk-link govuk-!-margin-left-4 govuk-!-margin-top-2" data-module="govuk-button">
+              <a href="cases-list?filter_status=&has_filter=" style="display:inline-block" class="govuk-link govuk-!-margin-left-4 govuk-!-margin-top-2" data-module="govuk-button">
                 Clear filters
               </a>
               {% endif %}
@@ -154,7 +154,7 @@ GOV.UK Prototype Kit
         <!-- {% if data.date_range and data.date_range != "any"%} exporting within <strong>{{data.date_range}}</strong>{% endif %} -->
         </p>
         <p class="govuk-body">
-        <a href="dashboard?filter_status=&has_filter=" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" data-module="govuk-button">
+        <a href="cases-list?filter_status=&has_filter=" class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" data-module="govuk-button">
           Clear
           {% if data.filter_status and query.search %}
           search and filter
@@ -173,6 +173,7 @@ GOV.UK Prototype Kit
       {% endfor %} -->
 
     </div>
+
     {% endif %}
     <table class="govuk-table responsive-table">
       <thead class="govuk-table__head">
@@ -188,19 +189,17 @@ GOV.UK Prototype Kit
         </tr>
       </thead>
       <tbody>
-        <!-- loop through a an array of cases. can be found in app > data > cases.json.
-              Loaded via app > data > session-data-defaults.js -->
+
         {% for case in data.case_list %}
         {%
-        if (not query.search and data.has_filter != "yes")
+        if (not query.search)
         or (query.search and (query.search|upper) in (case.name|upper))
         or (query.search and (query.search|upper) in (case.caseID|upper))
         or (query.search and (query.search|upper) in (case.destination|upper))
         or (query.search and (query.search|upper) in (case.destination|upper))
         or (query.search and (query.search|upper) in (case.certificate|upper))
-
         %}
-        {% if case.status in data.filter_status %}
+        {% if not query.search and (case.status in data.filter_status) %}
         <tr class="govuk-table__row">
           <th id="-appRef" class="govuk-table__cell applicationRef-column table-header" scope="row">
             <a id="dashboard_action_link_1651965954452" class="govuk-link govuk-link--no-visited-state" href="{% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch{%elseif case.status=='certifier action'%}summary/case-certifier-action{%elseif case.is_replacement == 'yes'%}summary/case-new{%else%}summary/case-{{case.status}}{%endif%}?ehc={{case.EHC or '6969EHC'}}&destination={{case.destination}}&cert_id={{case.index}}">
@@ -251,9 +250,9 @@ GOV.UK Prototype Kit
     $('.derfa-filter--content').hide()
     $('.defra-filter--action').show()
     $('#js-case-count').text(count);
-    if (count == 0) {
-      $('.govuk-table').hide()
-    }
+    // if (count == 0) {
+    //   $('.govuk-table').hide()
+    // }
     $('.derfa-filter--content').hide()
     $('#defra-filter--button').on("click", function() {
       if (!$('.defra-filter--action').hasClass('defra-filter--open')) {
@@ -261,7 +260,6 @@ GOV.UK Prototype Kit
         $('.defra-filter--action').addClass('defra-filter--open')
         $('#defra-filter--button').attr('aria-expanded', 'true');
         $(".defra-filter--button-content").text('Hide filters')
-
       } else {
         $('.derfa-filter--content').hide()
         $('.defra-filter--action').removeClass('defra-filter--open')
