@@ -15,34 +15,38 @@ GOV.UK Prototype Kit
 </div>
 {% endblock %}
 
-
 {% block content %}
+
+
 <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <div>
                     <h1 class="govuk-heading-l heading">Export animal to
-                        Hong Kong -
-                        3658EHC</h1>
+                        United Arab Emirates -
+                        2849EHC</h1>
                 </div>
                 <div class="govuk-grid-column-full">
                     <div class="govuk-grid-column-three-quarters">
 
                         <p class="govuk-body">
-                            Case ID: 19/1398 <br>
-                            Name of applicant: Bob Smith <br>
-                            Destination Country: Hong Kong
+                            Case ID: 19/1527 <br>
+                            Name of applicant: Alan Home Purchase <br>
+                            Destination Country: United Arab Emirates
                             <br>
-                            Proposed Export Date: 2019-08-10 <br>
+                            Proposed Export Date: 2019-05-15 <br>
                         </p>
 
                     </div>
-                    <div class="govuk-grid-column-one-quarter">                    </div>
+                    <div class="govuk-grid-column-one-quarter"><a class="govuk-link" href="/protected/application/1651965954452/ehc" target="_blank" id="download_all_link">Download All Certificates</a>
+                    </div>
                 </div>
                 <div>
                     <form id="table-select-certificates" action="#">
                         <table class="govuk-table">
                             <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
+
+                                <th class="govuk-table__header">No.</th>
                                 <th class="govuk-table__header">Certificate Number
                                 </th>
                                 <th class="govuk-table__header">Actual Export Date</th>
@@ -54,24 +58,40 @@ GOV.UK Prototype Kit
                             <tbody>
 
                             <tr class="govuk-table__row">
-                                <td id="cert-num" class="govuk-table__cell" scope="row">19/2/011117</td>
+                                <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
+                                <td id="cert-num" class="govuk-table__cell" scope="row">19-02-005770</td>
                                 <td id="actual-export-date" class="govuk-table__cell" scope="row">
-                                    10 Aug 2019
+                                    30 May 2022
                                 </td>
-                                <td id="status" class="govuk-table__cell" scope="row">CANCELLED
+                                <td id="status" class="govuk-table__cell" scope="row">NEW
                                 </td>
                                 <td id="actions" class="govuk-table__cell" scope="row">
-                                    <a id="view_cert_19/2/011117" href="/protected/application/1721147988847/ehc/a8bb413d-31b5-e911-a980-000d3ab6ae65" target="_blank">
-                                        View Certificate
+                                    <a id="view_cert_19-02-005770" href="/protected/application/1651965954452/ehc/2caf6335-f672-e911-a830-000d3a207f58" target="_blank">
+                                        View
                                     </a>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
+                                <td id="cert-num" class="govuk-table__cell" scope="row">19-02-005771</td>
+                                <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                                    30 May 2022
+                                </td>
+                                <td id="status" class="govuk-table__cell" scope="row">COMPLETED
+                                </td>
+                                <td id="actions" class="govuk-table__cell" scope="row">
                                 </td>
                             </tr>
                             </tbody>
                         </table>
                     </form>
+                    <div>
+                    </div>
                 </div>
             </div>
         </div>
+
+
 
 
 {% endblock %}
