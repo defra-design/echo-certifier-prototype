@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EXP-8903 contents page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      9237 filter - status only
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-3791" class="govuk-link">View cancel and replace Epic on jira</a> </p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <ul class="govuk-list">
+      <li><a href="dashboard">Start from dashboard</a><br></li>
+      <li><a href="summary/case-completed?ehc=7006EHC&destination=China&cert_id=14">Summary - certified certificate</a></li>
+      <li><a href="replace/elegibility?cancelation_return_url=summary/case-complete">Elegibility page (cancelation criteria )</a></li>
+      <li><a href="certificates/7006EHC/declaration">Declaration (new)</a></li>
+      <li><a href="certificates/7006EHC/confirmation">Request submitted - confirmation (new)</a><br></li>
+      <li><a href="summary/case-pending?ehc=7006EHC&destination=China&cert_id=14">Summary - Pending replacement</a></li>
+      <li><a href="summary/case-replaced?cert_id=14&destination=China&ehc=6969EHC&update_status=replaced&duplicate_case=yes">Summary - Replaced (cancelled)</a></li>
+      <li><a href="summary/case-new">Summary - Replacement</a></li>
+      <li><a href="summary/case-rejected?ehc=6969EHC&destination=Gibraltar&cert_id=8">Summary - reqest rejected</a></li>
+      <br>
+    </ul>
+
+
+
+  </div>
+</div>
+{% endblock %}
