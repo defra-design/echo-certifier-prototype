@@ -126,16 +126,14 @@ GOV.UK Prototype Kit
 
           </div>
           <div class="govuk-grid-column-full">
-            <p class="govuk-body">
               <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button" name="has_filter" value="yes">
                 Apply filter
               </button>
-              {% if data.has_filter %}
+              <!-- {% if data.has_filter %}
               <a href="dashboard?filter_status=&has_filter=" style="display:inline-block" class="govuk-link govuk-!-margin-left-4 govuk-!-margin-top-2" data-module="govuk-button">
                 Clear filters
               </a>
-              {% endif %}
-            </p>
+              {% endif %} -->
           </div>
         </div>
       </form>
@@ -146,7 +144,7 @@ GOV.UK Prototype Kit
     <div class="filter-tag--wrapper govuk-!-margin-bottom-6" data-module="track-click">
       <p class="govuk-body govuk-!-margin-bottom-2">
         Showing <span id="js-case-count"></span> cases {% if query.search %} matching <strong>‘{{query.search}}’</strong>{% endif %}
-        {% if data.filter_status %}
+        {% if data.has_filter == "yes"%}
           with status {% for filter in data.filter_status %}
                         <strong>{{filter | capitalize}}</strong>{%if (data.filter_status|length)-1 == (loop.index) and (data.filter_status|length) != 1 %} or {% elseif (data.filter_status|length) != (loop.index)%},{%endif%}
                         {%endfor%}
@@ -174,6 +172,7 @@ GOV.UK Prototype Kit
 
     </div>
     {% endif %}
+
     <table class="govuk-table responsive-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -198,9 +197,8 @@ GOV.UK Prototype Kit
         or (query.search and (query.search|upper) in (case.destination|upper))
         or (query.search and (query.search|upper) in (case.destination|upper))
         or (query.search and (query.search|upper) in (case.certificate|upper))
-
+        or case.status in data.filter_status
         %}
-        {% if case.status in data.filter_status %}
         <tr class="govuk-table__row">
           <th id="-appRef" class="govuk-table__cell applicationRef-column table-header" scope="row">
             <a id="dashboard_action_link_1651965954452" class="govuk-link govuk-link--no-visited-state" href="{% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch{%elseif case.status=='certifier action'%}summary/case-certifier-action{%elseif case.is_replacement == 'yes'%}summary/case-new{%else%}summary/case-{{case.status}}{%endif%}?ehc={{case.EHC or '6969EHC'}}&destination={{case.destination}}&cert_id={{case.index}}">
@@ -235,7 +233,6 @@ GOV.UK Prototype Kit
             <span class="table-heading" aria-hidden="true">Reference </span> {{case.reference or 'Not set'}}
           </td>
         </tr>
-        {% endif %}
         {% endif %}
         {% endfor %}
         <!-- For testing purpose only show when not searching -->

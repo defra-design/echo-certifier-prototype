@@ -161,6 +161,11 @@ GOV.UK Prototype Kit
               <button type="submit" class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button" name="has_filter" value="yes">
                 Apply filter
               </button>
+              {% if data.has_filter %}
+              <a href="dashboard?filter_status=&has_filter=" style="display:inline-block" class="govuk-link govuk-!-margin-left-4 govuk-!-margin-top-2" data-module="govuk-button">
+                Clear filters
+              </a>
+              {% endif %}
             </p>
           </div>
         </div>
@@ -168,9 +173,10 @@ GOV.UK Prototype Kit
     </div>
   </div>
   <div class="govuk-grid-column-full">
-    <div class="filter-tag--wrapper govuk-!-margin-bottom-6">
+    {% if data.has_filter == "yes" or query.search %}
+    <div class="filter-tag--wrapper govuk-!-margin-bottom-6" data-module="track-click">
       <p class="govuk-body govuk-!-margin-bottom-2">
-        <span id="js-case-count"></span> cases {% if query.search %} matching <strong>‘{{query.search}}’</strong>{% endif %}
+        Showing <span id="js-case-count"></span> cases {% if query.search %} matching <strong>‘{{query.search}}’</strong>{% endif %}
         {% if data.filter_status %}
           with status {% for filter in data.filter_status %}
                         <strong>{{filter | capitalize}}</strong>{%if (data.filter_status|length)-1 == (loop.index) and (data.filter_status|length) != 1 %} or {% elseif (data.filter_status|length) != (loop.index)%},{%endif%}
@@ -198,6 +204,7 @@ GOV.UK Prototype Kit
       {% endfor %} -->
 
     </div>
+    {% endif %}
     <table class="govuk-table responsive-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
