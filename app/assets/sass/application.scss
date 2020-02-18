@@ -76,6 +76,11 @@ $govuk-global-styles: true;
     font-size: 1.1875rem;
     line-height: 1.31579;
     box-shadow: none;
+    display:inline-block;
+}
+.defra-link-button--inline{
+  margin-top: 8px;
+  margin-left: 15px;
 }
 .icon {
     display: inline-block;
