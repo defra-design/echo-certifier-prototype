@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Exports application - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      You do not need to replace this certificate
+    </h1>
+    <p class="govuk-body">Update the details that need changing in the certificate by hand.
+You must stamp where you have made changes.</p>
+    <form method="post" novalidate>
+      <a href="../{{return_url or '../dashboard'}}" class="govuk-button" data-module="govuk-button">
+        Return to your cases
+      </a>
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}
