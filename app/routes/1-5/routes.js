@@ -4,6 +4,7 @@ module.exports = function(router) {
 
 
   // ADD extra routing here if needed.
+  require('./cancel-replace-with-dashboard.js')(router)
   require('./cancel-replace-2.js')(router)
   require('./cancel-replace.js')(router)
   require('./EXP-8903-close-certifcate.js')(router)
