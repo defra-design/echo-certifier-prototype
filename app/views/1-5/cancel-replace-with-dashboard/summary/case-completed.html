@@ -23,7 +23,7 @@ GOV.UK Prototype Kit
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Manage case 19/921
+      <h1 class="govuk-heading-xl">Manage case {{data.case_id or '19/921'}}
         </h1>
         <dl class="govuk-summary-list govuk-summary-list--no-border">
           <div class="govuk-summary-list__row">
@@ -92,11 +92,11 @@ GOV.UK Prototype Kit
               <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
-                <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  target="_blank">
+                <a id="view_cert_19/2/008722" href="/public/images/{%if query.ehc == '7006EHC' %}ehc-7006ehc-3.1.pdf{%else%}ehc-6969ehc-8.1.pdf{%endif%}"  target="_blank">
                   View Certificate
                 </a>
                 <br>
-                <a id="continue_link_19/2/008722" href="../replace/elegibility?cancelation_return_url=summary/case-complete">
+                <a id="continue_link_19/2/008722" href="../replace/elegibility?cancelation_return_url=summary/case-complete&certificate_id=19/2/00872">
                   Cancel and replace</a>
               </td>
             </tr>

@@ -199,7 +199,7 @@ GOV.UK Prototype Kit
         %}
         <tr class="govuk-table__row">
           <th id="-appRef" class="govuk-table__cell applicationRef-column table-header" scope="row">
-            <a id="dashboard_action_link_1651965954452" class="govuk-link govuk-link--no-visited-state" href="{% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch{%elseif case.status=='certifier action'%}summary/case-certifier-action{%elseif case.is_replacement == 'yes'%}summary/case-new{%else%}summary/case-{{case.status}}{%endif%}?ehc={{case.EHC or '6969EHC'}}&destination={{case.destination}}&cert_id={{case.index}}">
+            <a id="dashboard_action_link_1651965954452" class="govuk-link govuk-link--no-visited-state" href="{% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch{%elseif case.status=='certifier action'%}summary/case-certifier-action{%elseif case.is_replacement == 'yes'%}summary/case-new{%else%}summary/case-{{case.status}}{%endif%}?ehc={{case.EHC or '6969EHC'}}&destination={{case.destination}}&cert_id={{case.index}}&case_id={{case.caseID}}">
               <span class="table-heading table-heading-full" aria-hidden="true">Case ID </span> {{case.caseID}}
             </a>
           </th>
@@ -216,10 +216,10 @@ GOV.UK Prototype Kit
             <span class="table-heading" aria-hidden="true">Status </span>
             <strong class="status-tag
                     {% if case.status=='completed'%}status-tag--grey
-                    {%elseif case.status=='new' or case.status=='processing'%}status-tag--grey
-                    {%elseif case.status=='dispatched'%}status-tag--blue
+                    {%elseif case.status=='new' or case.status=='processing'%}status-tag--blue
+                    {%elseif case.status=='dispatched'%}status-tag--turquoise
                     {%elseif case.status=='withdrawn' or case.status=='cancelled' or case.status=='replaced'%}status-tag--grey
-                    {% elseif case.status=='pending'%}status-tag--grey
+                    {% elseif case.status=='pending'%}status-tag--yellow
                     {%elseif case.status=='certifier action' %}status-tag--purple
                     {%else%}status-tag--grey
                     {%endif%}

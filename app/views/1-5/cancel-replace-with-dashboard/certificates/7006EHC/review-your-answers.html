@@ -27,9 +27,9 @@ Check your answers
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-three-quarters">
 
-  <span class="govuk-caption-l">Request to cancel and replace certificate 12/12314</span>
+  <span class="govuk-caption-l">Request to cancel and replace certificate {{data.certificate_id or '12/12314'}}</span>
         <h1 class="govuk-heading-xl">
-          Review and submit your replacement certifcate
+          Review and submit your replacement  certificate
         </h1>
 
         <br>
@@ -160,7 +160,7 @@ Check your answers
               What are the details of the slaughterhouse of origin?
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.slaughter_details}}
+              {{data.slaughter_details or 'CRANSWICK COUNTRY FOODS, Staithes Rd, Preston, Hull HU12 8TB, UK/2093/EC'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="slaughterhouse_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -171,7 +171,7 @@ Check your answers
               Provide name, address and Veterinary Approval number for any additional slaughterhouses.  (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.slaughter_name}}
+              {{data.slaughter_name or 'Not Applicable'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="slaughterhouse_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -182,7 +182,7 @@ Check your answers
               If any additional slaughterhouses were used, what are the details? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.slaughter_additional}}
+              {{data.slaughter_additional or 'Not Applicable'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="slaughterhouse_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -198,7 +198,7 @@ Check your answers
               What are the details of the cutting plant? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.cutting_details}}
+              {{data.cutting_details or 'CRANSWICK COUNTRY FOODS, Staithes Rd, Preston, Hull HU12 8TB, UK/2093/EC'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="cutting_plant_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -209,7 +209,7 @@ Check your answers
               Provide name, address and Veterinary Approval number for any additional cutting plants.  (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.cutting_vets}}
+              {{data.cutting_vets or 'Not applicable'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="cutting_plant_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -226,7 +226,7 @@ Check your answers
               What are the details of the cold store? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.cold_store_details}}
+              {{data.cold_store_details or 'ABP Coldstore, North Humberside, Corporation Rd, Hull HU9 5NF'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="cold_store_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -242,7 +242,7 @@ Check your answers
               What is the name of the product? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-                {{data.product_name}}
+                {{data.product_name or 'Frozen pork tail bones'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="product_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -253,7 +253,7 @@ Check your answers
               What type of product is it? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.product_type}}
+              {{data.product_type or 'Frozen pork sacrum bones'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="product_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -269,7 +269,7 @@ Check your answers
               What is the type and number of packages? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.package_type}}
+              {{data.package_type or '2335 cardboard boxes'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="packages?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -285,7 +285,7 @@ Check your answers
               What is the gross weight of the product(s)?  (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.weight_gross}}
+              {{data.weight_gross or '25240kg'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="weight?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -296,7 +296,7 @@ Check your answers
               What is the net weight of the product(s)? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.weight_net}}
+              {{data.weight_net or '23350kg'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="weight?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -312,7 +312,7 @@ Check your answers
               What is the range of slaughter dates? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.slaughter_date_range}}
+              {{data.slaughter_date_range or '12.04.2019 - 06.05.2019'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="slaughter_dates?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -328,7 +328,7 @@ Check your answers
               What are the dates of cutting, from earliest to latest? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.cutting_date_range}}
+              {{data.cutting_date_range or '15.04.2019 - 07.05.2019'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="cutting_dates?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -344,7 +344,7 @@ Check your answers
               What are the dates of production? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.production_date_range}}
+              {{data.production_date_range or '15.04.2019 - 07.05.2019'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="production_dates?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -424,7 +424,7 @@ Check your answers
               What is the container number? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.transport_contianer_number}}
+              {{data.transport_contianer_number or '920494u2039'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="transport_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -435,7 +435,7 @@ Check your answers
               What is the seal number? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.transport_seal_numbers}}
+              {{data.transport_seal_numbers or '098324982034,390848234,093848923'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="transport?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -446,7 +446,7 @@ Check your answers
               Transportation type (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.transport_type}}
+              {{data.transport_type or 'Ship'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="transport?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -457,7 +457,7 @@ Check your answers
               Departure port (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.transport_port_departure}}
+              {{data.transport_port_departure or 'Southampton'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="transport?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
@@ -511,7 +511,7 @@ Check your answers
               What is the name and address of the consignee? (optional)
             </td>
             <td class="govuk-table__cell answer_cell" scope="row">
-              {{data.consignee}}
+              {{data.consignee or 'Tianjin Zhongyu Real Estate Co.'}}
             </td>
             <td class="govuk-table__cell align-right" scope="row">
               <a class="govuk-link change_answer_link" href="consignee?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
