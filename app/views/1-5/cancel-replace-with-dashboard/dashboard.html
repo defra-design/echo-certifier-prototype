@@ -33,7 +33,7 @@ GOV.UK Prototype Kit
     <form method="GET">
       <div class="search-wrapper govuk-form-group">
         <label for="search-reservations" class="govuk-label">
-          Search by case ID, name, destination or reference number
+          Search by certificate ID, case ID, name, destination or reference number
         </label>
         <div class="search-input-wrapper">
           <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
@@ -193,7 +193,7 @@ GOV.UK Prototype Kit
         or (query.search and (query.search|upper) in (case.name|upper))
         or (query.search and (query.search|upper) in (case.caseID|upper))
         or (query.search and (query.search|upper) in (case.destination|upper))
-        or (query.search and (query.search|upper) in (case.destination|upper))
+        or (query.search and (query.search|upper) in (case.reference|upper))
         or (query.search and (query.search|upper) in (case.certificate|upper))
         or case.status in data.filter_status
         %}
