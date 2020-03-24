@@ -19,13 +19,10 @@ Exports application - GOV.UK
       <div class="govuk-grid-column-three-quarters">
         <div class="govuk-panel govuk-panel--confirmation">
           <h1 class="govuk-panel__title">
-            You have successfully submitted your application to replace certificate XXXXXXX
+            You have successfully submitted your request to replace certificate {{data.certificate_id or '12/12314'}}
           </h1>
 
-          <div class="govuk-panel__body">
-            Your reference number is <br>
-            <strong class="bold" id="applicationFormId" data-qa-id="TextDisplay-CVEDReferenceNumber">1651966034932</strong>
-          </div>
+
         </div>
         </div>
           </div>
@@ -33,15 +30,15 @@ Exports application - GOV.UK
         <div class="govuk-grid-column-two-thirds">
         <h3 class="govuk-heading-m">What happens next</h3>
         <ol class="govuk-list govuk-list--number">
-          <li>Our team will check the information you gave us and decide if we can issue a new certificate.</li>
-          <li>If we can, we will send the new certificate to you by [method]</li>
-          <li>If we cannot, we will contact you and the exporter to let you know why.</li>
+          <li>Our team will check the information you gave us and decide if we can issue a new certificate:</li>
+          <li>if we can, we will send the new certificate to you</li>
+          <li>if we cannot, we will contact you and the exporter to let you know why</li>
           </ol>
           <h3 class=govuk-heading-m>Get help</h3>
-          <p class="govuk-body">If you need help, contact us quoting your APHA reference number [reference number]. </p>
+          <p class="govuk-body">If you need help, contact us:</p>
           <ul class="govuk-list govuk-list--bullet">
-            <li>03000 200 301, Monday to Friday 8.30am to 5pm
-              <li><a href="mailto:ssc.carlisle@apha.gov.uk">mailto:ssc.carlisle@apha.gov.uk</a> </li>
+            <li>03000 200 301, Monday to Friday 8.30am to 5pm</li>
+              <li><a href="exports@apha.gov.uk">exports@apha.gov.uk</a> </li>
               </ul>
           <form method="POST">
           <p class="govuk-body">

@@ -8,20 +8,14 @@ GOV.UK Prototype Kit
 <!-- add admin navbar from includes folder -->
 {% block navadmin %}{% include "./includes/nav-admin.html" %}{% endblock %}
 <!-- back button -->
+<style media="screen">
+  .app-card--inactive{
+    background-color: #f8f8f8;
+  }
+</style>
 {% endblock %}
 {% block content %}
-<style media="screen">
-  .govuk-table .govuk-tag.orange{
-    color: #0b0c0c;
-background: #FFBF47;
-border: 3px solid #FFBF47;
-  }
-  .govuk-table  .gray-tag {
-    color: #0b0c0c;
-    background: #DEE0E2;
-    border: 3px solid #DEE0E2;
-}
-</style>
+
 <div class="govuk-grid-row ">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Your cases</h1>
@@ -46,10 +40,10 @@ border: 3px solid #FFBF47;
     </form>
   </div>
 </div>
-
+<p class="govuk-body"><a href="#" class="govuk-heading-m">View all your cases</a></p>
 <div class="govuk-grid-row app-card--row" data-height="175">
       <div class="govuk-grid-column-one-third">
-        <div class="app-card" style="height: 175px;">
+        <div class="app-card app-card--inactive" style="height: 175px;">
           <div class="app-card--content">
             <h3 class="govuk-heading-m app-card--heading">
               <span class="app-card--stat">20</span>
@@ -57,6 +51,7 @@ border: 3px solid #FFBF47;
                   To review
               </a>
             </h3>
+
               <p class="govuk-body app-card--description">Approve or reject a certificate dispatched to your organisation by APHA </p>
             <!-- <p class="govuk-body app-card--description"></p> -->
               <!-- <ul class="app-card--tasks govuk-list">
@@ -115,7 +110,7 @@ border: 3px solid #FFBF47;
         </div>
       </div>
       <div class="govuk-grid-column-one-third">
-        <div class="app-card " style="height: 175px;">
+        <div class="app-card" style="height: 175px;">
           <div class="app-card--content">
             <h3 class="govuk-heading-m app-card--heading">
               <span class="app-card--stat">43</span>
@@ -137,5 +132,4 @@ border: 3px solid #FFBF47;
         </div>
       </div>
     </div>
-    <p class="govuk-body"><a href="cases-list?filter_status=&has_filter=" class="govuk-link govuk-link--no-visited-state govuk-heading-m">View all your cases</a></p>
 {% endblock %}

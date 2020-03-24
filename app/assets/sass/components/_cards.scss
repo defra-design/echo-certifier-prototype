@@ -1,28 +1,28 @@
-.das-card--row {
+.app-card--row {
   margin-right: -10px;
 margin-left: -10px;
 .govuk-grid-column-one-third{
   padding: 0 10px;
 }
 }
-.das-card{
+.app-card{
   background-color: #ffffff;
   border: 1px solid  $govuk-border-colour;
   margin-bottom: 20px;
   overflow: hidden;
 
-  &.das-card--error{
+  &.app-card--error{
     border-color:$govuk-error-colour;
     border-width: 3px;
   }
-  &.das-card--inactive{
+  &.app-card--inactive{
     background-color: #f8f8f8;
   }
 
-  .das-card--content{
+  .app-card--content{
     padding: 20px;
   }
-  .das-card--heading{
+  .app-card--heading{
     margin-bottom: 10px;
     font-size: 19px;
     font-size: 1.1875rem;
@@ -31,13 +31,13 @@ margin-left: -10px;
       color: #005ea5;
     }
   }
-  .das-card--stat{
+  .app-card--stat{
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.31579;
   }
   @media (min-width: 48.0525em){
-    .das-card--stat{
+    .app-card--stat{
       display:block;
       font-size: 24px;
       font-size: 1.5rem;
@@ -46,15 +46,15 @@ margin-left: -10px;
 
   }
 
-  .das-card--description, .das-card--hint{
+  .app-card--description, .app-card--hint{
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
   }
-  .das-card--hint{
+  .app-card--hint{
     color:  $govuk-secondary-text-colour;
   }
-  .das-card--tasks{
+  .app-card--tasks{
     li{
           a{
             font-size: 16px;
