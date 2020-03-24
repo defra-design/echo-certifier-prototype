@@ -46,10 +46,8 @@ GOV.UK Prototype Kit
         <div class="app-card app-card--inactive" style="height: 175px;">
           <div class="app-card--content">
             <h3 class="govuk-heading-m app-card--heading">
-              <span class="app-card--stat">20</span>
-              <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=dispatched&has_filter=yes">
+              <span class="app-card--stat">0</span>
                   To review
-              </a>
             </h3>
 
               <p class="govuk-body app-card--description">Approve or reject a certificate dispatched to your organisation by APHA </p>
@@ -64,13 +62,11 @@ GOV.UK Prototype Kit
       </div>
       {% if data.has_precheck == 'yes' %}
       <div class="govuk-grid-column-one-third">
-        <div class="app-card" style="height: 175px;">
+        <div class="app-card app-card--inactive">
           <div class="app-card--content">
             <h3 class="govuk-heading-m app-card--heading">
-              <span class="app-card--stat">20</span>
-              <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=certifier+action&has_filter=yes">
+              <span class="app-card--stat">0</span>
                   To pre-check
-              </a>
             </h3>
               <p class="govuk-body app-card--description">Check a certificate before submitting to APHA</p>
             <!-- <p class="govuk-body app-card--description"></p> -->
@@ -110,13 +106,11 @@ GOV.UK Prototype Kit
         </div>
       </div>
       <div class="govuk-grid-column-one-third">
-        <div class="app-card" style="height: 175px;">
+        <div class="app-card app-card--inactive" >
           <div class="app-card--content">
             <h3 class="govuk-heading-m app-card--heading">
-              <span class="app-card--stat">43</span>
-              <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=dispatched&filter_status=certifier+action&filter_status=processing&filter_status=approved&has_filter=yes">
+              <span class="app-card--stat">0</span>
                 Total open cases
-              </a>
             </h3>
             <p class="govuk-body app-card--description">View all your cases that need an action from your organisation</p>
             <!-- <p class="govuk-body app-card--description">./vacancies published on Find an Apprenctice service</p>
@@ -132,4 +126,38 @@ GOV.UK Prototype Kit
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      function defer(method) {
+          if (window.jQuery) {
+              method();
+          } else {
+              setTimeout(function() { defer(method) }, 50);
+          }
+      }
+      window.onresize = function(event) {
+        resize()
+
+      };
+      function resize(){
+
+        var maxHeight = 0;
+        $(".app-card--row").attr('data-height', maxHeight)
+        console.log("--- resizing ---")
+
+        $(".app-card").each(function(){
+          var row = $(this).parent().parent();
+           if ($(this).find('.app-card--content').height() > row.attr('data-height') ){
+              row.attr('data-height', $(this).find('.app-card--content').height()+30)
+            }
+        });
+        console.log($(".app-card--row").attr('data-height'))
+        $(".app-card").each(function(){
+          var newHeight = $(this).parent().parent().attr('data-height')
+          $(this).height(newHeight)
+        })
+      }
+      defer(function () {
+        resize()
+      });
+    </script>
 {% endblock %}

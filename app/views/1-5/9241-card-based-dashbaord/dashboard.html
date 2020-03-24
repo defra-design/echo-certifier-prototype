@@ -138,4 +138,38 @@ border: 3px solid #FFBF47;
       </div>
     </div>
     <p class="govuk-body"><a href="cases-list?filter_status=&has_filter=" class="govuk-link govuk-link--no-visited-state govuk-heading-m">View all your cases</a></p>
+    <script type="text/javascript">
+      function defer(method) {
+          if (window.jQuery) {
+              method();
+          } else {
+              setTimeout(function() { defer(method) }, 50);
+          }
+      }
+      window.onresize = function(event) {
+        resize()
+
+      };
+      function resize(){
+
+        var maxHeight = 0;
+        $(".app-card--row").attr('data-height', maxHeight)
+        console.log("--- resizing ---")
+
+        $(".app-card").each(function(){
+          var row = $(this).parent().parent();
+           if ($(this).find('.app-card--content').height() > row.attr('data-height') ){
+              row.attr('data-height', $(this).find('.app-card--content').height()+30)
+            }
+        });
+        console.log($(".app-card--row").attr('data-height'))
+        $(".app-card").each(function(){
+          var newHeight = $(this).parent().parent().attr('data-height')
+          $(this).height(newHeight)
+        })
+      }
+      defer(function () {
+        resize()
+      });
+    </script>
 {% endblock %}

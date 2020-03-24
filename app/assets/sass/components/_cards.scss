@@ -9,7 +9,7 @@ margin-left: -10px;
   background-color: #ffffff;
   border: 1px solid  $govuk-border-colour;
   margin-bottom: 20px;
-  overflow: hidden;
+
 
   &.app-card--error{
     border-color:$govuk-error-colour;
@@ -21,6 +21,7 @@ margin-left: -10px;
 
   .app-card--content{
     padding: 20px;
+    flex: 1;
   }
   .app-card--heading{
     margin-bottom: 10px;
@@ -60,11 +61,13 @@ margin-left: -10px;
             font-size: 16px;
             font-size: 1rem;
             line-height: 1.25;
-
           }
           a:visited{
             color: #005ea5;
           }
     }
   }
+}
+@media (min-width: 48.0525em){
+  min-height: 175px;
 }
