@@ -8,12 +8,17 @@ GOV.UK Prototype Kit
 <!-- add admin navbar from includes folder -->
 {% block navadmin %}{% include "./includes/nav-admin.html" %}{% endblock %}
 <!-- back button -->
+<style media="screen">
+  .app-card--inactive{
+    background-color: #f8f8f8;
+  }
+</style>
 {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row ">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Case management</h1>
+    <h1 class="govuk-heading-xl">Your cases</h1>
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -35,32 +40,41 @@ GOV.UK Prototype Kit
     </form>
   </div>
 </div>
-
+<p class="govuk-body"><a href="#" class="govuk-heading-m">View all your cases</a></p>
 <div class="govuk-grid-row app-card--row" data-height="175">
       <div class="govuk-grid-column-one-third">
-        <div class="app-card" style="height: 175px;">
+        <div class="app-card app-card--inactive" style="height: 175px;">
           <div class="app-card--content">
             <h3 class="govuk-heading-m app-card--heading">
-              <span class="app-card--stat">20</span>
-              <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=dispatched&has_filter=yes">
-                  Cases to review
-              </a>
+              <span class="app-card--stat">0</span>
+                  To review
             </h3>
+
               <p class="govuk-body app-card--description">Approve or reject a certificate dispatched to your organisation by APHA </p>
+            <!-- <p class="govuk-body app-card--description"></p> -->
+              <!-- <ul class="app-card--tasks govuk-list">
+                <li>
+                  <a class="ga-track-anchor-click" href="vacancies?status=new" data-ga-event-category="link - click" >6 new applications to look at </a>
+                </li>
+              </ul> -->
           </div>
         </div>
       </div>
       {% if data.has_precheck == 'yes' %}
       <div class="govuk-grid-column-one-third">
-        <div class="app-card" style="height: 175px;">
+        <div class="app-card app-card--inactive">
           <div class="app-card--content">
             <h3 class="govuk-heading-m app-card--heading">
-              <span class="app-card--stat">20</span>
-              <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=certifier+action&has_filter=yes">
-                  Cases to pre-check
-              </a>
+              <span class="app-card--stat">0</span>
+                  To pre-check
             </h3>
               <p class="govuk-body app-card--description">Check a certificate before submitting to APHA</p>
+            <!-- <p class="govuk-body app-card--description"></p> -->
+              <!-- <ul class="app-card--tasks govuk-list">
+                <li>
+                  <a class="ga-track-anchor-click" href="vacancies?status=new" data-ga-event-category="link - click" >6 new applications to look at </a>
+                </li>
+              </ul> -->
           </div>
         </div>
       </div>
@@ -71,7 +85,7 @@ GOV.UK Prototype Kit
             <h3 class="govuk-heading-m app-card--heading">
               <span class="app-card--stat">2</span>
               <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=approved&has_filter=yes">
-                  Cases to close
+                  To close
               </a>
             </h3>
               <p class="govuk-body app-card--description">Close these certificates your organisation has approved or rejected</p>
@@ -84,7 +98,7 @@ GOV.UK Prototype Kit
             <h3 class="govuk-heading-m app-card--heading">
               <span class="app-card--stat">14</span>
               <a href="cases-list?filter_status=_unchecked&filter_status=processing&has_filter=yes" class="govuk-link">
-                  Upcoming cases
+                  APHA processing
               </a>
             </h3>
               <p class="govuk-body app-card--description">These certificates have not yet been dispatched to your organisation by APHA</p>
@@ -92,20 +106,26 @@ GOV.UK Prototype Kit
         </div>
       </div>
       <div class="govuk-grid-column-one-third">
-        <div class="app-card " style="height: 175px;">
+        <div class="app-card app-card--inactive" >
           <div class="app-card--content">
             <h3 class="govuk-heading-m app-card--heading">
-              <span class="app-card--stat">43</span>
-              <a class="card-link" href="cases-list?filter_status=_unchecked&filter_status=dispatched&filter_status=certifier+action&filter_status=processing&filter_status=approved&has_filter=yes">
-                Open cases
-              </a>
+              <span class="app-card--stat">0</span>
+                Total open cases
             </h3>
             <p class="govuk-body app-card--description">View all your cases that need an action from your organisation</p>
+            <!-- <p class="govuk-body app-card--description">./vacancies published on Find an Apprenctice service</p>
+              <ul class="app-card--tasks govuk-list">
+                <li>
+                  <a class="govuk-link" href="vacancies?status=closing">6 vacancies are closing soon</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="vacancies?status=closing-no-applications">3 vacancies are closing soon and have no applications</a>
+                </li>
+              </ul> -->
           </div>
         </div>
       </div>
     </div>
-    <p class="govuk-body"><a href="cases-list?filter_status=&has_filter=" class="govuk-link govuk-link--no-visited-state govuk-heading-m">All your cases</a></p>
     <script type="text/javascript">
       function defer(method) {
           if (window.jQuery) {

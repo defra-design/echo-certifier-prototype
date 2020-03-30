@@ -10,7 +10,18 @@ GOV.UK Prototype Kit
 <!-- back button -->
 {% endblock %}
 {% block content %}
-
+<style media="screen">
+  .govuk-table .govuk-tag.orange{
+    color: #0b0c0c;
+background: #FFBF47;
+border: 3px solid #FFBF47;
+  }
+  .govuk-table  .gray-tag {
+    color: #0b0c0c;
+    background: #DEE0E2;
+    border: 3px solid #DEE0E2;
+}
+</style>
 <div class="govuk-grid-row ">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Case management</h1>
@@ -47,6 +58,12 @@ GOV.UK Prototype Kit
               </a>
             </h3>
               <p class="govuk-body app-card--description">Approve or reject a certificate dispatched to your organisation by APHA </p>
+            <!-- <p class="govuk-body app-card--description"></p> -->
+              <!-- <ul class="app-card--tasks govuk-list">
+                <li>
+                  <a class="ga-track-anchor-click" href="vacancies?status=new" data-ga-event-category="link - click" >6 new applications to look at </a>
+                </li>
+              </ul> -->
           </div>
         </div>
       </div>
@@ -61,6 +78,12 @@ GOV.UK Prototype Kit
               </a>
             </h3>
               <p class="govuk-body app-card--description">Check a certificate before submitting to APHA</p>
+            <!-- <p class="govuk-body app-card--description"></p> -->
+              <!-- <ul class="app-card--tasks govuk-list">
+                <li>
+                  <a class="ga-track-anchor-click" href="vacancies?status=new" data-ga-event-category="link - click" >6 new applications to look at </a>
+                </li>
+              </ul> -->
           </div>
         </div>
       </div>
@@ -101,6 +124,15 @@ GOV.UK Prototype Kit
               </a>
             </h3>
             <p class="govuk-body app-card--description">View all your cases that need an action from your organisation</p>
+            <!-- <p class="govuk-body app-card--description">./vacancies published on Find an Apprenctice service</p>
+              <ul class="app-card--tasks govuk-list">
+                <li>
+                  <a class="govuk-link" href="vacancies?status=closing">6 vacancies are closing soon</a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="vacancies?status=closing-no-applications">3 vacancies are closing soon and have no applications</a>
+                </li>
+              </ul> -->
           </div>
         </div>
       </div>

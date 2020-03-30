@@ -1,25 +1,20 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
 GOV.UK Prototype Kit
 {% endblock %}
-
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       Certifiers' prototype
-      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
     </h1>{{releaseVersion | log }}
     <h3 class="govuk-heading-m">Version 1.5</h3>
     <ul class="govuk-list">
       <li><a href="/1-5/EXP-9464-upload-ET135/replace/elegibility">EXP-9464 upload ET135 with C&R</a></li>
-        <li><a href="/1-5/9241-card-based-dashbaord/contents">9241-card-based-dashbaord</a></li>
-
+      <li><a href="/1-5/9241-card-based-dashbaord/contents">EXP-9241-card-based-dashbaord</a></li>
+      <li><a href="/1-5/§/EXP-10017-open-cases-dashboard/contents">EXP-10017 open cases on dashboard</a></li>
       <li><a href="/1-5/filter/dashboard">Filter (experimental)</a></li>
       <li><a href="/1-5/cancel-replace/dashboard">Cancel and replace v1</a></li>
-      <!-- <li><a href="/1-3/certifier/Config">Config</a></li> -->
       <li><a href="/1-5/cancel-replace-2/contents">Cancel and replace v2</a></li>
       <li><a href="/1-5/cancel-replace-with-dashboard/contents">Cancel and replace with new dashboard</a></li>
       <li><a href="/1-5/EXP-8903-close-certifcate/contents">EXP-8903 close certifcate</a></li>
@@ -31,23 +26,18 @@ GOV.UK Prototype Kit
       <li><a href="/1-4/certifier/start">Certifier start page</a></li>
       <li><a href="/1-4/certifier/gov-sign-in">Sign in</a></li>
       <li><a href="/1-4/certifier/certifier-single-org-dashboard">Start from dashboard</a></li>
-
-      <!-- <li><a href="/1-3/certifier/Config">Config</a></li> -->
     </ul>
-
-
     <h3 class="govuk-heading-m">Version 1.3</h3>
     <p class="govuk-body">Developer version</p>
     <ul class="govuk-list">
       <li><a href="/1-3/certifier/certifier-multi-org-dashboard">Start from dashboard - multiple orgs</a></li>
       <li><a href="/1-3/certifier/start">Start end to end - Register</a></li>
-      <!-- <li><a href="/1-3/certifier/Config">Config</a></li> -->
     </ul>
     <p class="govuk-body">Testing version</p>
     <ul class="govuk-list">
       <li><a href="/1-3/EXP-4870-search/index">EXP-4870: search on dashboard</a></li>
       <li><a href="/1-3/EXP-7136-supporting-documents/index">EXP-7136: Duplicate file upload</a></li>
-<br>
+      <br>
       <li><a href="/1-3/new-design/certifier-multi-org-dashboard">New design</a></li>
       <li><a href="/1-3/responsive-tables/certifier-multi-org-dashboard">Responsive tables</a></li>
       <li><a href="/1-3/organisation-switcher/index">Organisation switcher v2</a></li>
@@ -56,26 +46,19 @@ GOV.UK Prototype Kit
       <li><span class="govuk-hint govuk-!-margin-bottom-0">Form pages</span></li>
       <li><a href="/1-3/search-organisation/certificates/8270EHC/organisation-search">Search and select a certifier</a></li>
       <li><a href="/1-3/EXP-7994-dynamics-error/error_dynamic_submition">Error with dymnaics submission</a></li>
-
     </ul>
-
-
-      <h2 class="govuk-heading-l">Certifier registration</h2>
+    <h2 class="govuk-heading-l">Certifier registration</h2>
     <h3 class="govuk-heading-m">Version 1.1</h3>
-
     <p>
       <a href="start.html" class="govuk-link--no-visited-state">Start here (Initial Organisation Administrator)</a>
     </p>
-
     <p>
       <a href="https://identity-management-app.herokuapp.com/emails/E1-invite-email" class="govuk-link--no-visited-state">Start here (individual Certifier invited to register)</a>
     </p>
-
     <!-- <span class="govuk-hint">
       Username and password for Identity pages, if needed -<br>
       <strong>username:</strong> whoareyou, <strong>password:</strong> menotyou
     </span> -->
-
     <p>
       <a href="certifier-org_confirm-org-details">Confirm org details
       </a>
@@ -88,57 +71,40 @@ GOV.UK Prototype Kit
       <a href="certifier-ov_post-idm">Registered but not yet approved (OV)
       </a>
     </p>
-
     <br>
-
     <h3 class="govuk-heading-m">Version 1.2</h3>
-
     <p>
       <a href="emails/org-invite-email" class="govuk-link--no-visited-state">Start here (Initial Organisation Administrator)</a>
     </p>
-
     <!-- <span class="govuk-hint">
       Username and password for Identity pages, if needed -<br>
       <strong>username:</strong> whoareyou, <strong>password:</strong> menotyou
     </span> -->
-
     <p>
       <a href="certifier-org_confirm-org-details-2">Confirm org details
       </a>
     </p>
-
     <p>
       <a href="certifier-org_post-idm_not-sorry">Registered but not yet approved (Organisation admin)
       </a>
     </p>
-
-
     <p>
       <a href="/emails/org-admin-reg-email">EMAIL: Org admin registration confirmation
       </a>
     </p>
-
-
     <br><br>
-
     <h2 class="govuk-heading-m">Certifier case processing</h2>
-
-
-      <p>
-        <a href="select-certifier-org" class="govuk-link--no-visited-state">1. Certifier selects an Organisation</a>
-      </p>
-      <p>
-        <a href="certifier-multi-org-dashboard" class="govuk-link--no-visited-state">2. Certifier dashboard</a> (select 'new' case to begin processing journey)
-      </p>
-      <p>
-        <a href="certifier-multi-org-case-summary-single" class="govuk-link--no-visited-state">3. Case summary, single certificate</a> (press 'Continue' button to go through processing journey)
-      </p>
-
-
+    <p>
+      <a href="select-certifier-org" class="govuk-link--no-visited-state">1. Certifier selects an Organisation</a>
+    </p>
+    <p>
+      <a href="certifier-multi-org-dashboard" class="govuk-link--no-visited-state">2. Certifier dashboard</a> (select 'new' case to begin processing journey)
+    </p>
+    <p>
+      <a href="certifier-multi-org-case-summary-single" class="govuk-link--no-visited-state">3. Case summary, single certificate</a> (press 'Continue' button to go through processing journey)
+    </p>
     <br><br>
-
     <h2 class="govuk-heading-m">BAU</h2>
-
     <p>
       <a href="exp-6472">EXP-6472 Certifier Onboarding: Confirm Address and Certifier Details Screen
       </a>
@@ -147,28 +113,19 @@ GOV.UK Prototype Kit
       <a href="exp-6472b">EXP-6472 Certifier Onboarding: Confirm Address and Certifier Details Screen (with hint text)
       </a>
     </p>
-
     <p>
       <a href="exp-6313">EXP-6313 Certifier Onboarding: Confirmation of submission screen
       </a>
     </p>
-
     <p>
       <a href="exp-6545">EXP-6545 Certifier Onboarding: personal accounts prohibited
       </a>
     </p>
-
     <p>
       <a href="exp6673">EXP-6673 Certifier Onboarding: Show organisation selector on Splash Screen
       </a>
     </p>
-
-
-
     <br>
-
-
   </div>
 </div>
-
 {% endblock %}
