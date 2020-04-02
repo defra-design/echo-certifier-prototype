@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <div class="login-nav single-org">
+      <ul class="login-nav__list">
+        <li class="login-nav__list-item" id="Nav-DisplayName">Ann Cooper</li>
+        <li class="login-nav__list-item"> | <a href="https://identity-management-app.herokuapp.com/manage/team-members/services-on-team-member-admin-account_company-exports?serviceLine=Export%20Health%20Certificates&serviceRole=Certifier&numUsers=1&numAgents=0&numServices=1&multiOrg=no&parentChild=parent" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount">Manage account</a>|</li>
+        <li class="login-nav__list-item"><a href="/sign-out" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--visible">
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Your registration to use this service is complete
+          </h1>
+        </div>
+
+<h3 class="govuk-heading-m">What happens next</h3>
+
+    <p class="govuk-body">
+      You will be able to use this service as soon as your registration has been processed by APHA. We will email you to let you know when this has been done.
+    </p>
+    <p class="govuk-body">If you need to speak to somebody about your access to this service,
+      <a class="govuk-link" href="#">
+        please contact us</a></p>
+  </div>
+</div>
+
+
+
+{% endblock %}

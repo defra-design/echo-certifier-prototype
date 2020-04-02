@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EXP-8903 contents page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      9241-card-based-dashbaord
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <p class="govuk-body"><a href="https://eaflood.atlassian.net/browse/EXP-9241" class="govuk-link">View cancel and replace Epic on jira</a> </p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <ul class="govuk-list">
+      <li><a href="dashboard?has_precheck=yes">New card dashboard (with precheck)</a><br></li>
+      <li><a href="dashboard?has_precheck=no">New card dashboard (without precheck)</a><br></li>
+      <li><a href="dashboard-non-active?has_precheck=yes">New card dashboard - inactive states</a><br></li>
+      <br>
+    </ul>
+
+
+
+  </div>
+</div>
+{% endblock %}
