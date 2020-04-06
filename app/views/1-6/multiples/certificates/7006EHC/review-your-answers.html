@@ -1,0 +1,619 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+
+<style media="screen">
+  .grid_half {
+    width: 50%;
+}
+.govuk-table{
+  margin-bottom: 50px;
+}
+.govuk-table__header:last-child, .govuk-table__cell:last-child {
+    padding-right: 0;
+}
+.align-right {
+    text-align: right;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+
+  <span class="govuk-caption-l">Cancel and replace certificate 12/12314</span>
+        <h1 class="govuk-heading-xl">
+          Review and submit your replacement  certificate
+        </h1>
+
+        <br>
+        <br>
+
+        <h2 class="govuk-heading-m">Commodity Details</h2>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header grid_half" scope="row" id="specific-commodity-question">
+              What are you exporting?
+            </td>
+            <td class="govuk-table__cell" scope="row" id="specific-commodity-answer">
+              Porcine
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m">Do you want to provide an applicant reference number?</h2>
+        <table class="govuk-table" id="page-section-0">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Applicant reference number (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              7006
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Select the certifier practice to include with your application</h2>
+        <table class="govuk-table" id="page-section-1">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Select the certifier practice to include with your application
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              ADM ACCOUNTING LIMITED Hornbeam House  CW12 3ER
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Select certificate delivery address
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              Hornbeam House Electra Way Crewe CW12 3ER
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Exporter details</h2>
+        <table class="govuk-table" id="page-section-2">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the name of the exporter?
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              tre
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              In which region will the certification take place?
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              England
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Dates required</h2>
+        <table class="govuk-table" id="page-section-3">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the planned export date of the consignment?
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              1 Dec 2019
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the planned date of certification? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              How would you like the certificate to be delivered?
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              First class post
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Slaughterhouse Details</h2>
+        <table class="govuk-table" id="page-section-4">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What are the details of the slaughterhouse of origin?
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.slaughter_details}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="slaughterhouse_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Provide name, address and Veterinary Approval number for any additional slaughterhouses.  (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.slaughter_name}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="slaughterhouse_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              If any additional slaughterhouses were used, what are the details? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.slaughter_additional}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="slaughterhouse_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Cutting plant details</h2>
+        <table class="govuk-table" id="page-section-5">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What are the details of the cutting plant? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.cutting_details}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="cutting_plant_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Provide name, address and Veterinary Approval number for any additional cutting plants.  (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.cutting_vets}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="cutting_plant_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+
+        </tbody></table>
+        <h2 class="govuk-heading-m">Cold store details</h2>
+        <table class="govuk-table" id="page-section-6">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What are the details of the cold store? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.cold_store_details}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="cold_store_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Product details</h2>
+        <table class="govuk-table" id="page-section-7">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the name of the product? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+                {{data.product_name}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="product_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What type of product is it? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.product_type}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="product_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Type and number of packages</h2>
+        <table class="govuk-table" id="page-section-8">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the type and number of packages? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.package_type}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="packages?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Gross and Net weight</h2>
+        <table class="govuk-table" id="page-section-9">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the gross weight of the product(s)?  (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.weight_gross}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="weight?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the net weight of the product(s)? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.weight_net}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="weight?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Slaughter Dates</h2>
+        <table class="govuk-table" id="page-section-10">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the range of slaughter dates? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.slaughter_date_range}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="slaughter_dates?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Cutting dates</h2>
+        <table class="govuk-table" id="page-section-11">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What are the dates of cutting, from earliest to latest? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.cutting_date_range}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="cutting_dates?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Production dates</h2>
+        <table class="govuk-table" id="page-section-12">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What are the dates of production? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.production_date_range}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="production_dates?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Shelf Life</h2>
+        <table class="govuk-table" id="page-section-13">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the shelf life of the product(s)? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.shelf_life}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="shelf_life?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Batch numbers</h2>
+        <table class="govuk-table" id="page-section-14">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What are the batch numbers? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.batch_numbers}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="batch_numbers?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Shipping marks</h2>
+        <table class="govuk-table" id="page-section-15">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What are the shipping marks? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.shipping_marks}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="shipping_marks?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Storage temperature</h2>
+        <table class="govuk-table" id="page-section-16">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the storage temperature? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.storage_temprature}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="storage_temprature?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Transport details</h2>
+        <table class="govuk-table" id="page-section-17">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the container number? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.transport_contianer_number}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="transport_details?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the seal number? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.transport_seal_numbers}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="transport?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Transportation type (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.transport_type}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="transport?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Departure port (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.transport_port_departure}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="transport?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Expected sailing date from the final UK port (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.transport_day}} /   {{data.transport_month}}  /   {{data.transport_year}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="transport?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Entry port in China (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.transport_china_port}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="transport?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Consignor </h2>
+        <table class="govuk-table" id="page-section-18">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the name and address of the consignor? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.consignor}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="consignor?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Consignee</h2>
+        <table class="govuk-table" id="page-section-19">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the name and address of the consignee? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.consignee}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="consignee?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Place and date of issue</h2>
+        <table class="govuk-table" id="page-section-20">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              When will the certificate be issued? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.issue_day}} / {{data.issue_month}} / {{data.issue_year}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="place_of_issue?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              Place of issue (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.issue_place}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="place_of_issue?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+        <h2 class="govuk-heading-m">Signature</h2>
+        <table class="govuk-table" id="page-section-21">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row ">
+            <td class="govuk-table__header grid_half" scope="row">
+              What is the name of the certifying official? (optional)
+            </td>
+            <td class="govuk-table__cell answer_cell" scope="row">
+              {{data.signature}}
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a class="govuk-link change_answer_link" href="signature?change=yes" data-qa-id="Link-ChangeAnswer">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+
+
+        <h2 class="govuk-heading-m">Supporting documents</h2>
+
+        <table class="govuk-table" id="page-section-1000">
+          <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header half" scope="row">
+                <div>
+                  File name
+                </div>
+                <div>
+                  File description
+                </div>
+            </td>
+            <td class="govuk-table__cell" scope="row">
+                <div id="file_0">
+                  test-ehc-default.pdf
+                </div>
+                <div id="description_0">
+                  &nbsp;
+                </div>
+            </td>
+            <td class="govuk-table__cell align-right" scope="row">
+              <a id="change_file_0" class="govuk-link" href="/protected/form/7006EHC/application/1721147999706/supplementary-documents">Change</a>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-warning-text">
+            <span class="icon icon-file-download"></span>
+            <span class="govuk-visually-hidden">File download</span>
+            <strong class="govuk-body govuk-!-font-weight-regular">Preview your answers in a <a href="/public/images/ehc-7006ehc-3.1.pdf" data-qa-id="Link-PreviewCertificate" rel="noreferrer noopener" target="_blank" class="govuk-link">specimen certificate</a>.</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <form action="../../certifier-record-decision" method="POST">
+              <input type="hidden" name="crumb_csrf_token" value="Gb3xP1qcExjm3zE_f922QkO0sYPMkZLJ3ad_zQ1l8ei">
+              <input type="hidden" name="applicationFormStatus" value="">
+              <!-- <input class="govuk-button margin-top-30" type="submit" value="Continue" id="Button-Continue" data-qa-id="Button-Continue"> -->
+              <a class="govuk-button" href="declaration">Accept and submit</a>
+              <p class="govuk-body"><a class="govuk-link" href="../../summary/case-completed">Do not replace this certificate</a></p>
+            </form>
+
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -17,25 +17,52 @@ GOV.UK Prototype Kit
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div>
-    <h1 class="govuk-heading-l heading">Export dairy and dairy products to Australia:
-      6969EHC</h1>
-  </div>
-  <div class="govuk-grid-column-full">
-    <div class="govuk-grid-column-three-quarters">
 
-      <p class="govuk-body">
-        Case ID: 19/1456 <br>
-        Name of applicant: Caitlin Dixon <br>
-        Destination Country: Australia
-        <br>
-        Proposed Export Date: 2019-12-06 <br>
-      </p>
+
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-xl heading">Manage case 20/08023</h1>
+    <p class="govuk-body">This is an case of 4 certificates</p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-summary-list__40">
+            EHC
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2849EHC: export horses to the United Arab Emirates (UAE)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-summary-list__40">
+            Exporter
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Caitlin Dixon
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-summary-list__40">
+            Destination
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ query.destination or 'China' }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-summary-list__40">
+            Proposed Export Date
+          </dt>
+          <dd class="govuk-summary-list__value govuk-summary-list__40">
+            02-08-2019
+          </dd>
+        </div>
+      </dl>
 
     </div>
-    <div class="govuk-grid-column-one-quarter"> </div>
   </div>
-    <div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">4 certificates</h2>
+      <p class="govuk-body"><a href="#" class="govuk-link"> Download all 5 certificates</a></p>
       <form id="table-select-certificates" action="#">
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -43,6 +70,7 @@ GOV.UK Prototype Kit
 
               <th class="govuk-table__header">Certificate Number
               </th>
+              <th class="govuk-table__header">Exporter reference</th>
               <th class="govuk-table__header">Actual Export Date</th>
               <th class="govuk-table__header">Certificate Status</th>
               <th class="govuk-table__header">Actions</th>
@@ -50,46 +78,108 @@ GOV.UK Prototype Kit
           </thead>
 
           <tbody>
-
+            {% if query.has_certified_certificate == "yes" %}
             <tr class="govuk-table__row">
               <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008302</td>
+              <td id="cert-ref" class="govuk-table__cell" scope="row">Nijinsky</td>
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 30 Jul 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
+                <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                  View certificate
+                </a>
               </td>
             </tr>
+
+            {% else %}
             <tr class="govuk-table__row">
-              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008303</td>
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008302</td>
+              <td id="cert-ref" class="govuk-table__cell" scope="row">Nijinsky</td>
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 30 Jul 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              <td id="status" class="govuk-table__cell" scope="row">DISPACHED
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
+                <a id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+                  <strong>  Review certificate</strong>
+                </a>
+                <br>
+                <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                  View certificate
+                </a>
+
+                <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1-edit.pdf" rel="noreferrer noopener" target="_blank">
+                  <br>View editable certificate
+                </a>
+              </td>
+            </tr>
+            {% endif %}
+            <tr class="govuk-table__row">
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008303</td>
+              <td id="cert-ref" class="govuk-table__cell" scope="row">Shergar</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                30 Jul 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">DISPACHED
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+                <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+                  <strong>  Review certificate</strong>
+                </a>
+                <br>
+                <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                  View certificate
+                </a>
+                <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1-edit.pdf" rel="noreferrer noopener" target="_blank">
+                  <br>View editable certificate
+                </a>
               </td>
             </tr>
             <tr class="govuk-table__row">
 
               <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008304</td>
+              <td id="cert-ref" class="govuk-table__cell" scope="row">Desert Orchid</td>
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 30 Jul 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              <td id="status" class="govuk-table__cell" scope="row">DISPACHED
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
+                <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+                  <strong>  Review certificate</strong>
+                </a>
+                <br>
+                <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                  View certificate
+                </a>
+                <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1-edit.pdf" rel="noreferrer noopener" target="_blank">
+                  <br>View editable certificate
+                </a>
               </td>
             </tr>
             <tr class="govuk-table__row">
               <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008305</td>
+              <td id="cert-ref" class="govuk-table__cell" scope="row">Tiger Roll</td>
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 30 Jul 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">PROCESSING
+              <td id="status" class="govuk-table__cell" scope="row">DISPACHED
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
+                <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+                  <strong>  Review certificate</strong>
+                </a>
+                <br>
+                <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                  View certificate
+                </a>
+                <a  class="govuk-link govuk-link--no-visited-state"id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1-edit.pdf" rel="noreferrer noopener" target="_blank">
+                  <br>View editable certificate
+                </a>
               </td>
             </tr>
           </tbody>
@@ -97,7 +187,6 @@ GOV.UK Prototype Kit
       </form>
     </div>
   </div>
-</div>
 
 
 
