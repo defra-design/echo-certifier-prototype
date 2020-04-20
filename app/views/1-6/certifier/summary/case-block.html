@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% if data.orgs=="multi"%}
+{% block navadmin %}{% include "../includes/nav-admin.html" %}{% endblock %}
+{% else %}
+{% block navadminSingle %}{% include "../includes/nav-admin-single.html" %}{% endblock %}
+{% endif %}
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../dashboard">Back</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Manage case 19/921
+    </h1>
+    <!-- <div class="defra-alert defra-alert--info ">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">1 certificate has been replaced </h3>
+        <p class="govuk-body">You can still clone this certificate. We'll adapt the information from the old version to fit the new form, but there may be new changes or changed questions. <br></p>
+      </div> -->
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          EHC
+        </dt>
+        <dd class="govuk-summary-list__value">
+          6969EHC: Export dairy and dairy products to Australia
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Exporter
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Farmfoods
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Destination
+        </dt>
+        <dd class="govuk-summary-list__value">
+          France
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Proposed Export Date
+        </dt>
+        <dd class="govuk-summary-list__value govuk-summary-list__40">
+          02 Jan 2019
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Certificates</h2>
+    <form id="table-select-certificates" action="#">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header">No.</th>
+            <th class="govuk-table__header">Certificate Number
+            </th>
+            <th class="govuk-table__header">Actual Export Date</th>
+            <th class="govuk-table__header">Certificate Status</th>
+            <th class="govuk-table__header">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="govuk-table__row">
+            <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022132</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Nov 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+              <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                View Certificate
+              </a>
+              <br>
+
+              <a id="continue_link_19/2/008722" href="../replace/left-uk">
+                Cancel and replace
+              </a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022133</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Nov 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+              <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                View Certificate
+              </a>
+              <br>
+
+              <a id="continue_link_19/2/008722" href="../replace/left-uk">
+                Cancel and replace
+              </a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+
+                <td id="cert-counter" class="govuk-table__cell" scope="row">3</td>
+                <td id="cert-num" class="govuk-table__cell" scope="row" style="width:30%;"><span class="govuk-status govuk-status--warning">Replaced</span>&nbsp;&nbsp;19/2/00869<br>
+                  <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-0">Replaced by <a href="case-new">19/2/00872</a></span>
+                </td>
+                <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                  02 Aug 2019
+                </td>
+                <td id="status" class="govuk-table__cell" scope="row">Cancelled on 02 Aug 2019
+                <td id="actions" class="govuk-table__cell" scope="row">
+                  <!-- <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                                        View replacement
+                                      </a>
+                                      <br>-->
+                  <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" rel="noreferrer noopener" target="_blank">
+                    View certificate
+                  </a>
+                  <br>
+                </td>
+
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="cert-counter" class="govuk-table__cell" scope="row">4</td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022135</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Nov 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
+            </td>
+            <td id="actions" class="certificateActions govuk-table__cell" scope="row">
+              <a id="continue_link_19/2/022135" href="/protected/form/1869EHC/application/1721147998437/review?certificate=c3ae2920-05f7-e911-a813-000d3ab0f933">
+                Continue
+              </a>
+              <br>
+                <a id="view_cert_19/2/022135" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c3ae2920-05f7-e911-a813-000d3ab0f933?printView=true" rel="noreferrer noopener" target="_blank">View Certificate</a>
+                <br>
+                <a id="edit_cert_19/2/022135" class="editableCertificatePdfLink" href="/protected/application/1721147998437/ehc/c3ae2920-05f7-e911-a813-000d3ab0f933" rel="noreferrer noopener" target="_blank">Editable Certificate</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td id="cert-counter" class="govuk-table__cell" scope="row">5</td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/2/022136</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Nov 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
+            </td>
+            <td id="actions" class="certificateActions govuk-table__cell" scope="row">
+              <a id="continue_link_19/2/022136" href="/protected/form/1869EHC/application/1721147998437/review?certificate=c4ae2920-05f7-e911-a813-000d3ab0f933">
+                Continue
+              </a>
+              <br>
+                <a id="view_cert_19/2/022136" class="printViewCertificatePdfLink" href="/protected/application/1721147998437/ehc/c4ae2920-05f7-e911-a813-000d3ab0f933?printView=true" rel="noreferrer noopener" target="_blank">View Certificate</a>
+                <br>
+                <a id="edit_cert_19/2/022136" class="editableCertificatePdfLink" href="/protected/application/1721147998437/ehc/c4ae2920-05f7-e911-a813-000d3ab0f933" rel="noreferrer noopener" target="_blank">Editable Certificate</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+{% endblock %}
