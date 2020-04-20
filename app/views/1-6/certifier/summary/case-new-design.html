@@ -1,129 +1,111 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Your cases
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
 <!-- call the same block in the main layout file -->
 {{super()}}
 <!-- add admin navbar from includes folder -->
-{% block navadmin %}{% include "../includes/nav-admin-new.html" %}{% endblock %}
+{% if data.orgs=="multi"%}
+{% block navadmin %}{% include "../includes/nav-admin.html" %}{% endblock %}
+{% else %}
+{% block navadminSingle %}{% include "../includes/nav-admin-single.html" %}{% endblock %}
+{% endif %}
 <!-- back button -->
 <div>
-  <a class="govuk-back-link" id="link-back" href="../certifier-certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
+  <a class="govuk-back-link" id="link-back" href="../certifier-single-org-dashboard">Back</a>
 </div>
 {% endblock %}
 
+
 {% block content %}
-
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl heading">Export animal to
-      United Arab Emirates -
-      2849EHC</h1>
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <dl class="govuk-summary-list govuk-summary-list--no-border">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-summary-list__40">
-          Case ID
-        </dt>
-        <dd class="govuk-summary-list__value">
-          19/1527
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-summary-list__40">
-          Name of applicant
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Alan Home Purchase
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-summary-list__40">
-          Alan Home Purchase
-        </dt>
-        <dd class="govuk-summary-list__value">
-          United Arab Emirates
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-summary-list__40">
-          Proposed Export Date
-        </dt>
-        <dd class="govuk-summary-list__value govuk-summary-list__40">
-          2019-05-15
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-
-
-
-
-<div>
-  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-0">
-  <form id="table-select-certificates" action="#">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-three-quarters"><h2 class="govuk-heading-l">Certificates</h2></div>
-      <div class="govuk-grid-column-one-quarter govuk-link-group--right"><p class="govuk-body"><a class="govuk-link" href="/protected/application/1651965954452/ehc" rel="noreferrer noopener" target="_blank" id="download_all_link">Download All Certificates</a></p></div>
+      <h1 class="govuk-heading-xl">Manage case 19/921
+        </h1>
+        <!-- <div class="defra-alert defra-alert--info ">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">1 certificate has been replaced </h3>
+        <p class="govuk-body">You can still clone this certificate. We'll adapt the information from the old version to fit the new form, but there may be new changes or changed questions. <br></p>
+      </div> -->
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Case ID
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Export dairy and dairy products to Australia:
+              6969EHC
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Exporter
+            </dt>
+            <dd class="govuk-summary-list__value">
+              	Bob Smith
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Destination
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Australia
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Proposed Export Date
+            </dt>
+            <dd class="govuk-summary-list__value govuk-summary-list__40">
+              	02 Aug 2019
+            </dd>
+          </div>
+        </dl>
     </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">Certificates</h2>
+      <form id="table-select-certificates" action="#">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Certificate Number
+              </th>
+              <th class="govuk-table__header">Actual Export Date</th>
+              <th class="govuk-table__header">Certificate Status</th>
+              <th class="govuk-table__header">Actions</th>
+            </tr>
+          </thead>
 
-    <table class="govuk-table">
-        <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
+          <tbody>
 
-            <th class="govuk-table__header">No.</th>
-            <th class="govuk-table__header">Certificate Number
-            </th>
-            <th class="govuk-table__header">Actual Export Date</th>
-            <th class="govuk-table__header">Certificate Status</th>
-            <th class="govuk-table__header">Actions</th>
-        </tr>
-        </thead>
-
-        <tbody>
-
-        <tr class="govuk-table__row">
-            <td id="cert-counter" class="govuk-table__cell" scope="row">1</td>
-            <td id="cert-num" class="govuk-table__cell" scope="row">19-02-005770</td>
-            <td id="actual-export-date" class="govuk-table__cell" scope="row">
-                30 May 2022
-            </td>
-            <td id="status" class="govuk-table__cell" scope="row">NEW
-            </td>
-            <td id="actions" class="govuk-table__cell" scope="row">
-                <a id="view_cert_19-02-005770" href="/protected/application/1651965954452/ehc/2caf6335-f672-e911-a830-000d3a207f58" rel="noreferrer noopener" target="_blank">
-                    View
+            <tr class="govuk-table__row">
+              <td id="cert-num" class="govuk-table__cell" scope="row"><span class="govuk-status govuk-status--warning">Replaced</span> 19/2/008722</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                02 Aug 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">Cancelled on 02 Aug 2019.<br>Replaced by <a href="#">19/2/00872</a>
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+                <!-- <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                  View replacement
                 </a>
-            </td>
-        </tr>
-        <tr class="govuk-table__row">
-            <td id="cert-counter" class="govuk-table__cell" scope="row">2</td>
-            <td id="cert-num" class="govuk-table__cell" scope="row">19-02-005771</td>
-            <td id="actual-export-date" class="govuk-table__cell" scope="row">
-                30 May 2022
-            </td>
-            <td id="status" class="govuk-table__cell" scope="row">COMPLETED
-            </td>
-            <td id="actions" class="govuk-table__cell" scope="row">
-            </td>
-        </tr>
-        </tbody>
-    </table>
-  </form>
-  <div>
+                <br>-->
+                <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                  View certificate
+                </a>
+                <br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
   </div>
-</div>
-</div>
-
-
 
 
 {% endblock %}

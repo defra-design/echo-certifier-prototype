@@ -30,13 +30,46 @@ GOV.UK Prototype Kit
     <div class="govuk-grid-column-full">
       <div class="govuk-grid-column-three-quarters">
 
-        <p class="govuk-body">
-          Case ID: 19/1456 <br>
-          Name of applicant: Caitlin Dixon <br>
-          Destination Country: Australia
-          <br>
-          Proposed Export Date: 2019-12-06 <br>
-        </p>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              EHC
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if query.ehc == "6969EHC" %}
+                6969EHC: Export dairy and dairy products to Australia
+              {% elseif query.ehc == "8270EHC"%}
+                8270EHC: fishery products intended for human consumption to the EU
+              {% else %}
+                7006GB: Pig meat from Great Britain to China
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Exporter
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Alan Home Purchase
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Destination
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.destination or 'China' }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Proposed Export Date
+            </dt>
+            <dd class="govuk-summary-list__value govuk-summary-list__40">
+              02-08-2019
+            </dd>
+          </div>
+        </dl>
 
       </div>
       <div class="govuk-grid-column-one-quarter"> </div>
@@ -65,28 +98,21 @@ GOV.UK Prototype Kit
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
 
-                {% if data.status_6969 == "completed" %}
 
-                {% elseif data.status_6969 == "approved" %}
                 <a id="continue_link_19/2/008722" href="../close-certificate?status_6969=completed&return=dispatched">
-                  Continue
+                  Reivew certificate
                 </a>
-                {% else %}
-                <a id="continue_link_19/2/008722" href="../certificates/6969EHC/review-your-answers?status_6969=approved&return=dispatched">
-                  Continue
-                </a>
-                {% endif %}
-                <div>
+                <br>
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
-                  View Certificate
+                  View Certificate[PDF]
                 </a>
-                &nbsp;
-                {% if data.status_6969 != "completed" %}
+                &nbsp
+                {% if data.is_white_paper == "yes" %}
+                <br>
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1-edit.pdf" rel="noreferrer noopener" target="_blank">
                   Editable certificate
                 </a>
                 {% endif %}
-                </div>
               </td>
             </tr>
           </tbody>
