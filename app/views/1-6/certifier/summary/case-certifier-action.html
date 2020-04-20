@@ -21,20 +21,50 @@ GOV.UK Prototype Kit
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <div>
-      <h1 class="govuk-heading-l heading">Export animal to China, People's Republic of - 7006EHC</h1>
-    </div>
-    <div class="govuk-grid-column-full">
-      <div class="govuk-grid-column-three-quarters">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Manage case {{query.case_id or "20/8051"}}</h1>
 
-        <p class="govuk-body">
-          Case ID: 19/1523 <br>
-          Name of applicant:	Anto Inigo<br>
-          Destination Country: China
-          <br>
-          Proposed Export Date: 2019-12-01 <br>
-        </p>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              EHC
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if query.ehc == "6969EHC" %}
+                6969EHC: Export dairy and dairy products to Australia
+              {% elseif query.ehc == "8270EHC"%}
+                8270EHC: fishery products intended for human consumption to the EU
+              {% else %}
+                7006GB: Pig meat from Great Britain to China
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Exporter
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Alan Home Purchase
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Destination
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.destination or 'China' }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Proposed Export Date
+            </dt>
+            <dd class="govuk-summary-list__value govuk-summary-list__40">
+              02-08-2019
+            </dd>
+          </div>
+        </dl>
+
 
       </div>
       <div class="govuk-grid-column-one-quarter"> </div>
@@ -59,25 +89,20 @@ GOV.UK Prototype Kit
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 	01 Dec 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_7006 == "completed" %}CERTIFIED{% elseif data.status_7006 == "dispatched" or data.status_7006 == "approved"  %}DISPATCHED{% else %}APHA is processing{% endif%}
+              <td id="status" class="govuk-table__cell" scope="row">	Awaiting pre-check
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
-                {% if data.status_7006 == "processing"  or data.status_7006 == "completed" %}
-                {% elseif data.status_7006 == "approved" or  data.status_7006 == "dispatched"%}
                 <a id="continue_link_19/2/008722" href="../close-certificate?status_7006=completed&return=certifier-action">
                   Continue
                 </a>
-                {% else %}
-                <a id="continue_link_19/2/008722" href="../certificates/7006EHC/slaughterhouse_details?status_7006=processing&return=certifier-action?id={{query.id}}&update_status=processing&id={{query.id}}">
-                  Continue
-                </a>
-                {% endif %}
+                <br>
                 <div>
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-7006ehc-3.1.pdf" rel="noreferrer noopener" target="_blank">
                   View Certificate
                 </a>
                 &nbsp;
                 {% if data.status_7006 != "completed"%}
+                <br>
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-7006ehc-3.1-edit.pdf" rel="noreferrer noopener" target="_blank">
                   Editable Certificate
                 </a>
@@ -88,12 +113,8 @@ GOV.UK Prototype Kit
           </tbody>
         </table>
       </form>
-      <br>
-        <a href="case-certifier-action?status_7006=dispatched" class="govuk-link">Dispatch certificate (for prototype only)</a>
-      <br>
+
     </div>
-  </div>
-</div>
 
 
 {% endblock %}
