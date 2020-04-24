@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+<!-- {% block beforeContent %}
+{{super()}}
+
+{% endblock %} -->
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{query.bulk_action or "Approve"}} 4 certificates?
+    </h1>
+    <div class="defra-alert" >
+    <p class="govuk-body">Certificates to {{query.bulk_action or "approve"}}:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+    </ul>
+    </div>
+    <form id="CloseCaseForm" method="get" action="../certifier-have-signed2">
+      <div class="govuk-form-group ">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Certifier details
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="fullname">
+              Full name
+            </label>
+            <input class="govuk-input  govuk-!-width-three-quarters" id="fullname" name="fullname" type="text" value="{{data.fullname}}">
+          </div>
+          <div class="govuk-form-group {% if query.has_error == 'yes' %}govuk-form-group--error{% endif %}">
+            <label class="govuk-label" for="id-number">
+              Identification number
+            </label>
+            {% if query.has_error == 'yes' %}
+            <span id="decision_identification_number_error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error: </span>Identification number must start with SP or NV
+            </span>
+            {% endif %}
+            <span id="decision_identification_number" class="govuk-hint">
+              Enter the number on your stamp including SP or NV
+            </span>
+            <input class="govuk-input govuk-input--width-10" id="decision_identification_number" name="decision_identification_number" type="text" value="{% if query.hasError =="yes" %}{{data.decision_identification_number}}{% endif %}">
+          </div>
+        </fieldset>
+      </div>
+      <h2 class="govuk-heading-m">Now submit your decision to APHA</h2>
+      <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <div class="govuk-form-group">
+        <input class="govuk-button" type="submit" name="acceptAndSubmit" value="Submit" id="Button-CertifierRecordDecisionSubmit">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

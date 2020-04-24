@@ -10,17 +10,21 @@ Exports application - GOV.UK
 <!-- add admin navbar from includes folder -->
 <!-- back button -->
 <div>
-  <a class="govuk-back-link" id="link-back" href="../certifier-{{data.orgs or 'single'}}-org-dashboard">Back</a>
+  <a class="govuk-back-link" id="link-back" href="{% if data.skip_step == 'yes'%}summary/case-dispatched?status_6969=approved{% else %}javascript:history.back(){%endif%}">Back</a>
 </div>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <div>
-      <h1 class="govuk-heading-l heading">Close certificate</h1>
-    </div>
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl ">Close certificate</h1>
+
+      <div class="defra-alert defra-alert--info">
+            <p class="govuk-body govuk-!-margin-bottom-0">If you have signed and issued the certificate, you can close it. There is no need to send a copy to APHA</p>
+          </div>
+
+
     <form action="./summary/case-{{data.return or 'certifier-action'}}" id="CloseCaseForm" method="POST">
       <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
       <input type="hidden" name="applicationId" value="1721147992687">

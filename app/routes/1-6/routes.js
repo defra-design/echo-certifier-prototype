@@ -198,6 +198,7 @@ module.exports = function(router) {
       res.redirect(301, '/' + base_url + req.params[0] + '/summary/case-dispatched?status_6969=approved');
     }
   })
+  
 
   // router.post('/' + base_url + "*/certifier-record-decision", function(req, res) {
   //   res.redirect(301, '/' + base_url + req.params[0] + '/confirmation');
