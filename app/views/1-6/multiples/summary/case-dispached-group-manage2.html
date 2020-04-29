@@ -79,24 +79,25 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l">4 certificates</h2>
     <p class="govuk-body"><a href="#" class="govuk-link"> Download all 4 certificates [PDF]</a></p>
+
     <form method="POST" action="bulk-action">
-    <div class="moj-action-bar">
+  <div class="moj-button-menu">
+  <div class="moj-button-menu__wrapper">
 
-      <div class="moj-button-menu">
-        <div class="moj-button-menu__wrapper">
+  <a href="bulk-action?bulk_action=Approve" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+    Approve selected
+  </a>
 
-          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
-            Approve selected
-          </button>
+  <a href="bulk-action?bulk_action=reject" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+    Reject selected
+  </a>
 
-          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
-            Reject selected
-          </button>
+  <a href="bulk-action?bulk_action=cancel" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+    Canceled selected
+  </a>
 
-        </div>
-      </div>
-
-    </div>
+  </div>
+  </div>
 <form id="table-select-certificates" action="#">
       <table class="govuk-table">
         <thead class="govuk-table__head">
@@ -140,9 +141,9 @@ GOV.UK Prototype Kit
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="mulitiple-Nijinsky" value="denali">
-                <label class="govuk-label govuk-checkboxes__label" for="multiple-Nijinsky">
-                  <span class="govuk-visually-hidden">Select Nijinsky</span>
+                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
+                <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
+                  <span class="govuk-visually-hidden">Select Denali</span>
                 </label>
               </div>
             </td>
@@ -151,7 +152,7 @@ GOV.UK Prototype Kit
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Jul 2019
             </td>
-            <td id="status" class="govuk-table__cell" scope="row">{{(query.bulk_action or "DISPATCHED") | upper}}
+            <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               <a id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
@@ -163,9 +164,9 @@ GOV.UK Prototype Kit
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="multiple-Shergar" value="Shergar">
-                <label class="govuk-label govuk-checkboxes__label" for="multiple-Shergar">
-                  <span class="govuk-visually-hidden">Select Shergar</span>
+                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
+                <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
+                  <span class="govuk-visually-hidden">Select Denali</span>
                 </label>
               </div>
             </td>
@@ -174,7 +175,7 @@ GOV.UK Prototype Kit
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Jul 2019
             </td>
-            <td id="status" class="govuk-table__cell" scope="row">{{(query.bulk_action or "DISPATCHED") | upper}}
+            <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
@@ -185,9 +186,9 @@ GOV.UK Prototype Kit
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-Desert" value="Desert Orchid">
-                <label class="govuk-label govuk-checkboxes__label" for="mountain-Desert">
-                  <span class="govuk-visually-hidden">Select Desert Orchid</span>
+                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
+                <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
+                  <span class="govuk-visually-hidden">Select Denali</span>
                 </label>
               </div>
             </td>
@@ -196,7 +197,7 @@ GOV.UK Prototype Kit
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Jul 2019
             </td>
-            <td id="status" class="govuk-table__cell" scope="row">{{(query.bulk_action or "DISPATCHED") | upper}}
+            <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
@@ -219,7 +220,7 @@ GOV.UK Prototype Kit
             <td id="actual-export-date" class="govuk-table__cell" scope="row">
               30 Jul 2019
             </td>
-            <td id="status" class="govuk-table__cell" scope="row">{{(query.bulk_action or "DISPATCHED") | upper}}
+            <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
               <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
@@ -236,10 +237,19 @@ GOV.UK Prototype Kit
 
 <script>
   window.addEventListener('load', function() {
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
     new MOJFrontend.MultiSelect({
       container: $('.moj-multi-select__select-all-container'),
       checkboxes: $('.govuk-checkboxes__input')
     });
+
+  new MOJFrontend.ButtonMenu({
+    container: $('.moj-button-menu'),
+    mq: '(min-width: 200em)',
+    buttonText: 'Review selected',
+    buttonClasses: 'govuk-button--secondary moj-button-menu__toggle-button--secondary'
+  });
+
   })
 </script>
 

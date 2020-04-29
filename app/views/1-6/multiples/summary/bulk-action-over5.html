@@ -10,15 +10,28 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{(query.bulk_action or "Approve") | capitalize}} 4 certificates
+      {{(query.bulk_action or "Approve") | capitalize}} 8 certificates
     </h1>
-    <p class="govuk-body">Certificates to {{query.bulk_action or "approve"}}:</p>
-    <ul class="govuk-list govuk-list--bullet  govuk-!-margin-bottom-6">
-      <li><strong>19/02/008302</strong> (Nijinsky) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
-      <li><strong>119/02/008302</strong>  (Shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
-      <li><strong>119/02/008302</strong> (Desert Orchid) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
-      <li><strong>119/02/008302</strong> (Tiger Roll) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+    <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Certificates you are about to {{query.bulk_action or "Approve"}}
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list govuk-list--bullet">
+
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
+      <li>Certificate 12/33920/23 (shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
     </ul>
+  </div>
+</details>
     <form id="CloseCaseForm" method="get" action="../certifier-have-signed2">
       <div class="govuk-form-group ">
         <fieldset class="govuk-fieldset">
