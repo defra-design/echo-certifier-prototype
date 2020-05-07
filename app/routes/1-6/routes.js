@@ -198,7 +198,28 @@ module.exports = function(router) {
       res.redirect(301, '/' + base_url + req.params[0] + '/summary/case-dispatched?status_6969=approved');
     }
   })
-  
+  // this adds query to all pages and will be called if no other get routing exists.
+  router.get('/' + base_url + '*/switch-organisation', function(req, res) {
+   var orgs=require('../../data/orgs.json')
+    console.log("Working")
+    res.render(base_url + req.params[0] + '/switch-organisation',{
+      "query": req.query,
+      "orgs": orgs
+    },function(err, html) {
+      if (err) {
+        if (err.message.indexOf('template not found') !== -1) {
+        console.log("Can find "+base_url + req.params[0]+ " in target directory, rendering page from Certifier jounrey")
+        return res.render(file_url + '/switch-organisation', {
+            "query": req.query,
+            "orgs": orgs
+          });
+      }
+        throw err;
+      }
+      res.send(html);
+    });
+  })
+
 
   // router.post('/' + base_url + "*/certifier-record-decision", function(req, res) {
   //   res.redirect(301, '/' + base_url + req.params[0] + '/confirmation');

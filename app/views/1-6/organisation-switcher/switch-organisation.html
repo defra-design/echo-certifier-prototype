@@ -1,0 +1,326 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which organisation fo you want to manage?
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a class="govuk-back-link" href="review-your-answers">Back</a>
+<style media="screen">
+  .defra-pagination__results{margin-bottom:20px;}
+  @media (min-width: 48.0625em){
+
+  .defra-pagination__list {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+      float: none;
+      margin-bottom: 20px;
+  }}
+</style>
+{% endblock %}
+
+{% block content %}
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <div>
+              <form action="cases" method="POST">
+                <div class="govuk-form-group ">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                      <h1 class="govuk-fieldset__heading">
+                        Which organisation do you want to view cases for?
+                      </h1>
+                    </legend>
+                    {% if query.show_full_list == "yes"%}
+                    <div class="search-wrapper govuk-form-group">
+                      <label for="search-reservations" class="govuk-label">
+                        Search organisations by name
+                      </label>
+                      <div class="search-input-wrapper">
+                        <input type="search" value="{{query.search or ''}}" id="search-orgs" name="search" title="Search" class="govuk-input">
+                        <div class="search-input-submit-wrapper">
+                          <button type="submit" class="search-submit">Search</button>
+                        </div>
+                      </div>
+                    </div>
+                    {% endif %}
+                    <div class="govuk-radios">
+                    {% if query.show_full_list != "yes"%}
+
+                      <div class="govuk-radios__item ">
+                        <input class="govuk-radios__input" id="org1" name="orgname" type="radio" value="ACME ORG LTD" data-aria-controls="conditional-decision-conditional-1">
+                        <label class="govuk-label govuk-radios__label" for="org1">
+                          ACME ORG LTD
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="org2" name="orgname" type="radio" value="ABC BUILDING LTD" data-aria-controls="conditional-decision-conditional-3">
+                        <label class="govuk-label govuk-radios__label" for="org2">
+                          ABC BUILDING LTD
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="org3" name="orgname" type="radio" value="XYZ FISHPORT LTD" data-aria-controls="conditional-decision-conditional-3">
+                        <label class="govuk-label govuk-radios__label" for="org3">
+                          XYZ FISHPORT LTD
+                        </label>
+                      </div>
+
+                      {% else %}
+                      {% for i in orgs %}
+                        <div class="govuk-radios__item selection-item result" data-item-id="{{loop.index+1}}">
+                          <input class="govuk-radios__input" id="selected-organisation-id-{{loop.index+1}}" name="orgname" type="radio"
+                            value="{% if data.currentEmployer %}{{data.currentEmployer}}{%else%}ABC opticians{%endif%} {{i}}" data-search-value="Organisation {{loop.index+1}}">
+                          <label class="govuk-label govuk-radios__label" for="selected-organisation-id-{{loop.index+1}}">
+                            {{i.company}}
+                          </label>
+                        </div>
+                        {% endfor %}
+                      {% endif %}
+                      </div>
+                  </fieldset>
+                </div>
+                {% if query.show_full_list == "yes"%}
+                <div class="pager das-pager" aria-hidden="false" style="margin-top:0" data-paging="">
+                  <nav class="defra-pagination" id="pagination-label">
+                    <p class="defra-pagination__results">Showing <b>1</b> to <b>30</b> of <b>90</b> organisations</p>
+
+                    <div class="pager-controls das-pager-controls"></div>
+				          </nav>
+
+
+				</div>
+        {% endif %}
+
+			</div>
+                  <div class="govuk-form-group">
+                    <input type="hidden" name="crumb_csrf_token" value="T7T4SHvWvcq7qk1MSfTevo6ezo5qfnvArpiUHe8Nr2d">
+                    <input class="govuk-button margin-top-30" type="submit" name="acceptAndSubmit" value="Choose organisation" id="Button-CertifierRecordDecisionSubmit">
+
+                  </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- <script>
+  window.addEventListener('load', function() {
+
+
+    $(".clear-search-holder").hide()
+    $(".search-what-cont").hide()
+    $("#search").click(function(e) {
+      $(".search-what-text").text($("#search-input").val());
+      $(".search-what-cont").show();
+      $(".result").each(function(e) {
+        var text = $(this).text().toLowerCase();
+        if (text.indexOf($("#search-input").val().toLowerCase()) > -1) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+    $("#clear-search, .search-what-close").click(function(e) {
+      $(".clear-search-holder").show()
+      $(".search-what-text").text($("#search-input").val());
+      $(".search-what-cont").show()
+      // clear - search - holder
+      $(".search-what-cont").hide();
+      $("#search-input").val("");
+      $(".result").each(function(e) {
+        $(this).show();
+      });
+      $(this).blur();
+    });
+  });
+</script> -->
+
+        <script>
+  window.addEventListener('load', function() {
+
+          $(".search-input-submit-wrapper").hide()
+          $('.search-wrapper input[type="search"]').css("border", "2px solid #0b0c0c")
+          function searchCheck(e){
+            console.log(e)
+            var count = 0
+            $(".result").each(function(g) {
+              var text = $(this).text().toLowerCase();
+              if (text.indexOf($("#search-orgs").val().toLowerCase()) > -1) {
+                count +=1
+                $(this).show();
+              } else {
+                $(this).hide();
+              }
+              total_items =count
+
+
+              buildPager()
+            });
+          }
+          $('#search-orgs').on('keydown', searchCheck)
+          // TODO call script from file instead
+          // pass this in - 118 - total items - totalCheckboxesCount
+          // pass this in - false - boolean whether to clear down or not
+          // pass this in - 25 - how many items to show per page
+          // checkboxEditing(
+          //   118,
+          //   false,
+          //   25,
+          //   "team member",
+          //   "team members"
+          // )
+
+          var page = 1;
+          var max_per_page = 25
+          var total_items = $(".selection-item").length
+          var page_total = Math.round(total_items/max_per_page)+1
+          var pagination_max = 6;
+          console.log(page_total)
+          //
+          var data_set = $('.selection-item');
+          var pagerControls = $('.pager-controls');
+          var keycount = 0
+          function updateList(){
+            data_set.each(function( index ) {
+              console.log(max_per_page*(page+1))
+              if($( this ).attr('data-item-id') > max_per_page*page-1 || $( this ).attr('data-item-id') < (max_per_page*page)-max_per_page ){
+                $(this).attr("hidden","hidden")
+                $(this).attr("aria-hidden","true")
+                $(this).hide();
+              }else{
+                $(this).removeAttr("hidden","hidden")
+                $(this).attr("aria-hidden","false")
+                $(this).show();
+              }
+            });
+            buildPager()
+
+          }
+          updateList()
+
+          function buildPager(){
+            var pager = ""
+            var shown_items_min = (1+max_per_page*page)-max_per_page
+            var shown_items_max = ((max_per_page*page) < total_items)? max_per_page*page : total_items;
+            if(page > 1){
+              pager +='<li class="defra-pagination__item  defra-pagination__item--prev"><a class="defra-pagination__link" href="#" aria-hidden="false">Previous</a></li>'
+            }
+            pager+='<p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p><ul class="defra-pagination__list">'
+              pager +='<li class="defra-pagination__item  defra-pagination__item--prev"><a class="defra-pagination__link" href="#" aria-hidden="false">Previous</a>'
+            for(var i=1;i<=page_total;i++){
+
+              if(page > (pagination_max/2) ){
+                console.log("i = "+i)
+                console.log("max limit = "+(page+(pagination_max/2)))
+                console.log("---------")
+                  if(i > (page-(pagination_max/2)) || i < (page+(pagination_max/2 ))){
+                    var pager_link = (i!=page) ? '<li class="defra-pagination__item"><a href="#" class="defra-pagination__link">'+i+'</a></li>' : '<li class="defra-pagination__item defra-pagination__item--active">'+i+'</li>'
+                    console.log("building  "+pager_link )
+                    pager+=pager_link
+                  }
+              }else{
+                  if(i <= page+pagination_max ){
+                    var pager_link = (i!=page) ? '<li class="defra-pagination__item"><a href="#" class="defra-pagination__link">'+i+'</a></li>' : '<li class="defra-pagination__item defra-pagination__item--active">'+i+'</li>'
+                    console.log("building  "+pager_link )
+                    pager+=pager_link
+                  }
+              }
+
+            }
+
+            if(page < page_total){
+              console.log("adding next")
+              pager +='<li class="defra-pagination__item  defra-pagination__item--next"><a class="defra-pagination__link" href="#" aria-hidden="false">Next</a></li>'
+            }
+            pager+='</ul></<nav>';
+            console.log("total_items:"+page)
+            pagerControls.html(pager)
+            $('.defra-pagination__link').on('click',function(event){
+              event.preventDefault();
+              console.log("updating page to ="+$(this).text())
+              page = $(this).text()
+              updateList()
+            });
+            $('.defra-pagination__item--prev a').on('click',function(event){
+              page +=1
+              updateList()
+            })
+            $('.defra-pagination__item--next a').on('click',function(event){
+              page -=1
+              updateList()
+            })
+            $('.defra-pagination__results').html("Showing <strong>"+shown_items_min+"</strong> to <strong>"+shown_items_max+ "</strong> of <strong>"+total_items+"</strong> organisations")
+            if(total_items < max_per_page){
+                $('.defra-pagination__list').hide()
+            }else{
+              $('.defra-pagination__list').show()
+            }
+            }
+          // function searchCheck(e){
+          //   keycount = $('#searchOrgsAuto').val().length
+          //   $('.querytext').text($('#searchOrgsAuto').val())
+          //   if(keycount == 2){
+          //     $("#oranisation-list-2").show()
+          //     $("#oranisation-list-1").hide()
+          //     $("#oranisation-list").hide()
+          //     $(".das-pager").hide()
+          //     $("#oranisation-list-no-result").hide()
+          //   }else if(keycount > 2 && keycount < 9){
+          //     $("#oranisation-list-1").show()
+          //     $("#oranisation-list-2").hide()
+          //     $("#oranisation-list").hide()
+          //       $("#oranisation-list-no-result").hide()
+          //       $(".das-pager").hide()
+          //
+          //     }else if(keycount >= 9){
+          //       $("#oranisation-list-no-result").hide()
+          //       $("#oranisation-list-1").hide()
+          //       $("#oranisation-list-2").hide()
+          //       $("#oranisation-list").hide()
+          //       $(".das-pager").hide()
+          //         $("#oranisation-list-no-result").show()
+          //     }else{
+          //     $("#oranisation-list").show()
+          //     $("#oranisation-list-2").hide()
+          //     $("#oranisation-list-1").hide()
+          //     $(".das-pager").show()
+          //     $("#oranisation-list-no-result").hide()
+          //   }
+          // }
+          // function init(){
+          //   // Set up autocomplete
+          //   searchCheck()
+          //   $('#clearSearch').on('click',function(e){
+          //     e.preventDefault();
+          //     $('#searchOrgsAuto').val('')
+          //     $("#oranisation-list").show()
+          //     $("#oranisation-list-2").hide()
+          //     $("#oranisation-list-1").hide()
+          //       $(".das-pager").show()
+          //   })
+          //
+          //   $('#searchOrgsAuto').show()
+          //   $('#searchOrgsAuto').on('keydown', searchCheck)
+          //   // $('#searchOrgsAuto').on('blur',function(){
+          //   //   keycount = 0
+          //   // })
+          //   $('#searchOrgsQuery').hide();
+          //   // Hide submit button in this version, only shows if Javascript is not on.
+          //   $('#searchOrgsSubmit').hide();
+          //   $('.search-input').removeClass('search-input-with-button')
+          //
+          //   buildPager()
+          //   updateList()
+          // }
+          // init()
+          //
+          //
+
+
+        });
+
+        </script>
+{% endblock %}
