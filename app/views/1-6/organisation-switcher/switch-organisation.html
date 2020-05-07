@@ -18,6 +18,12 @@ Which organisation fo you want to manage?
       float: none;
       margin-bottom: 20px;
   }}
+  .moj-pagination__item--active, .moj-pagination__item--dots {
+    font-weight: bold;
+    height: 25px;
+    padding: 5px 10px;
+    text-align: center;
+}
 </style>
 {% endblock %}
 
@@ -72,7 +78,7 @@ Which organisation fo you want to manage?
                       {% for i in orgs %}
                         <div class="govuk-radios__item selection-item result" data-item-id="{{loop.index+1}}">
                           <input class="govuk-radios__input" id="selected-organisation-id-{{loop.index+1}}" name="orgname" type="radio"
-                            value="{% if data.currentEmployer %}{{data.currentEmployer}}{%else%}ABC opticians{%endif%} {{i}}" data-search-value="Organisation {{loop.index+1}}">
+                            value="{{i.company}}" data-search-value="Organisation {{loop.index+1}}">
                           <label class="govuk-label govuk-radios__label" for="selected-organisation-id-{{loop.index+1}}">
                             {{i.company}}
                           </label>
@@ -157,7 +163,7 @@ Which organisation fo you want to manage?
               total_items =count
 
 
-              buildPager()
+              updateList()
             });
           }
           $('#search-orgs').on('keydown', searchCheck)
@@ -178,11 +184,12 @@ Which organisation fo you want to manage?
           var total_items = $(".selection-item").length
           var page_total = Math.round(total_items/max_per_page)+1
           var pagination_max = 6;
-          console.log(page_total)
+          console.log(page_total);
           //
           var data_set = $('.selection-item');
           var pagerControls = $('.pager-controls');
-          var keycount = 0
+          var keycount = 0;
+
           function updateList(){
             data_set.each(function( index ) {
               console.log(max_per_page*(page+1))
@@ -202,55 +209,57 @@ Which organisation fo you want to manage?
           updateList()
 
           function buildPager(){
+            console.log("builing pagination for page "+page)
             var pager = ""
             var shown_items_min = (1+max_per_page*page)-max_per_page
             var shown_items_max = ((max_per_page*page) < total_items)? max_per_page*page : total_items;
-            if(page > 1){
-              pager +='<li class="defra-pagination__item  defra-pagination__item--prev"><a class="defra-pagination__link" href="#" aria-hidden="false">Previous</a></li>'
-            }
             pager+='<p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p><ul class="defra-pagination__list">'
-              pager +='<li class="defra-pagination__item  defra-pagination__item--prev"><a class="defra-pagination__link" href="#" aria-hidden="false">Previous</a>'
+              pager +='<li class="defra-pagination__item  defra-pagination__item--prev "><a class="defra-pagination__link" href="#" aria-hidden="false">Previous</a>'
             for(var i=1;i<=page_total;i++){
 
               if(page > (pagination_max/2) ){
-                console.log("i = "+i)
-                console.log("max limit = "+(page+(pagination_max/2)))
-                console.log("---------")
+
                   if(i > (page-(pagination_max/2)) || i < (page+(pagination_max/2 ))){
-                    var pager_link = (i!=page) ? '<li class="defra-pagination__item"><a href="#" class="defra-pagination__link">'+i+'</a></li>' : '<li class="defra-pagination__item defra-pagination__item--active">'+i+'</li>'
+                    console.log("page is greater than pagination max")
+                    var pager_link = (i!=page) ? '<li class="defra-pagination__item "><a href="#" class="defra-pagination__link pager_link">'+i+'</a></li>' : '<li class="defra-pagination__item defra-pagination__item--active">'+i+'</li>'
                     console.log("building  "+pager_link )
                     pager+=pager_link
                   }
               }else{
+                console.log("page is smaller than pagination max")
                   if(i <= page+pagination_max ){
-                    var pager_link = (i!=page) ? '<li class="defra-pagination__item"><a href="#" class="defra-pagination__link">'+i+'</a></li>' : '<li class="defra-pagination__item defra-pagination__item--active">'+i+'</li>'
+                    var pager_link = (i!=page) ? '<li class="defra-pagination__item"><a href="#" class="defra-pagination__link pager_link">'+i+'</a></li>' : '<li class="defra-pagination__item defra-pagination__item--active">'+i+'</li>'
                     console.log("building  "+pager_link )
                     pager+=pager_link
                   }
               }
 
             }
+            console.log("adding next")
+            pager +='<li class="defra-pagination__item  defra-pagination__item--next"><a class="defra-pagination__link" href="#" aria-hidden="false">Next</a></li>'
 
-            if(page < page_total){
-              console.log("adding next")
-              pager +='<li class="defra-pagination__item  defra-pagination__item--next"><a class="defra-pagination__link" href="#" aria-hidden="false">Next</a></li>'
-            }
-            pager+='</ul></<nav>';
+            pager+='</ul>';
             console.log("total_items:"+page)
             pagerControls.html(pager)
-            $('.defra-pagination__link').on('click',function(event){
+            $('.pager_link').on('click',function(event){
               event.preventDefault();
               console.log("updating page to ="+$(this).text())
               page = $(this).text()
               updateList()
             });
-            $('.defra-pagination__item--prev a').on('click',function(event){
-              page +=1
-              updateList()
-            })
             $('.defra-pagination__item--next a').on('click',function(event){
+              event.preventDefault();
+              if(page < page_total){
+                page +=1
+                updateList()
+              }
+            })
+            $('.defra-pagination__item--prev a').on('click',function(event){
+              event.preventDefault();
+                if(page > 1){
               page -=1
               updateList()
+            }
             })
             $('.defra-pagination__results').html("Showing <strong>"+shown_items_min+"</strong> to <strong>"+shown_items_max+ "</strong> of <strong>"+total_items+"</strong> organisations")
             if(total_items < max_per_page){
