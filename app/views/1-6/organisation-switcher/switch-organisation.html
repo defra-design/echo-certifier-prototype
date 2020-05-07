@@ -150,20 +150,23 @@ Which organisation fo you want to manage?
           $(".search-input-submit-wrapper").hide()
           $('.search-wrapper input[type="search"]').css("border", "2px solid #0b0c0c")
           function searchCheck(e){
-            console.log(e)
             var count = 0
             $(".result").each(function(g) {
               var text = $(this).text().toLowerCase();
               if (text.indexOf($("#search-orgs").val().toLowerCase()) > -1) {
                 count +=1
+                $(this).attr("hidden","")
+                $(this).attr("aria-hidden","false")
                 $(this).show();
               } else {
+                $(this).attr("hidden","hidden")
+                $(this).attr("aria-hidden","true")
                 $(this).hide();
               }
               total_items =count
 
 
-              updateList()
+              buildPager()
             });
           }
           $('#search-orgs').on('keydown', searchCheck)
@@ -206,7 +209,6 @@ Which organisation fo you want to manage?
             buildPager()
 
           }
-          updateList()
 
           function buildPager(){
             console.log("builing pagination for page "+page)
@@ -328,7 +330,7 @@ Which organisation fo you want to manage?
           //
           //
 
-
+          updateList()
         });
 
         </script>

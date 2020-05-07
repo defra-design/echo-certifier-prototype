@@ -201,6 +201,12 @@ module.exports = function(router) {
   // this adds query to all pages and will be called if no other get routing exists.
   router.get('/' + base_url + '*/switch-organisation', function(req, res) {
    var orgs=require('../../data/orgs.json')
+   orgs.sort(function(a,b) {
+
+				var returnValue = a.company.toUpperCase() > b.company.toUpperCase() ? 1 : b.company.toUpperCase() > a.company.toUpperCase() ? -1 : 0;
+
+				return returnValue;
+			})
     console.log("Working")
     res.render(base_url + req.params[0] + '/switch-organisation',{
       "query": req.query,
