@@ -10,9 +10,9 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{(query.bulk_action or "Approve") | capitalize}} 4 certificates
+      {{(query.bulk_action or "approve") | capitalize}} 4 certificates
     </h1>
-    <p class="govuk-body">Certificates to {{query.bulk_action or "approve"}}:</p>
+    <p class="govuk-body">Certificates to {{(query.bulk_action or "approve")|lower}}:</p>
     <ul class="govuk-list govuk-list--bullet  govuk-!-margin-bottom-6">
       <li><strong>19/02/008302</strong> (Nijinsky) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
       <li><strong>119/02/008302</strong>  (Shergar) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
