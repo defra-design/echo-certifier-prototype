@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EXP-8903 contents page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Multiples
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <ul class="govuk-list">
+      <li><a href="dashboard?show_full_list=yes">Dashboard (with new org switcher)</a></li>
+      <li><a href="switch-organisation?show_full_list=yes">Select org - From a large list</a></li>
+      <li><a href="switch-organisation?show_full_list=no">Select org - only 3 orgs</a><br></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
