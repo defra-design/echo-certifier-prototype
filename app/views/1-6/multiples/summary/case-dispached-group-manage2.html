@@ -84,15 +84,15 @@ GOV.UK Prototype Kit
   <div class="moj-button-menu">
   <div class="moj-button-menu__wrapper">
 
-  <a href="bulk-action?bulk_action=Approve" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+  <a href="bulk-action?bulk_action=Approve&return=complete-group" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
     Approve selected
   </a>
 
-  <a href="bulk-action?bulk_action=reject" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+  <a href="bulk-action?bulk_action=reject&return=complete-group" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
     Reject selected
   </a>
 
-  <a href="bulk-action?bulk_action=cancel" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+  <a href="bulk-action?bulk_action=cancel&return=complete-group" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
     Cancel selected
   </a>
 
@@ -113,15 +113,9 @@ GOV.UK Prototype Kit
         </thead>
 
         <tbody>
-          {% if query.has_certified_certificate == "yes" %}
+          {% if data.has_certified_certificate == "yes" %}
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
-                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
-                <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
-                  <span class="govuk-visually-hidden">Select Denali</span>
-                </label>
-              </div>
             </td>
             <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008302</td>
             <td id="cert-ref" class="govuk-table__cell" scope="row">Nijinsky</td>
@@ -131,7 +125,7 @@ GOV.UK Prototype Kit
             <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
-              <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" rel="noreferrer noopener" target="_blank">
+              <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-2849ehc-3.1.pdf" rel="noreferrer noopener" target="_blank">
                 View certificate [PDF]
               </a>
             </td>
@@ -155,8 +149,11 @@ GOV.UK Prototype Kit
             <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
-              <a id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+              <a id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispached-group-manage2&is_group=yes">
                 <strong>Review certificate</strong>
+              </a><br>
+              <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-2849ehc-3.1.pdf" rel="noreferrer noopener" target="_blank">
+                View certificate [PDF]
               </a>
             </td>
           </tr>
@@ -178,8 +175,11 @@ GOV.UK Prototype Kit
             <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
-              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispached-group-manage2&is_group=yes">
                 <strong> Review certificate</strong>
+              </a><br>
+              <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-2849ehc-3.1.pdf" rel="noreferrer noopener" target="_blank">
+                View certificate [PDF]
               </a>
             </td>
           </tr>
@@ -200,11 +200,15 @@ GOV.UK Prototype Kit
             <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
-              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispached-group-manage2&is_group=yes">
                 <strong> Review certificate</strong>
               </a>
               <br>
+              <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-2849ehc-3.1.pdf" rel="noreferrer noopener" target="_blank">
+                View certificate [PDF]
+              </a>
             </td>
+
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -223,8 +227,11 @@ GOV.UK Prototype Kit
             <td id="status" class="govuk-table__cell" scope="row">DISPATCHED
             </td>
             <td id="actions" class="govuk-table__cell" scope="row">
-              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group-manage-manage2&is_group=yes">
                 <strong> Review certificate</strong>
+              </a><br>
+              <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-2849ehc-3.1.pdf" rel="noreferrer noopener" target="_blank">
+                View certificate [PDF]
               </a>
             </td>
           </tr>

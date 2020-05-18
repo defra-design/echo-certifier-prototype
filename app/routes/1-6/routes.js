@@ -175,11 +175,9 @@ module.exports = function(router) {
       console.log(req.session.data.is_group)
       if(req.body.decision=="approved" && req.session.data.skip_step == "yes" ){
         res.redirect(301, '/' + base_url + req.params[0] + '/close-certificate?status_6969=completed');
-      }else if(req.session.data.is_group=="yes" && req.body.decision=="approved" ){
-        req.session.data.is_group =""
-        res.redirect(301, '/' + base_url + req.params[0] + '/summary/case-dispached-group?has_certified_certificate=yes');
       }else if(req.body.decision=="approved" ){
-        res.redirect(301, '/' + base_url + req.params[0] + '/certifier-have-signed');
+        req.session.data.is_group =""
+        res.redirect(301, '/' + base_url + req.params[0] + '/certifier-have-signed?has_certified_certificate=yes');
       }else{
         res.redirect(301, '/' + base_url + req.params[0] + '/summary/case-'+req.body.decision);
       }

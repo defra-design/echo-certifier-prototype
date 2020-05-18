@@ -18,18 +18,17 @@ Exports application - GOV.UK
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl ">Close certificate</h1>
+    <h1 class="govuk-heading-xl ">Close certificate</h1>
 
-      <div class="defra-alert defra-alert--info">
-            <p class="govuk-body govuk-!-margin-bottom-0">If you have signed and issued the certificate, you can close it. There is no need to send a copy to APHA</p>
-          </div>
-
+    <div class="defra-alert defra-alert--info">
+      <p class="govuk-body govuk-!-margin-bottom-0">If you have signed and issued the certificate, you can close it. There is no need to send a copy to APHA</p>
+    </div>
 
     <form action="./summary/case-{{data.return or 'certifier-action'}}" id="CloseCaseForm" method="POST">
       <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
       <input type="hidden" name="applicationId" value="1721147992687">
-                <p id="close-case-declaration" class="govuk-body">
-                    I confirm that I have followed the relevant Notes for Guidance for the EHC and export certification guidance on the APHA Vet Gateway and certification is complete.
+      <p id="close-case-declaration" class="govuk-body">
+        I confirm that I have followed the relevant Notes for Guidance for the EHC and export certification guidance on the APHA Vet Gateway and certification is complete.
       </p>
       <br>
       <div class="govuk-form-group ">
@@ -42,27 +41,30 @@ Exports application - GOV.UK
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="a39890fe-79d0-e911-a982-000d3ab6a5e0-day">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="a39890fe-79d0-e911-a982-000d3ab6a5e0-day" name="1-day" value="NaN" data-qa-id="Question-a39890fe-79d0-e911-a982-000d3ab6a5e0-Day" autofocus="autofocus" type="number" pattern="^[0-9]{2}$" data-com.onepassword.iv="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="a39890fe-79d0-e911-a982-000d3ab6a5e0-day" name="1-day" value="NaN" data-qa-id="Question-a39890fe-79d0-e911-a982-000d3ab6a5e0-Day" autofocus="autofocus" type="number"
+                  pattern="^[0-9]{2}$" data-com.onepassword.iv="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="a39890fe-79d0-e911-a982-000d3ab6a5e0-month">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="a39890fe-79d0-e911-a982-000d3ab6a5e0-month" name="1-month" value="NaN" data-qa-id="Question-a39890fe-79d0-e911-a982-000d3ab6a5e0-Month" type="number" pattern="^[0-9]{2}$" data-com.onepassword.iv="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="a39890fe-79d0-e911-a982-000d3ab6a5e0-month" name="1-month" value="NaN" data-qa-id="Question-a39890fe-79d0-e911-a982-000d3ab6a5e0-Month" type="number" pattern="^[0-9]{2}$"
+                  data-com.onepassword.iv="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="a39890fe-79d0-e911-a982-000d3ab6a5e0-year">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="a39890fe-79d0-e911-a982-000d3ab6a5e0-year" name="1-year" value="NaN" data-qa-id="Question-a39890fe-79d0-e911-a982-000d3ab6a5e0-Year" type="number" pattern="^[0-9]{4}$" data-com.onepassword.iv="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="a39890fe-79d0-e911-a982-000d3ab6a5e0-year" name="1-year" value="NaN" data-qa-id="Question-a39890fe-79d0-e911-a982-000d3ab6a5e0-Year" type="number" pattern="^[0-9]{4}$"
+                  data-com.onepassword.iv="">
               </div>
             </div>
           </div>
         </fieldset>
       </div>
-      <a href="summary/case-complete-group" class="govuk-button" id="Button-CloseCase">
+      <button type="submit" class="govuk-button" id="Button-CloseCase">
         Close this certificate
-      </a>
+      </button>
     </form>
   </div>
 </div>
