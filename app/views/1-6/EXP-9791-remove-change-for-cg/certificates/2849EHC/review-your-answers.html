@@ -1,0 +1,686 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+{% block beforeContent %}
+
+<style media="screen">
+  .govuk-summary-list__s .govuk-summary-list__key {
+     width: 15%;
+   }
+
+  .download-a-document-container {
+  padding-bottom: 0px;
+}
+@media (min-width: 641px) {
+  .download-a-document-container {
+    padding-bottom: 10px;
+  }
+}
+.defra-alert--no-border{
+  border-width:0;
+}
+.download-a-document {
+  margin-bottom:40px;
+}
+.download-a-document:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.download-a-document-image {
+  display:block;
+  float:left;
+  overflow:hidden;
+  margin-right:20px;
+}
+.download-a-document-content {
+  font-size: 16px;
+  font-weight: normal;
+  display: inline-grid;
+}
+.download-a-document-section-1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.download-a-document-section-2 {
+  display: block;
+}
+</style>
+<style media="screen">
+  .download-a-document-container {
+  padding-bottom: 0px;
+}
+@media (min-width: 641px) {
+  .gem-c-govspeak .attachment .attachment-thumb {
+    position: relative;
+    float: left;
+    margin-top: 5px;
+    margin-left: -124px;
+    padding-bottom: 15px;
+}
+.gem-c-govspeak .attachment:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.gem-c-govspeak .attachment:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.gem-c-govspeak .attachment {
+    position: relative;
+    margin: 30px 0;
+    padding: 15px 0 0 129px;
+}
+.gem-c-govspeak .attachment .attachment-thumb img {
+    display: block;
+    width: 99px;
+    height: 140px;
+    background: #ffffff;
+    outline: 5px solid rgba(11,12,12,0.1);
+    box-shadow: 0 2px 2px rgba(11,12,12,0.4);
+}
+.gem-c-govspeak img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+  .download-a-document-container {
+    padding-bottom: 10px;
+  }
+}
+.defra-alert--no-border{
+  border-width:0;
+}
+.download-a-document {
+  margin-bottom:0;
+}
+.download-a-document:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.download-a-document-image {
+  display:block;
+  float:left;
+  overflow:hidden;
+  margin-right:20px;
+}
+.download-a-document-content {
+  font-size: 16px;
+  font-weight: normal;
+  display: inline-grid;
+}
+.download-a-document-section-1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.download-a-document-section-2 {
+  display: block;
+}
+
+</style>
+<a class="govuk-back-link" href="../certifier-multi-org-dashboard">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl">
+      Review these answers for certificate 20/23432
+      <span class="govuk-caption-l">Exporter's certificate reference: Tiger roll</span>
+    </h1>
+    <div class="govuk-tabs" data-module="tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day">
+            Export health certificate
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-month">
+            Attachments
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week">
+            APHA processing information
+          </a>
+        </li>
+
+      </ul>
+      <div class="govuk-tabs__panel" id="past-day">
+        <h2 class="govuk-heading-l">Export health certificate</h2>
+        <p class="govuk-body">This is the certificate as it was sent to you</p>
+        <div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+          <section class="attachment embedded govuk-!-margin-bottom-0" id="attachment_3220161">
+            <div class="attachment-thumb">
+              <a aria-hidden="true" class="thumbnail" tabindex="-1" href="/public/images/{{db.sample_PDF or 'ehc-2580ehc-7.6.pdf'}}"><img alt="" src="/public/images/specimin_thumb.png"></a>
+            </div>
+            <div class="attachment-details">
+              <p class="govuk-body">See what certifcate look like by <a aria-describedby="attachment-3220161-accessibility-help" href="/public/images/{{db.sample_PDF or 'ehc-2580ehc-7.6.pdf'}}">previewing
+                  your answers in a specimen certificate (opens in a new tab)</a></p>
+              <p class="metadata">
+                <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span class="file-size">784KB</span>, <span class="page-length">2 pages</span> <br>This file may not be suitable for users of assistive technology.
+              </p>
+
+              <p class="govuk-body">
+
+              </p>
+
+            </div>
+          </section>
+        </div>
+
+        <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  View answers for this certificate
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              <p class='govuk-body'>This is the content for Writing well for the web.</p>
+              <h3 class="govuk-heading-m">About the horse</h3>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Name
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Tiger Roll
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=1&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Horse name</span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Breed
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    thoroughbred
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=1&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Breed</span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Age
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    2015
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=1&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Age</span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Colour
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Black
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=1&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Colour</span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Sex
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    stallion
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=1&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Sex</span>
+                    </a>
+                  </dd> -->
+                </div>
+              </dl>
+              <h2 class="govuk-heading-m">Identification</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Method of identification
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Passport
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=2&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Method of identification </span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Passport number
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    13234213412
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=2&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Passport number</span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Passport issuer
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    UK
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=2&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Passport issuer</span>
+                    </a>
+                  </dd> -->
+                </div>
+              </dl>
+              <h2 class="govuk-heading-m">Origin</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Name and address of the owner
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    24 The Grove
+                    DARTFORD
+                    DA51 2XQ
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=3&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Name and address of the owner</span>
+                    </a>
+                  </dd> -->
+                </div>
+              </dl>
+              <h2 class="govuk-heading-m">Exporter and examination</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Name and address of exporter
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    24 The Grove
+                    DARTFORD
+                    DA51 2XQ
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=4&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Name and address of exporter</span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Address of the premises of examination
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    24 The Grove
+                    DARTFORD
+                    DA51 2XQ
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=4&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Address of the premises of examination</span>
+                    </a>
+                  </dd> -->
+                </div>
+              </dl>
+              <h2 class="govuk-heading-m">Transport and destination</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    How will the horse be transported?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Airplane ZZ1234
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=6&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> How will the horse be transported?</span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Address of destination
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Box No. 56487, Dubai, 56487
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=6&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Address of destination</span>
+                    </a>
+                  </dd> -->
+                </div>
+                <div class="govuk-summary-list__row ">
+                  <dt class="govuk-summary-list__key ">
+                    Name and address of consignee
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    DUBAI RACE TRACK, Box No. 56487, Dubai, 56487
+                  </dd>
+                  <!-- <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="page?id=6&amp;next=check-your-answers-ehc&amp;confirm=yes&amp;change=yes">
+                      Change<span class="govuk-visually-hidden"> Name and address of consignee</span>
+                    </a>
+                  </dd> -->
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-summary-list__m">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            Certificate reference name (does not appear on the certificate)
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Tiger roll
+          </dd>
+      </div>
+      </dl> -->
+
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+
+                <h2 class="govuk-heading-l">Attachments</h2>
+                <p class="govuk-body">The exporter uploaded 5 certificates along with this application. <br><a href="#" class="govuk-link">Download all 5 files [zip]</a></p>
+                <dl class="govuk-summary-list govuk-summary-list__s">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        File 1
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <a href="#"><strong>Screenshot 2020-05-27 at 14.05.02.png</strong></a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download <span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 14.05.02.png</span>
+                        </a>
+                      </dd>
+                    </div>
+
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        File 2
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <a href="#"><strong>Screenshot 2020-05-27 at 13.10.45.png</strong></a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.10.45.png</span>
+                        </a>
+                      </dd>
+                    </div>
+
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        File 3
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <a href="#"><strong>Screenshot 2020-05-27 at 13.14.14.png</strong></a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.14.14.png</span>
+                        </a>
+                      </dd>
+                    </div>
+
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        File 4
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <a href="#"><strong>Screenshot 2020-05-27 at 13.07.12.png</strong></a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.07.12.png</span>
+                        </a>
+                      </dd>
+                    </div>
+
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        File 5
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <a href="#"><strong>Screenshot 2020-05-27 at 13.06.48.png</strong></a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.06.48.png</span>
+                        </a>
+                      </dd>
+                    </div>
+
+
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        File 6
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        <a href="#"><strong>Screenshot 2020-05-27 at 13.03.11.png</strong></a>
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="supporting-documents?change=yes">
+                          Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.03.11.png</span>
+                        </a>
+                      </dd>
+                    </div>
+
+
+                    <!-- <p class="govuk-body govuk-!-margin-top-6"><a href="supporting-documents?change=yes" class="govuk-link">Add more attachments</a></p> -->
+
+                    </dl>
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+        <h2 class="govuk-heading-l">Information needed by APHA</h2>
+        <p class="govuk-body">This information has been provided by the exporter and cannot be changed</p>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-4 govuk-summary-list__m">
+          <div class="govuk-summary-list__row">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Create a reference number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                309840932842
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="exa/reference?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-0">Change</a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Select the certifier practice to include with your application
+              </dt>
+              <dd class="govuk-summary-list__value">IKVETS Crewe
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="exa/certifier?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-4">Change</a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Select certificate delivery address
+              </dt>
+              <dd class="govuk-summary-list__value">Crewe Joe Bloggs Road, Crewe, CW1 6GJ,
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="exa/certifier-confirm-address?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-5">Change</a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Delivery method
+              </dt>
+              <dd class="govuk-summary-list__value">First class post
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="exa/certifier-certificate-delevery?change=yes" data-qa-id="Link-ChangeAnswer" id="Link-ChangeAnswer-6">Change</a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Certification region
+              </dt>
+              <dd class="govuk-summary-list__value">
+                yes
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="page?id=10&amp;next=check-your-answers">
+                  Change<span class="govuk-visually-hidden"> Certification region</span>
+                </a>
+              </dd> -->
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Exporter name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                ABC EXPORTS LTD
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="page?id=11&amp;next=check-your-answers">
+                  Change<span class="govuk-visually-hidden"> Exporter name</span>
+                </a>
+              </dd> -->
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Planned export date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                05/05/2020
+              </dd>
+              <!-- <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="page?id=16&amp;next=check-your-answers">
+                  Change<span class="govuk-visually-hidden"> Planned export date</span>
+                </a>
+              </dd> -->
+            </div>
+          </div>
+
+        </dl>
+      </div>
+    </div>
+
+  </div>
+</div>
+<section class="form-block attachment embedded">
+</section>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form id="CloseCaseForm"  method="POST">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                What is your decision about this export health certificate?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="approved" name="decision" type="radio" value="approved" {% if data.decision == "approved" and query.hasError =="yes" %}selected="selected"{% endif %} >
+                <label class="govuk-label govuk-radios__label" for="approved">
+                  Approve
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="rejected" name="decision" type="radio" value="rejected" data-aria-controls="conditional-decision-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="rejected">
+                  Reject
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-decision-conditional-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="rejected-reason">
+                    Reason for rejection
+                  </label>
+                  <input class="govuk-input" id="rejected-reason" name="rejected-reason" type="" value="">
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="cancelled" name="decision" type="radio" value="cancelled" data-aria-controls="conditional-decision-conditional-3" {% if data.decision == "cancelled"%}selected="selected"{% endif %}>
+                <label class="govuk-label govuk-radios__label" for="cancelled">
+                  Cancel
+                </label>
+              </div>
+              <div class="govuk-radios__conditional" id="conditional-decision-conditional-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="rejected-reason">
+                    Reason for cancellation
+                  </label>
+                  <input class="govuk-input" id="rejected-reason" name="rejected-reason" type="" value="">
+                </div>
+              </div>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group ">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Certifier details
+              </h1>
+            </legend>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="fullname">
+                Full name
+              </label>
+              <input class="govuk-input  govuk-!-width-three-quarters" id="fullname" name="fullname" type="text" value="{{data.fullname}}">
+            </div>
+            <div class="govuk-form-group {% if query.has_error == 'yes' %}govuk-form-group--error{% endif %}">
+              <label class="govuk-label" for="id-number">
+                Identification number
+              </label>
+              {% if query.has_error == 'yes' %}
+              <span id="decision_identification_number_error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error: </span>Identification number must start with SP or NV
+              </span>
+              {% endif %}
+              <span id="decision_ identification_number" class="govuk-hint">
+                Enter the number on your stamp including SP or NV
+              </span>
+              <input class="govuk-input govuk-input--width-10" id="decision_identification_number" name="decision_identification_number" type="text" value="{% if query.hasError =="yes" %}{{data.decision_identification_number}}{% endif %}">
+            </div>
+          </fieldset>
+        </div>
+        <p class="govuk-body">By submitting this form you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+        <div class="govuk-form-group">
+          <input class="govuk-button" type="submit" name="acceptAndSubmit" value="Submit" id="Button-CertifierRecordDecisionSubmit">
+        </div>
+      </form>
+  </div>
+</div>
+{% endblock %}
