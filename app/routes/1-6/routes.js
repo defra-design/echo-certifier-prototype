@@ -5,6 +5,7 @@ module.exports = function(router) {
 
   // ADD extra routing here if needed.
   require('./qr-code.js')(router)
+  require('./EXP-10372-organisation-switcher.js')(router)
 
   // CHANGE VERSION TO THE VERSION
   const version = '1-6'
@@ -197,7 +198,7 @@ module.exports = function(router) {
     }
   })
   // this adds query to all pages and will be called if no other get routing exists.
-  router.get('/' + base_url + '*/switch-organisation', function(req, res) {
+  router.get('/' + base_url + '*/switch-organisation*', function(req, res) {
    var orgs=require('../../data/orgs.json')
    orgs.sort(function(a,b) {
 
@@ -206,14 +207,14 @@ module.exports = function(router) {
 				return returnValue;
 			})
     console.log("Working")
-    res.render(base_url + req.params[0] + '/switch-organisation',{
+    res.render(base_url + req.params[0] + '/switch-organisation'+ req.params[1],{
       "query": req.query,
       "orgs": orgs
     },function(err, html) {
       if (err) {
         if (err.message.indexOf('template not found') !== -1) {
         console.log("Can find "+base_url + req.params[0]+ " in target directory, rendering page from Certifier jounrey")
-        return res.render(file_url + '/switch-organisation', {
+        return res.render(file_url + '/switch-organisation'+ req.params[0], {
             "query": req.query,
             "orgs": orgs
           });

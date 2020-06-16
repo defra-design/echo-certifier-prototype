@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EXP-8903 contents page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      EXP-10372: Certifier with over a many accounts switches organisation
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <p class="govuk-body"><a href="govuk-link" href="https://eaflood.atlassian.net/browse/EXP-10372">Jira ticket EXP-10372</a></p>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <ul class="govuk-list">
+      <li><a href="cases?orgname=ABC BUILDING LTD">Cases with new org switcher design</a></li>
+      <li><a href="switch-organisation">Organisation switcher - 137 orgs (new)</a></li>
+      <li><a href="switch-organisation?page=2">Organisation switcher, page = 2</a></li>
+      <li><a href="switch-organisation?page=1&search=co">Organisation switcher with search (multiple results)</a></li>
+      <li><a href="switch-organisation?page=1&search=MAGMINA LTD">Organisation switcher with search (1 result)</a></li>
+      <li><a href="switch-organisation?page=1&search=This is not in here">Organisation switcher with search (0 results)</a></li>
+      <li><a href="switch-organisation?orgname=ARCHITAX LTD">Organisation already active (ARCHITAX LTD) shows in list</a></li>
+<br>
+
+      <li><a href="switch-organisation-4">Organisation switcher - 4 accounts (no search)</a></li>
+
+      <br>
+      <li>Alternative, Javascript version</li>
+      <li><a href="switch-organisation_alt?show_full_list=yes">Organisation switcher - many accounts (new)</a></li>
+      <br>
+    </ul>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which organisation fo you want to manage?
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a class="govuk-back-link" href="review-your-answers">Back</a>
+<style media="screen">
+  .defra-pagination__results{margin-bottom:20px;}
+  @media (min-width: 48.0625em){
+
+  .defra-pagination__list {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+      float: none;
+      margin-bottom: 20px;
+  }}
+  .moj-pagination__item--active, .moj-pagination__item--dots {
+    font-weight: bold;
+    height: 25px;
+    padding: 5px 10px;
+    text-align: center;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Which organisation do you want to view cases for?
+    </h1>
+        <form action="switch-organisation" method="GET">
+          <div class="govuk-form-group">
+          <div class="search-wrapper ">
+            <label for="search-reservations" class="govuk-label">
+              Search for an organisation by name
+            </label>
+            <div class="search-input-wrapper">
+              <input type="search" value="{{query.search or ''}}" id="search-orgs" name="search" title="Search" class="govuk-input">
+              <div class="search-input-submit-wrapper">
+                <button type="submit" class="search-submit">Search</button>
+              </div>
+            </div>
+          </div>
+          </div>
+        </form>
+        {% if query.search %}
+        <p class="govuk-body  govuk-!-margin-bottom-2">{{orgs | length }} organisation{% if (orgs | length ) != 1%}s{%endif%} matching &quot;<strong>{{query.search}}</strong>&quot;</p>
+        <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="?page=1">Clear search</a></p>
+        {% endif %}
+
+        <form action="cases" method="post">
+          <div class="govuk-form-group">
+          <div class="govuk-radios">
+            {% for i in orgs %}
+            <div class="govuk-radios__item selection-item result" data-item-id="{{loop.index+1}}">
+              <input class="govuk-radios__input" id="selected-organisation-id-{{loop.index+1}}" name="orgname" type="radio" value="{{i.company}}"  {% if data.orgname == i.company  %}checked = "checked" {%endif%}data-search-value="Organisation {{loop.index+1}}">
+              <label class="govuk-label govuk-radios__label" for="selected-organisation-id-{{loop.index+1}}">
+                {{i.company}}
+              </label>
+            </div>
+            {% endfor %}
+          </div>
+          </div>
+
+
+          {% set page = data.page or 1 %}
+          {% if (orgs | length) >=  24 %}
+
+          <div class="pager das-pager" aria-hidden="false" style="margin-top:0" data-paging="">
+            <nav class="defra-pagination" id="pagination-label">
+              <p class="defra-pagination__results">Showing <b>{{shown_items_min}}</b> to <b>{{shown_items_max}}</b> of <b>{{total_items}}</b> organisations</p>
+
+              <div class="pager-controls das-pager-controls">
+                <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+                <ul class="defra-pagination__list">
+                  {% if data.page > 1 %}
+                  <li class="defra-pagination__item  defra-pagination__item--prev "><a class="defra-pagination__link" href="?page={{prev_page}}" aria-hidden="false">Previous</a></li>
+                  {% endif %}
+                  <li class="defra-pagination__item {% if data.page == 1 or not data.page %} defra-pagination__item--active">1{%else%}"><a href="?page=1" class="defra-pagination__link pager_link">1</a>{% endif %}</li>
+                  <li class="defra-pagination__item {% if data.page == 2  %} defra-pagination__item--active">2{%else%}"><a href="?page=2" class="defra-pagination__link pager_link">2</a>{% endif %}</li>
+                  <li class="defra-pagination__item {% if data.page == 3  %} defra-pagination__item--active">3{%else%}"><a href="?page=3" class="defra-pagination__link pager_link">3</a>{% endif %}</li>
+                  <li class="defra-pagination__item {% if data.page == 4  %} defra-pagination__item--active">4{%else%}"><a href="?page=4" class="defra-pagination__link pager_link">4</a>{% endif %}</li>
+                  <li class="defra-pagination__item {% if data.page == 5  %} defra-pagination__item--active">5{%else%}"><a href="?page=5" class="defra-pagination__link pager_link">5</a>{% endif %}</li>
+                  {% if data.page != 5 %}
+                  <li class="defra-pagination__item  defra-pagination__item--next"><a class="defra-pagination__link" href="?page={{next_page}}" aria-hidden="false">Next</a></li>
+                </ul>
+              </div>
+            </nav>
+            {%endif%}
+          </div>
+          {% endif %}
+
+
+          <div class="govuk-form-group">
+            <input type="hidden" name="crumb_csrf_token" value="T7T4SHvWvcq7qk1MSfTevo6ezo5qfnvArpiUHe8Nr2d">
+            <input class="govuk-button margin-top-30" type="submit" name="acceptAndSubmit" value="Choose organisation" id="Button-CertifierRecordDecisionSubmit">
+
+          </div>
+        </form>
+    </div>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which organisation fo you want to manage?
+{% endblock %}
+
+{% block beforeContent %}
+{{super()}}
+<a class="govuk-back-link" href="review-your-answers">Back</a>
+<style media="screen">
+  .defra-pagination__results{margin-bottom:20px;}
+  @media (min-width: 48.0625em){
+
+  .defra-pagination__list {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+      float: none;
+      margin-bottom: 20px;
+  }}
+  .moj-pagination__item--active, .moj-pagination__item--dots {
+    font-weight: bold;
+    height: 25px;
+    padding: 5px 10px;
+    text-align: center;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Which organisation do you want to view cases for?
+    </h1>
+
+
+        
+
+        <form action="cases" method="post">
+          <div class="govuk-form-group">
+          <div class="govuk-radios">
+
+            <div class="govuk-radios__item selection-item result" data-item-id="2">
+              <input class="govuk-radios__input" id="selected-organisation-id-2" name="orgname" type="radio" value="COMCUR LTD" data-search-value="Organisation 2">
+              <label class="govuk-label govuk-radios__label" for="selected-organisation-id-2">
+                COMCUR LTD
+              </label>
+            </div>
+
+            <div class="govuk-radios__item selection-item result" data-item-id="3">
+              <input class="govuk-radios__input" id="selected-organisation-id-3" name="orgname" type="radio" value="COMTEXT LTD" data-search-value="Organisation 3">
+              <label class="govuk-label govuk-radios__label" for="selected-organisation-id-3">
+                COMTEXT LTD
+              </label>
+            </div>
+
+            <div class="govuk-radios__item selection-item result" data-item-id="4">
+              <input class="govuk-radios__input" id="selected-organisation-id-4" name="orgname" type="radio" value="COMTRAK LTD" data-search-value="Organisation 4">
+              <label class="govuk-label govuk-radios__label" for="selected-organisation-id-4">
+                COMTRAK LTD
+              </label>
+            </div>
+
+            <div class="govuk-radios__item selection-item result" data-item-id="5">
+              <input class="govuk-radios__input" id="selected-organisation-id-5" name="orgname" type="radio" value="QUAILCOM LTD" data-search-value="Organisation 5">
+              <label class="govuk-label govuk-radios__label" for="selected-organisation-id-5">
+                QUAILCOM LTD
+              </label>
+            </div>
+
+          </div>
+          </div>
+
+
+
+
+
+
+          <div class="govuk-form-group">
+            <input type="hidden" name="crumb_csrf_token" value="T7T4SHvWvcq7qk1MSfTevo6ezo5qfnvArpiUHe8Nr2d">
+            <input class="govuk-button margin-top-30" type="submit" name="acceptAndSubmit" value="Choose organisation" id="Button-CertifierRecordDecisionSubmit">
+
+          </div>
+        </form>
+    </div>
+  </div>
+  {% endblock %}
