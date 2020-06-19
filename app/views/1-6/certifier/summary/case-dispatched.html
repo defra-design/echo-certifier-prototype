@@ -81,7 +81,6 @@ GOV.UK Prototype Kit
               <th class="govuk-table__header">Actions</th>
             </tr>
           </thead>
-
           <tbody>
 
             <tr class="govuk-table__row">
@@ -89,15 +88,20 @@ GOV.UK Prototype Kit
               <td id="actual-export-date" class="govuk-table__cell" scope="row">
                 02 Aug 2019
               </td>
-              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_6969 == "completed" %}CERTIFIED{% else %}DISPATCHED{% endif %}
+              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_6969 == "completed" %}CERTIFIED% {% elseif data.status_6969 == "approved" %}APPROVED{% else %}DISPATCHED{% endif %}
               </td>
               <td id="actions" class="govuk-table__cell" scope="row">
-
-
+                {% if data.status_6969 == "approved" %}
                 <a id="continue_link_19/2/008722" href="../close-certificate?status_6969=completed&return=dispatched">
+                  Close certificate
+                </a>
+                <br>
+                {% elseif data.status_6969 != "completed" %}
+                <a id="continue_link_19/2/008722" href="../certificates/{{query.ehc or '6969EHC'}}/review-your-answers">
                   Reivew certificate
                 </a>
                 <br>
+                {% endif %}
                 <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
                   View certificate[PDF]
                 </a>
