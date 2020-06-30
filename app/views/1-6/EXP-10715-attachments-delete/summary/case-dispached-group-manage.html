@@ -1,0 +1,246 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% block navadmin %}{% include "../includes/nav-admin.html" %}{% endblock %}
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+</div>
+<style media="screen">
+  /* ==========================================================================
+   # MULTI-SELECT
+   ========================================================================== */
+
+
+.moj-multi-select__checkbox {
+  display: inline-block;
+  padding-left: 0;
+}
+
+.moj-multi-select__toggle-label {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl heading">Manage case 20/08023</h1>
+    <p class="govuk-body">4 certificates for 4 horses</p>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          EHC
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2849EHC: export horses to the United Arab Emirates (UAE)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Exporter
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Caitlin Dixon
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Destination
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ query.destination or 'China' }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Proposed export date
+        </dt>
+        <dd class="govuk-summary-list__value govuk-summary-list__40">
+          30 Jul 2019
+        </dd>
+      </div>
+    </dl>
+
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">4 certificates</h2>
+    <p class="govuk-body"><a href="#" class="govuk-link"> Download all 4 certificates [PDF]</a></p>
+    <form method="POST" action="bulk-action">
+    <div class="moj-action-bar">
+
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
+
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+            Approve selected
+          </button>
+
+          <button type="submit" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
+            Reject selected
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+<form id="table-select-certificates" action="#">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header moj-multi-select__select-all-container" scope="col"></th>
+            <th class="govuk-table__header">Certificate number
+            </th>
+            <th class="govuk-table__header">Exporter reference</th>
+            <th class="govuk-table__header">Actual export date</th>
+            <th class="govuk-table__header">Certificate status</th>
+            <th class="govuk-table__header">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% if query.has_certified_certificate == "yes" %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
+                <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
+                  <span class="govuk-visually-hidden">Select Denali</span>
+                </label>
+              </div>
+            </td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008302</td>
+            <td id="cert-ref" class="govuk-table__cell" scope="row">Nijinsky</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Jul 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">CERTIFIED
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+              <a class="govuk-link govuk-link--no-visited-state" id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf" rel="noreferrer noopener" target="_blank">
+                View certificate [PDF]
+              </a>
+            </td>
+          </tr>
+
+          {% else %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="mulitiple-Nijinsky" value="denali">
+                <label class="govuk-label govuk-checkboxes__label" for="multiple-Nijinsky">
+                  <span class="govuk-visually-hidden">Select Nijinsky</span>
+                </label>
+              </div>
+            </td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008302</td>
+            <td id="cert-ref" class="govuk-table__cell" scope="row">Nijinsky</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Jul 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">{{(query.bulk_action or "DISPATCHED") | upper}}
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+              <a id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+                <strong>Review certificate</strong>
+              </a>
+            </td>
+          </tr>
+          {% endif %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="multiple-Shergar" value="Shergar">
+                <label class="govuk-label govuk-checkboxes__label" for="multiple-Shergar">
+                  <span class="govuk-visually-hidden">Select Shergar</span>
+                </label>
+              </div>
+            </td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008303</td>
+            <td id="cert-ref" class="govuk-table__cell" scope="row">Shergar</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Jul 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">{{(query.bulk_action or "DISPATCHED") | upper}}
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+                <strong> Review certificate</strong>
+              </a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-Desert" value="Desert Orchid">
+                <label class="govuk-label govuk-checkboxes__label" for="mountain-Desert">
+                  <span class="govuk-visually-hidden">Select Desert Orchid</span>
+                </label>
+              </div>
+            </td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008304</td>
+            <td id="cert-ref" class="govuk-table__cell" scope="row">Desert Orchid</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Jul 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">{{(query.bulk_action or "DISPATCHED") | upper}}
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+                <strong> Review certificate</strong>
+              </a>
+              <br>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-denali" value="denali">
+                <label class="govuk-label govuk-checkboxes__label" for="mountain-denali">
+                  <span class="govuk-visually-hidden">Select Denali</span>
+                </label>
+              </div>
+            </td>
+            <td id="cert-num" class="govuk-table__cell" scope="row">19/02/008305</td>
+            <td id="cert-ref" class="govuk-table__cell" scope="row">Tiger Roll</td>
+            <td id="actual-export-date" class="govuk-table__cell" scope="row">
+              30 Jul 2019
+            </td>
+            <td id="status" class="govuk-table__cell" scope="row">{{(query.bulk_action or "DISPATCHED") | upper}}
+            </td>
+            <td id="actions" class="govuk-table__cell" scope="row">
+              <a class="govuk-link govuk-link--no-visited-state" id="continue_link_19/2/008722" href="../certificates/2849EHC/review-your-answers?status_2949=approved&return=dispatched-group&is_group=yes">
+                <strong> Review certificate</strong>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+<script type="text/javascript" src="/public/javascripts/moj.js"></script>
+
+<script>
+  window.addEventListener('load', function() {
+    new MOJFrontend.MultiSelect({
+      container: $('.moj-multi-select__select-all-container'),
+      checkboxes: $('.govuk-checkboxes__input')
+    });
+  })
+</script>
+
+{% endblock %}
