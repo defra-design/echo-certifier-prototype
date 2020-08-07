@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+EXP-8903 contents page
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+       Pre-certificates
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <ul class="govuk-list">
+      <li>From dashboard</li>
+      <li><a href="dashboard">Start from dashboard</a></li>
+      <li><a href="cases">Start from cases</a></li>
+
+      <li>Summary page</li>
+      <li><a href="summary/case-dispached-new-single?ehc=6062HC&destination=Turkey&cert_id=16&case_id=20/23422&status=dispatched">Summary of certificate that allows pre-certificates (displatched)</a></li>
+      <li><a href="summary/case-dispached-new-single?ehc=6062HC&destination=Turkey&cert_id=16&case_id=20/23432&status=processing">Summary of certificate that allows pre-certificates (processing)</a></li>
+  </div>
+</div>
+{% endblock %}

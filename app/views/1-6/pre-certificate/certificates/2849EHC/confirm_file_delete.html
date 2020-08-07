@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Exports application - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="javascript: history.back()">Back</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="get" action="{{query.return_to or 'supporting-documents'}}">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-botton-6">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to delete this file?
+            </h1>
+          </legend>
+          <p class="govuk-body"><strong>File to delete:</strong> {{data.file or 'document_file.xls'}}</p>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live" name="delete_file" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                Yes, delete the file
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="delete_file" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                No, dont delete the file
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock%}
