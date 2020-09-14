@@ -221,6 +221,7 @@
     "status": "processing",
     "reference": "PO9348209 3902840",
     "is_group": "no",
-    "allow_pre_certificate": "yes"
+    "allow_pre_certificate": "yes",
+    "has_downloadable_precert": "yes"
   }
 ]

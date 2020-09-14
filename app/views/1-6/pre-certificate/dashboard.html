@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% block navadmin %}{% include "./includes/nav-admin.html" %}{% endblock %}
+<!-- back button -->
+{% endblock %}
+{% block content %}
+<style media="screen">
+  .govuk-table .govuk-tag.orange{
+    color: #0b0c0c;
+background: #FFBF47;
+border: 3px solid #FFBF47;
+  }
+  .govuk-table  .gray-tag {
+    color: #0b0c0c;
+    background: #DEE0E2;
+    border: 3px solid #DEE0E2;
+}
+</style>
+<div class="govuk-grid-row ">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Case management</h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="dashboard" method="GET">
+      <div class="search-wrapper govuk-form-group">
+        <label for="search-reservations" class="govuk-label">
+          Search by certificate ID, case ID, name, destination or reference number
+        </label>
+        <div class="search-input-wrapper">
+          <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
+           <input type="hidden" id="filter_status" name="filter_status" value="">
+            <input type="hidden" id="filter_status" name="has_filter" value="">
+            <div class="search-input-submit-wrapper">
+              <button type="submit" class="search-submit">Search</button>
+            </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="govuk-grid-row app-card--row" data-height="175">
+      <div class="govuk-grid-column-one-third">
+        <div class="app-card" style="height: 175px;">
+          <div class="app-card--content">
+            <h3 class="govuk-heading-m app-card--heading">
+              <span class="app-card--stat">20</span>
+              <a class="card-link" href="cases?filter_status=_unchecked&filter_status=dispatched&has_filter=yes">
+                  Cases to review
+              </a>
+            </h3>
+              <p class="govuk-body app-card--description">Approve or reject a certificate dispatched to your organisation by APHA </p>
+            <!-- <p class="govuk-body app-card--description"></p> -->
+              <!-- <ul class="app-card--tasks govuk-list">
+                <li>
+                  <a class="ga-track-anchor-click" href="vacancies?status=new" data-ga-event-category="link - click" >6 new applications to look at </a>
+                </li>
+              </ul> -->
+          </div>
+        </div>
+      </div>
+      {% if data.has_precheck == 'yes' %}
+      <div class="govuk-grid-column-one-third">
+        <div class="app-card" style="height: 175px;">
+          <div class="app-card--content">
+            <h3 class="govuk-heading-m app-card--heading">
+              <span class="app-card--stat">20</span>
+              <a class="card-link" href="cases?filter_status=_unchecked&filter_status=certifier+action&has_filter=yes">
+                  Cases to pre-check
+              </a>
+            </h3>
+              <p class="govuk-body app-card--description">Check a certificate before submitting to APHA</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <div class="govuk-grid-column-one-third">
+        <div class="app-card" style="height: 175px;">
+          <div class="app-card--content">
+            <h3 class="govuk-heading-m app-card--heading">
+              <span class="app-card--stat">2</span>
+              <a class="card-link" href="cases?filter_status=_unchecked&filter_status=approved&has_filter=yes">
+                  Cases to close
+              </a>
+            </h3>
+              <p class="govuk-body app-card--description">Close these certificates your organisation has approved or rejected</p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="app-card" style="height: 175px;">
+          <div class="app-card--content">
+            <h3 class="govuk-heading-m app-card--heading">
+              <span class="app-card--stat">14</span>
+              <a href="cases?filter_status=_unchecked&filter_status=processing&has_filter=yes" class="govuk-link">
+                  Upcoming cases
+              </a>
+            </h3>
+              <p class="govuk-body app-card--description">These certificates have not yet been dispatched to your organisation by APHA</p>
+              <ul class="app-card--tasks govuk-list">
+                <li>
+                <a href="cases?filter_status=_unchecked&filter_other=pre-check&has_filter=yes&filter_status=" class="govuk-link">1 case has a pre-certificate to download</a>
+                </li>
+              </ul>
+
+          </div>
+        </div>
+      </div>
+      <!-- <div class="govuk-grid-column-one-third">
+        <div class="app-card " style="height: 175px;">
+          <div class="app-card--content">
+            <h3 class="govuk-heading-m app-card--heading">
+              <span class="app-card--stat">43</span>
+              <a class="card-link" href="cases?filter_status=_unchecked&filter_status=dispatched&filter_status=certifier+action&filter_status=processing&filter_status=approved&has_filter=yes">
+                Open cases
+              </a>
+            </h3>
+            <p class="govuk-body app-card--description">View all your cases that need an action from your organisation</p>
+
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <p class="govuk-body"><a href="cases?filter_status=&has_filter=" class="govuk-link govuk-link--no-visited-state govuk-heading-m">All your cases</a></p>
+    <script type="text/javascript">
+      function defer(method) {
+          if (window.jQuery) {
+              method();
+          } else {
+              setTimeout(function() { defer(method) }, 50);
+          }
+      }
+      window.onresize = function(event) {
+        resize()
+
+      };
+      function resize(){
+
+        var maxHeight = 0;
+        $(".app-card--row").attr('data-height', maxHeight)
+        console.log("--- resizing ---")
+
+        $(".app-card").each(function(){
+          var row = $(this).parent().parent();
+           if ($(this).find('.app-card--content').height() > row.attr('data-height') ){
+              row.attr('data-height', $(this).find('.app-card--content').height()+30)
+            }
+        });
+        console.log($(".app-card--row").attr('data-height'))
+        $(".app-card").each(function(){
+          var newHeight = $(this).parent().parent().attr('data-height')
+          $(this).height(newHeight)
+        })
+      }
+      defer(function () {
+        resize()
+      });
+    </script>
+{% endblock %}

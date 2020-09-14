@@ -40,7 +40,7 @@ GOV.UK Prototype Kit
     <div class="defra-alert defra-alert--success"><p class="govuk-body govuk-!-margin-bottom-0">Succesfully deleted file {{data.file}}</p></div>
     {% endif %}
     <h1 class="govuk-heading-xl heading">Manage case 20/08023</h1>
-  
+
     <dl class="govuk-summary-list govuk-summary-list--no-border">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-summary-list__40">
@@ -96,9 +96,10 @@ GOV.UK Prototype Kit
           </a>
         </li>
       </ul>
+
       <div class="govuk-tabs__panel" id="ehc-tab">
         <h2 class="govuk-heading-l">1 certificates</h2>
-        <form id="table-select-certificates" action="#">
+
           <table class="govuk-table">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
@@ -134,10 +135,11 @@ GOV.UK Prototype Kit
                     View certificate[PDF]
                   </a>
                   <br>
-                  <a id="view_cert_19/2/008722" href="/public/images/20.2.301830PX (A3 C).pdf" download>
-                    Download pre-certificate[PDF]
-                  </a>
-                  &nbsp
+                  <form method="get" action="download">
+                  <button type=submit class="defra-link-button govuk-!-padding-left-0 govuk-!-margin-bottom-0" id="view_cert_19/2/008722"  >
+                    Download pre-certificate [PDF]
+                  </button>
+                  </form>
                   {% if data.is_white_paper == "yes" %}
                   <br>
                   <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1-edit.pdf" rel="noreferrer noopener" target="_blank">
@@ -148,7 +150,6 @@ GOV.UK Prototype Kit
               </tr>
             </tbody>
           </table>
-        </form>
       </div>
       <div class="govuk-tabs__panel" id="attachment-tab">
                 <h2 class="govuk-heading-l"><span class="file_count">3</span> attachments</h2>

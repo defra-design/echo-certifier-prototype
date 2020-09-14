@@ -146,6 +146,8 @@ GOV.UK Prototype Kit
       <p class="govuk-body govuk-!-margin-bottom-2">
         Showing <span id="js-case-count"></span> cases {% if query.search %} matching <strong>‘{{query.search}}’</strong>{% endif %}
         {% if data.has_filter == "yes"%}
+        {% if data.filter_other == "pre-check"%}  <strong>with a pre-cert</strong>{% endif %}
+        {% else %}
           with status {% for filter in data.filter_status %}
                         <strong>{{filter | capitalize}}</strong>{%if (data.filter_status|length)-1 == (loop.index) and (data.filter_status|length) != 1 %} or {% elseif (data.filter_status|length) != (loop.index)%},{%endif%}
                         {%endfor%}
@@ -198,6 +200,7 @@ GOV.UK Prototype Kit
         or (query.search and (query.search|upper) in (case.destination|upper))
         or (query.search and (query.search|upper) in (case.reference|upper))
         or (query.search and (query.search|upper) in (case.certificate|upper))
+        or ("pre-check" in data.filter_other and case.allow_pre_certificate =="yes" and case.has_downloadable_precert=="yes")
         or case.status in data.filter_status
         %}
         <tr class="govuk-table__row">
