@@ -21,6 +21,14 @@ GOV.UK Prototype Kit
     </ul>
     <form id="CloseCaseForm" method="get" action="../certifier-have-signed2">
       <div class="govuk-form-group ">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="fullname">
+            Reasons for rejection
+          </label>
+          <input class="govuk-input  govuk-!-width-three-quarters" id="rejection" name="rejection_reasons" type="text" value="{{data.rejection_reasons}}">
+        </div>
+      </div>
+      <div class="govuk-form-group ">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">

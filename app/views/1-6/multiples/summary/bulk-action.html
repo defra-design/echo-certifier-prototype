@@ -20,6 +20,14 @@ GOV.UK Prototype Kit
       <li><strong>119/02/008302</strong> (Tiger Roll) <a href="/public/images/ehc-2849ehc-3.1.pdf" target="_blank" data-qa-id="Link-PreviewCertificate" class="govuk-link">Preview certificate [PDF]</a></li>
     </ul>
     <form id="CloseCaseForm" method="get" action="../certifier-have-signed2">
+      {% if query.bulk_action == "reject" or query.bulk_action == "cancel" %}
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="reasons">
+          Reason for {% if query.bulk_action == "reject" %}rejecting{% else %}cancelling{% endif %} 4 certificates
+        </label>
+        <textarea name="name" rows="4" class="govuk-textarea  govuk-!-width-three-quarters" id="reasons" name="reasons" type="text" value="{{data.reasons}}"></textarea>
+      </div>
+      {% endif %}
       <div class="govuk-form-group ">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
