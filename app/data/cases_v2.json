@@ -218,7 +218,7 @@
     "date": "06 Dec 2019",
     "destination": "Turkey",
     "EHC": "6062HC",
-    "status": "processing",
+    "status": "needs pre-certiciation",
     "reference": "PO9348209 3902840",
     "is_group": "no",
     "allow_pre_certificate": "yes",

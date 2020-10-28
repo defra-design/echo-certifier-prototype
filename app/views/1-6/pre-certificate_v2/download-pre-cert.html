@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Exports application - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="{% if data.skip_step == 'yes'%}summary/case-dispatched?status_6969=approved{% else %}javascript:history.back(){%endif%}">Back</a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl ">Download and sign this pre-certificate</h1>
+    <p>Please download the pre-certificate</p>
+      <form method="get" action="download">
+    <p class="download-a-document">
+      <span class="download-a-document-image" style="    vertical-align: middle; "> <img class="" src="/public/images/icon-file-download.png" alt="your answers in a specimen certificate" ><span style="padding-left:10px;" class="govuk-visually-hidden">File download</span></span>
+
+      <button type=submit class="defra-link-button govuk-!-padding-left-0 govuk-!-margin-bottom-0" style="diplay:inline-block;" id="view_cert_19/2/008722"  >
+        <strong>Download the pre-certicicate </strong>
+      </button> (PDF, 23KB)
+
+    </p>
+    </form>
+
+    <form action="./summary/case-{{data.return or 'certifier-action'}}" id="CloseCaseForm" method="POST">
+      <input type="hidden" name="crumb_csrf_token" value="iPCPTvJUeOWpwzfyGMAuuzwnFDrzrao8BPMCTQ88C7q">
+      <input type="hidden" name="applicationId" value="1721147992687">
+
+      <p id="close-case-declaration" class="govuk-body">
+        You are confirming that you have downloaded this pre-certificate and will sign and return it to the exporter
+      </p>
+      <br>
+      <a href="summary/case-dispached-new-single?ehc=6062HC&destination=Turkey&cert_id=16&case_id=20/23432&status=processing&has_downloadable_precert=yes" class="govuk-button" id="Button-CloseCase">
+        Confirm and continue
+      </a>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
