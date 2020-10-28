@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% block navadmin %}{% include "./includes/nav-admin.html" %}{% endblock %}
+<!-- back button -->
+
+<!-- <div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+</div> -->
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Your cases</h1>
+    <form method="GET">
+      <div class="search-wrapper govuk-form-group">
+        <label for="search-reservations" class="govuk-label">
+          Search by certificate ID, case ID, name, destination or reference number
+        </label>
+        <div class="search-input-wrapper">
+          <input type="search" value="{{query.search or ''}}" id="search-reservations" name="search" title="Search" class="govuk-input">
+          <div class="search-input-submit-wrapper">
+            <button type="submit" class="search-submit">Search</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="govuk-grid-column-full">
+    {% if query.search %}
+    <p class="govuk-body"><a href="certifier-multi-org-dashboard" class="govuk-link govuk-link--no-visited-state">Clear search</a></p>
+    <p class="govuk-body">
+      There are <span id="js-case-count"></span> cases matching <strong>‘{{query.search}}’</strong>
+    </p>
+    {% endif %}
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header">
+            <div class="applicationRef-column">Case ID</div>
+          </th>
+          <th class="govuk-table__header">Name</th>
+          <th class="govuk-table__header">Export date</th>
+          <th class="govuk-table__header">Destination</th>
+          <th class="govuk-table__header">Status</th>
+          <th class="govuk-table__header">Reference</th>
+          <th class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- loop through a an array of cases. can be found in app > data > cases.json.
+        Loaded via app > data > session-data-defaults.js -->
+        {% for case in data.cases %}
+          {% if (query.search|upper) in (case.name|upper)
+              or (query.search|upper) in (case.caseID|upper)
+              or (query.search|upper) in (case.destination|upper)
+              or (query.search|upper) in (case.destination|upper)
+            %}
+        <tr class="govuk-table__row">
+          <td id="-appRef" class="govuk-table__cell applicationRef-column" scope="row">
+            {{case.caseID}}
+          </td>
+          <td id="-commodity" class="govuk-table__cell commodity-column" scope="row">
+            {{case.name}}
+          </td>
+          <td id="-submitted" class="govuk-table__cell submitted-column" scope="row">
+            {{case.date}}
+          </td>
+          <td id="-destination" class="govuk-table__cell" scope="row">
+            {{case.destination}}
+          </td>
+          <td id="-status" class="govuk-table__cell" scope="row">
+            <strong class="status-tag status-tag--{% if case.status=='completed'%}completed
+                    {%elseif case.status=='new' or case.status=='processing'%}processing
+                    {%elseif case.status=='dispatched'%}dispatched
+                    {%elseif case.status=='withdrawn'%}gray-tag
+                    {% elseif case.status=='pending'%}green
+                    {%elseif case.status=='approved'%}approved
+                    {% elseif case.status=='certifier action' %}action
+                    {%elseif case.status=='cancelled' or case.status=='replaced' %}warning
+                    {%else%}rejected
+                    {%endif%}
+                    ">
+                    {% if case.status == "pending"%}Completed{% else  %}{{case.status}}{% endif%}
+            </strong>
+          </td>
+          <td id="-reference" class="govuk-table__cell" scope="row">
+            {{case.reference}}
+          </td>
+          <td id="-actions" class="govuk-table__cell" scope="row">
+
+            <a id="dashboard_action_link_1651965954452" href="{% if case.status=='awaiting dispatch'%}summary/case-awaiting-dispatch{% elseif case.status=='approved'%}summary/case-dispatched?id={{case.index}}{%elseif case.status=='certifier action'%}summary/case-certifier-action{%else%}summary/case-{{case.status}}{%endif%}?id={{case.index}}">
+              Summary
+            </a>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    var count = $('.govuk-table__row').length-1
+    $('#js-case-count').text(count);
+    if(count == 0){
+      $('.govuk-table').hide()
+    }
+  })
+
+</script>
+{% endblock %}

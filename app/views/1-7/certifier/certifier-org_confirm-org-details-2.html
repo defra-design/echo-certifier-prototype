@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Please confirm your organisation details</h1>
+
+      <h2 class="govuk-heading-m">Acme Org Ltd</h2>
+
+      <!--
+1 Francis Crick Avenue, Cambridge Biomedical Campus, Cambridge, United Kingdom, CB2 0AA
+        -->
+
+
+      <span class="govuk-hint">
+        This is the address that Exporters will see when they're selecting a Certifier for an EHC application
+      </span>
+
+
+      <form action="certifier-org_post-idm_not-sorry" method="post" novalidate>
+
+        <p>1 Francis Crick Avenue,<br>Cambridge Biomedical Campus,<br>Cambridge,<br>United Kingdom,<br>CB2 0AA</p>
+        <p>info@acme.org</p>
+
+        <p><a href="certifier-org_confirm-org-details-2b">Enter a different address</a></p>
+
+        <button type="submit" class="govuk-button">
+          Save and continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

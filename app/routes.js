@@ -8,4 +8,5 @@ require('./routes/1-3/routes.js')(router);
 require('./routes/1-4/routes.js')(router);
 require('./routes/1-5/routes.js')(router);
 require('./routes/1-6/routes.js')(router);
+require('./routes/1-7/routes.js')(router);
 module.exports = router

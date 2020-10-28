@@ -1,0 +1,243 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% block navadmin %}{% include "../includes/nav-admin.html" %}{% endblock %}
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-multi-org-dashboard">Back</a>
+</div>
+<style media="screen">
+  /* ==========================================================================
+   # MULTI-SELECT
+   ========================================================================== */
+
+
+.moj-multi-select__checkbox {
+  display: inline-block;
+  padding-left: 0;
+}
+
+.moj-multi-select__toggle-label {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-three-quarters">
+    {% if query.delete_file == 'yes'%}
+    <div class="defra-alert defra-alert--success">
+      <p class="govuk-body govuk-!-margin-bottom-0">Succesfully deleted file: <strong>{{data.file}}</strong></p>
+    </div>
+    {% endif %}
+    <h1 class="govuk-heading-xl heading">Manage case 20/08023</h1>
+    <p class="govuk-body">4 certificates for 4 horses</p>
+
+    <!-- summary -->
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          EHC
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2849EHC: export horses to the United Arab Emirates (UAE)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Exporter
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Caitlin Dixon
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Destination
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ query.destination or 'China' }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-summary-list__40">
+          Proposed export date
+        </dt>
+        <dd class="govuk-summary-list__value govuk-summary-list__40">
+          30 Jul 2019
+        </dd>
+      </div>
+    </dl><!-- summary End -->
+
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-tabs" data-module="tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <!-- Tabs list -->
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#ehc-tab">
+            Export health certificates (4)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#attachment-tab">
+            Attachments (<span class="file_count">3</span>)
+          </a>
+        </li>
+      </ul><!-- Tabs list end -->
+
+      <div class="govuk-tabs__panel" id="ehc-tab">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Used 4 of 30 certificates</span>
+        <h2 class="govuk-heading-l">Pre-processed certificates</h2>
+
+        <p class="govuk-body">You have used 4 of 30 certificates<br>Next certificate to use from this block: <a href="#">23/234343</a></p>
+        <ol class="app-certificate-list">
+            <li class="app-certificate-list__item">
+              <div class="app-certificate-list__content">
+                <span class="app-certificate-list__name govuk-heading-s ">
+                  20/331232
+                </span>
+                <p class="govuk-body govuk-!-margin-bottom-2">Certifed on 30 December 2020</p>
+                <p class="govuk-body"><a href="#">View certificate (opens in new tab)</a></p>
+
+              </div>
+              <strong class="govuk-tag app-certificate-list__tag status-tag--green" id="eligibility-status">Certified </strong>
+            </li>
+            <li class="app-certificate-list__item">
+              <div class="app-certificate-list__content">
+                <span class="app-certificate-list__name govuk-heading-s">
+                  20/331232
+                </span>
+                <p class="govuk-body govuk-!-margin-bottom-2">Proposed export date: 28 December 2020 <br>Certifed on 30 December 2020</p>
+                <p class="govuk-body"><a href="#">View certificate (opens in new tab)</a></p>
+              </div>
+              <strong class="govuk-tag app-certificate-list__tag status-tag--green" id="eligibility-status">Certified </strong>
+            </li>
+          </ol>
+          </div>
+          </div>
+      </div>
+      <div class="govuk-tabs__panel" id="attachment-tab">
+        <h2 class="govuk-heading-l"><span class="file_count">3</span> attachments</h2>
+        <p class="govuk-body">You cannot delete any file uploaded by the exporter</p>
+        <p class="govuk-body"><a href="#" class="govuk-link">Download all <span class="file_count">3</span> files [zip]</a></p>
+        <dl class="govuk-summary-list ">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              <a href="#"><strong>test_support.docx</strong></a>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              This is a description of the file
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="supporting-documents?change=yes">
+                Download <span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 14.05.02.png</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              <a href="#"><strong>test_support.docx</strong></a>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Packing list
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="supporting-documents?change=yes">
+                Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.10.45.png</span>
+              </a>
+            </dd>
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              <a href="#"><strong>test_support.docx</strong></a>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Passport for all horses
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="supporting-documents?change=yes">
+                Download<span class="govuk-visually-hidden"> Screenshot 2020-05-27 at 13.14.14.png</span>
+              </a>
+            </dd>
+          </div>
+
+
+          {% if data.file and query.delete_file != 'yes'%}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              <a href="#"><strong>{{data.file}}</strong></a>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data.description}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="../certificates/2849EHC/confirm_file_delete?return_to=../../summary/case-dispached-new-group#attachment-tab">
+                Delete <span class="govuk-visually-hidden"> {{data.file}}</span>
+              </a>&nbsp;
+              <a class="govuk-link" href="#">
+                Download<span class="govuk-visually-hidden"> {{data.file}}</span>
+              </a>
+            </dd>
+          </div>
+
+          {% endif %}
+
+
+
+
+          <!-- <p class="govuk-body govuk-!-margin-top-6"><a href="../certificates/2849EHC/supporting-documents?change=yes" class="govuk-link">Add more attachments</a></p> -->
+
+        </dl>
+        <p class="govuk-body"><a class="govuk-link--no-visited-state" href="../certificates/2849EHC/supporting-documents?return_to=../../summary/case-dispached-new-group#attachment-tab{%if query.delete_file == 'yes'%}&file={%endif%}">Add attachments</a></p>
+
+      </div>
+
+
+
+    </div>
+  </div>
+  <script type="text/javascript" src="/public/javascripts/moj.js"></script>
+
+  <script>
+    window.addEventListener('load', function() {
+
+      $('.file_count').text($('#attachment-tab .govuk-summary-list__row').length)
+
+      document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+      new MOJFrontend.MultiSelect({
+        container: $('.moj-multi-select__select-all-container'),
+        checkboxes: $('.govuk-checkboxes__input')
+      });
+
+      new MOJFrontend.ButtonMenu({
+        container: $('.moj-button-menu'),
+        mq: '(min-width: 200em)',
+        buttonText: 'Review selected',
+        buttonClasses: 'govuk-button--secondary moj-button-menu__toggle-button--secondary'
+      });
+
+    })
+  </script>
+
+  {% endblock %}
