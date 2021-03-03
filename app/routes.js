@@ -9,4 +9,17 @@ require('./routes/1-4/routes.js')(router);
 require('./routes/1-5/routes.js')(router);
 require('./routes/1-6/routes.js')(router);
 require('./routes/1-7/routes.js')(router);
+
+//Cancel and replace
+router.post('/beta/v8/cancel-replace/request-replacement', function (req, res) {
+  console.log(req.session.data['cancelAndReplaceDecision']);
+  if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
+res.redirect('/beta/v8/cancel-replace/update-answers');
+  }
+  else {
+res.redirect('/beta/v8/cancel-replace/index')
+  }
+})
+
+
 module.exports = router

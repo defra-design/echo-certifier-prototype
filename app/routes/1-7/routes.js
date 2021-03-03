@@ -280,6 +280,17 @@ module.exports = function(router) {
   })
 
 
+  //Cancel and replace
+  router.post('/1-7/cancel-replace/request-replacement', function (req, res) {
+    console.log(req.session.data['cancelAndReplaceDecision']);
+    if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
+  res.redirect('/1-7/cancel-replace/update-answers');
+    }
+    else {
+  res.redirect('/1-7/cancel-replace/index')
+    }
+  })
+
 
 
 
