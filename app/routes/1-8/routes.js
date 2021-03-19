@@ -8,7 +8,7 @@ module.exports = function(router) {
   // require('./EXP-10372-organisation-switcher.js')(router)
 
   // CHANGE VERSION TO THE VERSION
-  const version = '1-7'
+  const version = '1-8'
   const base_url = version + "/"
   const file_url = version + "/certifier"
 
@@ -281,13 +281,13 @@ module.exports = function(router) {
 
 
   //Cancel and replace
-  router.post('/1-7/cancel-replace/request-replacement', function (req, res) {
+  router.post('/1-8/cancel-replace/request-replacement', function (req, res) {
     console.log(req.session.data['cancelAndReplaceDecision']);
     if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
-  res.redirect('/1-7/cancel-replace/update-answers');
+  res.redirect('/1-8/cancel-replace/update-answers');
     }
     else {
-  res.redirect('/1-7/cancel-replace/index')
+  res.redirect('/1-8/cancel-replace/index')
     }
   })
 
