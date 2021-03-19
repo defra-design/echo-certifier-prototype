@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<!-- call the same block in the main layout file -->
+{{super()}}
+<!-- add admin navbar from includes folder -->
+{% if data.orgs=="multi"%}
+{% block navadmin %}{% include "../includes/nav-admin.html" %}{% endblock %}
+{% else %}
+{% block navadminSingle %}{% include "../includes/nav-admin-single.html" %}{% endblock %}
+{% endif %}
+<!-- back button -->
+<div>
+  <a class="govuk-back-link" id="link-back" href="../certifier-single-org-dashboard">Back</a>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Manage case {{query.case_id or "20/8051"}}</h1>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              EHC
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if query.ehc == "6969EHC" %}
+                6969EHC: Export dairy and dairy products to Australia
+              {% elseif query.ehc == "8270EHC"%}
+                8270EHC: fishery products intended for human consumption to the EU
+              {% else %}
+                7006GB: Pig meat from Great Britain to China
+              {% endif %}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Exporter
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Alan Home Purchase
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Destination
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ query.destination or 'China' }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-summary-list__40">
+              Proposed export date
+            </dt>
+            <dd class="govuk-summary-list__value govuk-summary-list__40">
+              30 Jul 2019
+            </dd>
+          </div>
+        </dl>
+
+      </div>
+      <div class="govuk-grid-column-one-quarter"> </div>
+    </div>
+    <div>
+      <form id="table-select-certificates" action="#">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">Certificate number
+              </th>
+              <th class="govuk-table__header">Actual export date</th>
+              <th class="govuk-table__header">Certificate status</th>
+              <th class="govuk-table__header">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr class="govuk-table__row">
+              <td id="cert-num" class="govuk-table__cell" scope="row">19/2/008722</td>
+              <td id="actual-export-date" class="govuk-table__cell" scope="row">
+                02 Aug 2019
+              </td>
+              <td id="status" class="govuk-table__cell" scope="row">{% if data.status_6969 == "completed" %}CERTIFIED% {% elseif data.status_6969 == "approved" %}APPROVED{% else %}DISPATCHED{% endif %}
+              </td>
+              <td id="actions" class="govuk-table__cell" scope="row">
+                {% if data.status_6969 == "approved" %}
+                <a id="continue_link_19/2/008722" href="../close-certificate?status_6969=completed&return=dispatched">
+                  Close certificate
+                </a>
+                <br>
+                {% elseif data.status_6969 != "completed" %}
+                <a id="continue_link_19/2/008722" href="../certificates/{{query.ehc or '6969EHC'}}/review-your-answers">
+                  Reivew certificate
+                </a>
+                <br>
+                {% endif %}
+                <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1.pdf"  rel="noreferrer noopener" target="_blank">
+                  View certificate[PDF]
+                </a>
+                &nbsp
+                {% if data.is_white_paper == "yes" %}
+                <br>
+                <a id="view_cert_19/2/008722" href="/public/images/ehc-6969ehc-8.1-edit.pdf" rel="noreferrer noopener" target="_blank">
+                  Editable certificate
+                </a>
+                {% endif %}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

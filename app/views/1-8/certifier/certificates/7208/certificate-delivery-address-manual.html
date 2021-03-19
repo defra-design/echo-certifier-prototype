@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/protected/form/7432EHC/application/1721147988469/page/2/certificate-delivery-address-manual" method="POST">
+          <input type="hidden" name="crumb_csrf_token" value="00cjWOe9i6sG-GzHQk_xVluLrDo3gxDb_D55s1NT9HE">
+          <input type="hidden" name="ehcNumber" value="7432EHC">
+          <input type="hidden" name="applicationFormId" value="1721147988469">
+          <input type="hidden" name="pageSequence" value="2">
+          <input type="hidden" name="certifierName" value="ADM ACCOUNTING LIMITED Hornbeam House  CW12 3ER  ">
+          <input type="hidden" name="certifierOrganisationId" value="e0ceed69-1aae-e911-a964-000d3ab6488a">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Where would you like your certificate to be delivered?
+              </h1>
+            </legend>
+            <br>
+            <div class="govuk-form-group ">
+              <label class="govuk-label" for="certifier-address-line-1">
+                Building and street
+                <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <input class="govuk-input" id="certifier-address-line-1" name="addressLine1" type="text" value="123 bog standard street">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="certifier-address-line-2">
+                <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+              </label>
+              <input class="govuk-input" id="certifier-address-line-2" name="addressLine2" type="text" value="">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="certifier-address-town">
+                Town or city
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="certifier-address-town" name="town" type="text" value="highbilly">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="certifier-address-county">
+                County
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="certifier-address-county" name="county" type="text" value="virginia">
+            </div>
+            <div class="govuk-form-group ">
+              <label class="govuk-label" for="certifier-address-postcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="certifier-address-postcode" name="postcode" value="dg34 0po" type="text">
+            </div>
+          </fieldset>
+          <br>
+          <div class="govuk-!-margin-left-0 govuk-grid-column-one-quarter govuk-!-padding-0">
+            <input class="govuk-button" type="submit" name="saveAndContinue" value="Save and continue" id="Button-SaveAndContinue" data-qa-id="Button-SaveAndContinue">
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-body">
+              <input class="link-button" type="submit" value="Save and continue later" name="saveAndResumeLater" data-qa-id="Button-SaveAndResumeLater" id="Button-SaveAndResumeLater">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+{% endblock %}
