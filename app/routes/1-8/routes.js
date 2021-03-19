@@ -284,10 +284,29 @@ module.exports = function(router) {
   router.post('/1-8/cancel-replace/request-replacement', function (req, res) {
     console.log(req.session.data['cancelAndReplaceDecision']);
     if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
-  res.redirect('/1-8/cancel-replace/update-answers');
+      res.redirect('/1-8/cancel-replace/update-answers');
     }
     else {
-  res.redirect('/1-8/cancel-replace/index')
+      res.redirect('/1-8/cancel-replace/index')
+    }
+  })
+
+  router.post('/1-8/cancel-replace/request-replacement-v2', function (req, res) {
+    if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
+      res.redirect('/1-8/cancel-replace/guidance-changes-allowed');
+    }
+    else {
+      res.redirect('/1-8/cancel-replace/guidance-changes-not-allowed')
+    }
+  })
+
+  router.post('/1-8/cancel-replace/guidance-changes-not-allowed', function (req, res) {
+    console.log(req.session.data['cancelAndReplaceDecision']);
+    if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
+      res.redirect('/1-8/cancel-replace/update-answers');
+    }
+    else {
+      res.redirect('/1-8/cancel-replace/index')
     }
   })
 
