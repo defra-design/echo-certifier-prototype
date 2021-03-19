@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Export Health Certificate
+
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+
+
+<div class="govuk-width-container">
+ <div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item" id="Nav-DisplayName"></li>
+    <li class="login-nav__list-item"> | <a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+    <li class="login-nav__list-item"><a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+{{ govukBackLink({
+  "text": "Back",
+  "href": "javascript: window.history.go(-1)"
+})}}
+</div>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="review-form" method="POST">
+      <h2 class="govuk-heading-xl">
+        You do not need a replacement certificate
+      </h2>
+      <p>
+        If the importing country allows you to make handwritten changes to the certificate, then you do not need a replacement.
+      </p>
+
+      <p>
+        You should:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          make any changes you need to the certificate
+        </li>
+        <li>
+          stamp and initial those changes
+        </li>
+      </ul>
+
+      <p>
+        Then, give it to the exporter along with:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          a letter on headed paper explaining why you made the changes
+        </li>
+        <li>
+          any correspondence from the importing country
+        </li>
+      </ul>
+
+      {{govukButton({
+        text: "Returnto your cases"
+      })}} 
+    </form>
+  </div>
+</div>
+{% endblock %}
