@@ -27,37 +27,40 @@ Export Health Certificate
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="review-form" method="POST">
-      <input type="hidden" name="crumb_csrf_token" value="ccMVX1E_RnHV8mCEX98N_SOaG8X4_N-dzQ0PStSpFRz"/>
-      {{ govukRadios({
-        idPrefix: "proceedCancelAndReplace",
-        name: "cancelAndReplaceDecision",
-        fieldset:
-        {
-          legend:
-          {
-            text: "Has the consignment already left the UK?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        items: [
-        {
-          value: "proceedCancelAndReplace",
-          text: "Yes"
-        },
-        {
-          value: "cancelCancelAndReplace",
-          text: "No"
-        }
-        ]
-      }) }}
-
-      <input class="govuk-button" type="submit" name="continue" value="Continue" id="CancelAndReplace-Continue" data-qa-id="Button-cancelAndReplaceContinue"/>
-
-      <p class="govuk-body">
-        <a class="govuk-link" href="index" id="cancelRequest">Cancel
-        request</a>
+      <h1 class="govuk-heading-xl">
+        You do not need a replacement certificate
+      </h1>
+      <p>
+        If the consignment has not left the UK, then you do not need to ask for a replacement certificate.
       </p>
+
+      <p>
+        You should:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          make any changes you need to the certificate
+        </li>
+        <li>
+          stamp and initial those changes
+        </li>
+      </ul>
+
+      <p>
+        Then, give it to the exporter along with:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          a letter on headed paper explaining why you made the changes
+        </li>
+        <li>
+          any correspondence from the importing country
+        </li>
+      </ul>
+
+      {{govukButton({
+        text: "Return to your cases"
+      })}} 
     </form>
   </div>
 </div>

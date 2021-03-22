@@ -306,7 +306,7 @@ module.exports = function(router) {
       res.redirect('/1-8/cancel-replace/update-answers');
     }
     else {
-      res.redirect('/1-8/cancel-replace/index')
+      res.redirect('/1-8/cancel-replace/guidance-consignment-left-uk')
     }
   })
 
