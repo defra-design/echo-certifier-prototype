@@ -283,6 +283,7 @@ module.exports = function(router) {
   //Cancel and replace
   router.post('/1-8/cancel-replace/request-replacement', function (req, res) {
     console.log(req.session.data['cancelAndReplaceDecision']);
+    req.session.data['cr-journey'] = 'v1'
     if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
       res.redirect('/1-8/cancel-replace/update-answers');
     }
@@ -303,16 +304,30 @@ module.exports = function(router) {
   router.post('/1-8/cancel-replace/guidance-changes-not-allowed', function (req, res) {
     console.log(req.session.data['cancelAndReplaceDecision']);
     if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
-      res.redirect('/1-8/cancel-replace/update-answers');
+      req.session.data['cr-journey'] = 'v2'
+      res.redirect('/1-8/cancel-replace/et135-v2');
     }
     else {
       res.redirect('/1-8/cancel-replace/guidance-consignment-left-uk')
     }
   })
 
+  router.post('/1-8/cancel-replace/update-answers', function (req, res) {
+    if (req.session.data['cr-journey'] == "v2"){
+      res.redirect('/1-8/cancel-replace/declaration');
+    }
+    else {
+      res.redirect('/1-8/cancel-replace/et135')
+    }
+  })
 
+  router.post('/1-8/cancel-replace/et135', function (req, res) {
+    res.redirect('/1-8/cancel-replace/declaration')
+  })
 
-
+  router.post('/1-8/cancel-replace/et135-v2', function (req, res) {
+    res.redirect('/1-8/cancel-replace/update-answers');
+  })
 
 
 

@@ -15,9 +15,10 @@ Export Health Certificate
     <li class="login-nav__list-item"><a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
   </ul>
 </div>
-<div>
-  <a class="govuk-back-link" id="link-back" href="">Back</a>
-</div>
+{{ govukBackLink({
+  "text": "Back",
+  "href": "javascript: window.history.go(-1)"
+})}}
 </div>
 {% endblock %}
 {% block content %}
