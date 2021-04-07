@@ -24,7 +24,10 @@ Export Health Certificate
 {% block content %}
 
 {% set reasonErrorText = 'Select a reason for cancelling and replacing this certificate' %}
-{% set detailsErrorText = "Provide details about the cancellation reason" %}
+
+{% set detailsErrorText %}
+{{'Provide details about the cancellation reason' if data['error'] != 'characters' else 'Details must be 275 characters or fewer'}}
+{% endset %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -108,20 +111,16 @@ Export Health Certificate
         </label>
       </h1>
 
-      {% if data['error'] and data['error'] != 'characters' %}
-      <span id="passport-issued-error" class="govuk-error-message">
+      {% if data['error'] %}
+      <span id="more-detail-error" class="govuk-error-message">
         <span class="govuk-visually-hidden">Error:</span> {{detailsErrorText}}
-      </span>
-      {% elif data['error'] and data['error'] == 'characters' %}
-      <span id="passport-issued-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Details must be 275 characters or fewer 
       </span>
       {% endif %}
 
       <textarea class="govuk-textarea govuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-info more-detail-hint"></textarea>
     </div>
 
-    {% if data['error'] and data['error'] == 'characters' %}
+    {% if data['error'] == 'characters' %}
     <div id="with-hint-info" class="govuk-character-count__message govuk-error-message govuk-!-font-weight-regular" aria-live="polite">
       You have 40 characters too many
     </div>
