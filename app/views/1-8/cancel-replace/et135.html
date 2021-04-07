@@ -23,18 +23,43 @@ Export Health Certificate
 {% endblock %}
 {% block content %}
 
+{% set reasonErrorText = 'Select a reason for cancelling and replacing this certificate' %}
+{% set detailsErrorText = "Provide details about the cancellation reason" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% if data['error'] %}
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+      {
+        text: reasonErrorText,
+        href: "#passport-issued-error"
+      },
+      {
+        text: detailsErrorText,
+        href: "#postcode-error"
+      }
+      ]
+    }) }}
+    {% endif %}
+
     <h1 class="govuk-heading-xl">Cancellation reasons</h1>
     <form method="post">
-      <div class="govuk-form-group">
+      <div class="govuk-form-group {{'govuk-form-group--error' if data['error']}}">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h2 class="govuk-heading-m">
               Why are you cancelling and replacing this certificate?
             </h2>
           </legend>
+
+          {% if data['error'] %}
+          <span id="passport-issued-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> {{reasonErrorText}}
+          </span>
+          {% endif %}
+
           <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="admin-error" name="cancel-replace-reason" type="radio" value="Administrative error">
@@ -63,31 +88,37 @@ Export Health Certificate
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="other" name="cancel-replace-reason" type="radio" value="Other">
               <label class="govuk-label govuk-radios__label" for="other">
-                 Error
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="other" name="cancel-replace-reason" type="radio" value="Other">
-              <label class="govuk-label govuk-radios__label" for="other">
-                Other
-              </label>
-            </div>
+               Error
+             </label>
+           </div>
+           <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="other" name="cancel-replace-reason" type="radio" value="Other">
+            <label class="govuk-label govuk-radios__label" for="other">
+              Other
+            </label>
           </div>
-        </fieldset>
-      </div>
-
-      <div class="govuk-form-group">
-        <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
-          Can you provide more detail?
-        </label>
-      </h2>
-
-      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+      </fieldset>
     </div>
-    <input type="hidden" name="applicationFormStatus" value=""/>
-    <input class="govuk-button" type="submit" value="Continue"
-    id="Button-Continue" data-qa-id="Button-Continue"/>
-  </form>
+
+    <div class="govuk-form-group {{'govuk-form-group--error' if data['error']}}">
+      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
+        Details
+      </label>
+      {% if data['error'] %}
+          <span id="passport-issued-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> {{detailsErrorText}}
+          </span>
+          {% endif %}
+    </h2>
+
+    <textarea class="govuk-textarea {{'govuk-textarea--error' if data['error']}}" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
+
+  <input type="hidden" name="applicationFormStatus" value=""/>
+  <input class="govuk-button" type="submit" value="Continue"
+  id="Button-Continue" data-qa-id="Button-Continue"/>
+</form>
 </div>
 </div>
 {% endblock %}
