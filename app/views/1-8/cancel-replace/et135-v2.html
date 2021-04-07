@@ -63,7 +63,7 @@ Export Health Certificate
         items: [
         {
           value: "email",
-          text: "Administrative error",
+          text: "EHC lost/damaged",
           conditional:
           {
             html: detailHtml
@@ -71,7 +71,7 @@ Export Health Certificate
         },
         {
           value: "phone",
-          text: "It was rejected at the border control post",
+          text: "Missing info",
           conditional:
           {
             html: detailHtml
@@ -79,7 +79,23 @@ Export Health Certificate
         },
         {
           value: "text",
-          text: "Certification issues",
+          text: "Issues relating to BCP or importing country",
+          conditional:
+          {
+            html: detailHtml
+          }
+        },
+        {
+          value: "text",
+          text: "Issues relating to logistics or transport",
+          conditional:
+          {
+            html: detailHtml
+          }
+        },
+        {
+          value: "text",
+          text: "Error",
           conditional:
           {
             html: detailHtml
