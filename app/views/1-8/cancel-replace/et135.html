@@ -101,23 +101,42 @@ Export Health Certificate
       </fieldset>
     </div>
 
-    <div class="govuk-form-group {{'govuk-form-group--error' if data['error']}}">
-      <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="more-detail">
-        Details
-      </label>
-      {% if data['error'] %}
-          <span id="passport-issued-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> {{detailsErrorText}}
-          </span>
-          {% endif %}
-    </h2>
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="275">
+      <div class="govuk-form-group {{'govuk-form-group--error' if data['error']}}">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="with-hint">
+          Details
+        </label>
+      </h1>
 
-    <textarea class="govuk-textarea {{'govuk-textarea--error' if data['error']}}" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      {% if data['error'] and data['error'] != 'characters' %}
+      <span id="passport-issued-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> {{detailsErrorText}}
+      </span>
+      {% elif data['error'] and data['error'] == 'characters' %}
+      <span id="passport-issued-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Details must be 275 characters or fewer 
+      </span>
+      {% endif %}
+
+      <textarea class="govuk-textarea govuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-info more-detail-hint"></textarea>
+    </div>
+
+    {% if data['error'] and data['error'] == 'characters' %}
+    <div id="with-hint-info" class="govuk-character-count__message govuk-error-message govuk-!-font-weight-regular" aria-live="polite">
+      You have 40 characters too many
+    </div>
+    {% else %}
+    <div id="exceeding-characters-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+      You can enter up to 275 characters
+    </div>
+    {% endif %}
+
   </div>
+</div>
 
-  <input type="hidden" name="applicationFormStatus" value=""/>
-  <input class="govuk-button" type="submit" value="Continue"
-  id="Button-Continue" data-qa-id="Button-Continue"/>
+<input type="hidden" name="applicationFormStatus" value=""/>
+<input class="govuk-button" type="submit" value="Continue"
+id="Button-Continue" data-qa-id="Button-Continue"/>
 </form>
 </div>
 </div>
