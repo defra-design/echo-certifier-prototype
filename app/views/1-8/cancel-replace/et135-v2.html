@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Export Health Certificate
+
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+
+
+<div class="govuk-width-container">
+ <div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item" id="Nav-DisplayName"></li>
+    <li class="login-nav__list-item"> | <a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+    <li class="login-nav__list-item"><a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+{{ govukBackLink({
+  "text": "Back",
+  "href": "javascript: window.history.go(-1)"
+})}}
+</div>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+      {% set detailHtml %}
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label:
+        {
+          text: "Details (optional)",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint:
+        {
+          text: ""
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "contact",
+        name: "contact",
+        fieldset:
+        {
+          legend:
+          {
+            text: "Why are you cancelling and replacing this certificate?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint:
+        {
+          text: "Select one option."
+        },
+        items: [
+        {
+          value: "email",
+          text: "EHC lost/damaged",
+          conditional:
+          {
+            html: detailHtml
+          }
+        },
+        {
+          value: "phone",
+          text: "Missing info",
+          conditional:
+          {
+            html: detailHtml
+          }
+        },
+        {
+          value: "text",
+          text: "Issues relating to BCP or importing country",
+          conditional:
+          {
+            html: detailHtml
+          }
+        },
+        {
+          value: "text",
+          text: "Issues relating to logistics or transport",
+          conditional:
+          {
+            html: detailHtml
+          }
+        },
+        {
+          value: "text",
+          text: "Error",
+          conditional:
+          {
+            html: detailHtml
+          }
+        },
+        {
+          value: "text",
+          text: "Other",
+          conditional:
+          {
+            html: detailHtml
+          }
+        }
+        ]
+      }) }}
+      
+      <input type="hidden" name="applicationFormStatus" value=""/>
+      <input class="govuk-button" type="submit" value="Continue"
+      id="Button-Continue" data-qa-id="Button-Continue"/>
+    </form>
+  </div>
+</div>
+{% endblock %}

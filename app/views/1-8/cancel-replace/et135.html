@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Export Health Certificate
+
+{% endblock %}
+{% block beforeContent%}
+{{super()}}
+
+
+<div class="govuk-width-container">
+ <div class="login-nav login-border">
+  <ul class="login-nav__list">
+    <li class="login-nav__list-item" id="Nav-DisplayName"></li>
+    <li class="login-nav__list-item"> | <a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state profile" id="Link-ManageAccount" target="_blank">Manage account</a>|</li>
+    <li class="login-nav__list-item"><a href="javascript:alert('Not in prototype!');" class="govuk-link login-nav__link govuk-link--no-visited-state" id="Link-SignOut">Sign out</a></li>
+  </ul>
+</div>
+{{ govukBackLink({
+  "text": "Back",
+  "href": "javascript: window.history.go(-1)"
+})}}
+</div>
+{% endblock %}
+{% block content %}
+
+{% set reasonErrorText = 'Select a reason for cancelling and replacing this certificate' %}
+
+{% set detailsErrorText %}
+{{'Provide details about the cancellation reason' if data['error'] != 'characters' else 'Details must be 275 characters or fewer'}}
+{% endset %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if data['error'] %}
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+      {
+        text: reasonErrorText,
+        href: "#passport-issued-error"
+      },
+      {
+        text: detailsErrorText,
+        href: "#postcode-error"
+      }
+      ]
+    }) }}
+    {% endif %}
+
+    <h1 class="govuk-heading-xl">Cancellation reasons</h1>
+    <form method="post">
+      <div class="govuk-form-group {{'govuk-form-group--error' if data['error']}}">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h2 class="govuk-heading-m">
+              Why are you cancelling and replacing this certificate?
+            </h2>
+          </legend>
+
+          {% if data['error'] %}
+          <span id="passport-issued-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> {{reasonErrorText}}
+          </span>
+          {% endif %}
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="admin-error" name="cancel-replace-reason" type="radio" value="Administrative error">
+              <label class="govuk-label govuk-radios__label" for="admin-error">
+                EHC lost/damaged
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="bcp-rejected" name="cancel-replace-reason" type="radio" value="Rejected at BCP">
+              <label class="govuk-label govuk-radios__label" for="bcp-rejected">
+                Missing info
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="certification-issues" name="cancel-replace-reason" type="radio" value="Certification issues">
+              <label class="govuk-label govuk-radios__label" for="certification-issues">
+                Issues relating to BCP or importing country
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other" name="cancel-replace-reason" type="radio" value="Other">
+              <label class="govuk-label govuk-radios__label" for="other">
+                Issues relating to logistics or transport
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="other" name="cancel-replace-reason" type="radio" value="Other">
+              <label class="govuk-label govuk-radios__label" for="other">
+               Error
+             </label>
+           </div>
+           <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="other" name="cancel-replace-reason" type="radio" value="Other">
+            <label class="govuk-label govuk-radios__label" for="other">
+              Other
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="275">
+      <div class="govuk-form-group {{'govuk-form-group--error' if data['error']}}">
+        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="with-hint">
+          Details
+        </label>
+      </h1>
+
+      {% if data['error'] %}
+      <span id="more-detail-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> {{detailsErrorText}}
+      </span>
+      {% endif %}
+
+      <textarea class="govuk-textarea govuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-info more-detail-hint"></textarea>
+    </div>
+
+    {% if data['error'] == 'characters' %}
+    <div id="with-hint-info" class="govuk-character-count__message govuk-error-message govuk-!-font-weight-regular" aria-live="polite">
+      You have 40 characters too many
+    </div>
+    {% else %}
+    <div id="exceeding-characters-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+      You can enter up to 275 characters
+    </div>
+    {% endif %}
+
+  </div>
+
+  <input type="hidden" name="applicationFormStatus" value=""/>
+  <input class="govuk-button" type="submit" value="Continue"
+  id="Button-Continue" data-qa-id="Button-Continue"/>
+</form>
+</div>
+</div>
+{% endblock %}

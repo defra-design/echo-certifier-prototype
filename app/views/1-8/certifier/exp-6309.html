@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Please confirm your organisation details</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Acme Org Ltd
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            153-155 Goverment Street
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address 2
+          </dt>
+          <dd class="govuk-summary-list__value">
+            District name
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address 3
+          </dt>
+          <dd class="govuk-summary-list__value">
+            N/A
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Town/City
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Crewe
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            County
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Cheshire
+          </dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Postcode
+          </dt>
+          <dd class="govuk-summary-list__value">
+            CW1 4QU
+          </dd>
+
+        </div>
+      </dl>
+
+
+      <p>If any of these details are wrong, please [insert the thing they need to do]</p>
+      <p>&nbsp;</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button">
+          Confirm and continue
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

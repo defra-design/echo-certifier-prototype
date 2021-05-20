@@ -8,7 +8,7 @@ module.exports = function(router) {
   // require('./EXP-10372-organisation-switcher.js')(router)
 
   // CHANGE VERSION TO THE VERSION
-  const version = '1-7'
+  const version = '1-8'
   const base_url = version + "/"
   const file_url = version + "/certifier"
 
@@ -281,19 +281,53 @@ module.exports = function(router) {
 
 
   //Cancel and replace
-  router.post('/1-7/cancel-replace/request-replacement', function (req, res) {
+  router.post('/1-8/cancel-replace/request-replacement', function (req, res) {
     console.log(req.session.data['cancelAndReplaceDecision']);
+    req.session.data['cr-journey'] = 'v1'
     if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
-  res.redirect('/1-7/cancel-replace/update-answers');
+      res.redirect('/1-8/cancel-replace/update-answers');
     }
     else {
-  res.redirect('/1-7/cancel-replace/index')
+      res.redirect('/1-8/cancel-replace/index')
     }
   })
 
+  router.post('/1-8/cancel-replace/request-replacement-v2', function (req, res) {
+    if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
+      res.redirect('/1-8/cancel-replace/guidance-changes-allowed');
+    }
+    else {
+      res.redirect('/1-8/cancel-replace/guidance-changes-not-allowed')
+    }
+  })
 
+  router.post('/1-8/cancel-replace/guidance-changes-not-allowed', function (req, res) {
+    console.log(req.session.data['cancelAndReplaceDecision']);
+    if (req.session.data['cancelAndReplaceDecision']=="proceedCancelAndReplace"){
+      req.session.data['cr-journey'] = 'v2'
+      res.redirect('/1-8/cancel-replace/et135-v2');
+    }
+    else {
+      res.redirect('/1-8/cancel-replace/guidance-consignment-left-uk')
+    }
+  })
 
+  router.post('/1-8/cancel-replace/update-answers', function (req, res) {
+    if (req.session.data['cr-journey'] == "v2"){
+      res.redirect('/1-8/cancel-replace/declaration');
+    }
+    else {
+      res.redirect('/1-8/cancel-replace/et135')
+    }
+  })
 
+  router.post('/1-8/cancel-replace/et135', function (req, res) {
+    res.redirect('/1-8/cancel-replace/declaration')
+  })
+
+  router.post('/1-8/cancel-replace/et135-v2', function (req, res) {
+    res.redirect('/1-8/cancel-replace/update-answers');
+  })
 
 
 

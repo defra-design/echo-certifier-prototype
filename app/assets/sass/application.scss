@@ -95,6 +95,8 @@ $govuk-global-styles: true;
     width: 30px;
     height: 39px;
     background-image: url('../images/icon-file-download.png');
+    vertical-align: middle;
+    margin-right: govuk-spacing(2);
 }
 
 .defra-lebel--inline{
