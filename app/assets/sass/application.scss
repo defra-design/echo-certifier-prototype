@@ -23,6 +23,7 @@ $govuk-global-styles: true;
 @import "components/button-menu";
 @import "components/pagination";
 @import "components/certificate-list";
+@import "components/notification-banner";
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 @import "patterns/login-nav";
